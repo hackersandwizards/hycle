@@ -54,11 +54,66 @@ versions/        ← Archived previous versions (v1.html, v2.html, ...)
 - "Coming soon" — this is content work, not website work
 - Do not change this section until real case studies exist
 
+## Characteristic Phrases per Level
+
+These phrases capture the voice of each maturity level. Preserve them when editing the model.
+
+- Level 0 — "Tell me what to build"
+- Level 1 — "I see the real problem"
+- Level 2 — "I intend to..."
+- Level 3 — "I've been doing..."
+- Level 4 — emergent (no single phrase — the system speaks)
+
 ## Foundational References
 
 - Herbert Simon (1978): Organizations are systems of decisions
 - Manfred Eigen (1971): Hypercycles — self-sustaining cycles enabling emergent complexity
 - These two references anchor "The Name" section. Do not remove or dilute them
+
+## Uncited but Formative Influences
+
+These shaped the thinking behind hycle but are deliberately NOT referenced on the website. Do not add citations for them.
+
+- David Marquet: Ladder of Leadership / "Turn the Ship Around!" — inspired the two-dimension model (Decision Authority + Human-AI Trust as co-evolving dimensions)
+- Djordje Babic: "The Loom" (Substack, March 2026) — catalyst for the co-evolution concept
+- Theory of Constraints / Toyota — origin of the water-level metaphor ("lowering the water reveals the rocks")
+- Agile Fluency Model — precedent for maturity thinking with investment profiles
+- Alistair Cockburn: "Everything we've ever written that is too disciplined for humans is perfect for AI"
+
+## Lessons from the Agile Manifesto
+
+What went wrong with Agile — and what hycle must avoid:
+
+- Too abstract — everyone made their own interpretation, coherence was lost
+- Immediately commercialized (Certified Scrum Master etc.) — hycle must resist certification culture
+- No maturity model — the manifesto had no path, no progression. hycle's maturity model is the direct answer to this gap
+- "X over Y" format was viral but premature for hycle — the group is not yet confident enough in the trade-offs to commit to that structure
+
+## Design Decisions
+
+Choices made deliberately, with rationale. Do not revisit without author consensus.
+
+- **Format**: "Problem-Statement + Hypotheses" ("We observe... We believe...") — chosen over "X over Y" (too early to commit to trade-offs) and numbered principles (not ready)
+- **Simon/Eigen placement**: Callout after the opening section, not the opener itself. The opener goes to the problem; the callout gives the intellectual backing
+- **Author bio style**: No company names. Short, role-focused. No "20+ years experience" patterns
+- **Language**: English, for international reach
+- **Domains**: hycle.org is primary. hycle.ai and hycle.dev redirect to .org
+
+## Strategic Positioning
+
+- hycle aims to be "Taktgeber der Diskussion" — pacemaker of the discourse, not the final answer
+- Community standard, not a product. Model: scs-architecture.org
+- "Wir gestehen uns ein, dass wir nur auf Sicht fahren" — we admit we are navigating by sight
+- Practical applicability — especially through the authors themselves — for immediate purpose
+- Demand-driven, not top-down. The work follows where the need is
+
+## Working Documents
+
+Source materials for the author group:
+
+- Fathom recording: Founding session, February 27, 2026 (153 minutes)
+- Google Doc: https://docs.google.com/document/d/1IY_5XbKPO1Lbj4QV-cpJ7s60EPZ_a6NTiByhe0ZkqKY/edit
+- Email thread: "Follow-up codename hycle" (between all authors)
 
 ## Versioning Protocol
 
