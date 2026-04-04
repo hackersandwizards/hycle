@@ -2,19 +2,19 @@
 
 **When execution becomes instant, only decisions remain.**
 
-hycle is an organizational model for the age of AI agents. It addresses the decision-making problem that becomes visible when AI execution speed removes development throughput as the bottleneck.
+hycle is an organizational model for the age of AI agents. It addresses the decision-making problem that becomes visible when AI execution speed removes throughput as the bottleneck.
 
 ## What is this?
 
 A set of observations and hypotheses from practice — from training teams, consulting organizations, and building software with AI agents.
 
-- **6 observations** about what happens when AI agents make development near-instant
-- **6 hypotheses** about what organizations need to do differently
+- **7 observations** about what happens when AI agents remove the execution constraint
+- **8 hypotheses** about what organizations need to do differently
 - **A maturity model** with 5 levels describing the co-evolution of decision authority and human-AI trust
 
 ## The Core Insight
 
-Organizations are systems of decisions (Herbert Simon, 1978). For decades, this was invisible — buried under coordination overhead and the fiction that development speed was the bottleneck. AI agents removed that fiction. The water level dropped. The rocks are visible now.
+Organizations are systems of decisions (Herbert Simon, 1978). For decades, this was invisible — buried under coordination overhead and the fiction that execution speed was the bottleneck. AI agents removed that fiction. The water level dropped. The rocks are visible now.
 
 ## The Website
 
@@ -23,9 +23,11 @@ Organizations are systems of decisions (Herbert Simon, 1978). For decades, this 
 Plain HTML/CSS. No frameworks. No build step.
 
 ```
-index.html    ← The manifesto
-style.css     ← Minimal styling
-CNAME         ← Custom domain config
+index.html       ← The manifesto (current version)
+changelog.html   ← Version history
+style.css        ← Minimal styling
+versions/        ← Previous versions
+CNAME            ← Custom domain config
 ```
 
 ## Contributing
