@@ -132,4 +132,4 @@ Archived versions additionally link back to the current version.
 
 ## Authors
 
-Sven Christian Andrä, Jens Himmelreich, Johannes Schmidt, Andreas Stephan, Benedikt Stemmildt.
+Andreas Stephan, Benedikt Stemmildt, Jens Himmelreich, Johannes Schmidt, Sven Christian Andrä.

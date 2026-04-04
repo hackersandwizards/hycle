@@ -38,11 +38,11 @@ hycle is not finished. It is an invitation to collective sense-making. If you se
 
 ## Authors
 
-- [Sven Christian Andrä](https://www.linkedin.com/in/svenandrae/)
-- [Jens Himmelreich](https://www.linkedin.com/in/jens-himmelreich-a310251/)
-- [Johannes Schmidt](https://www.linkedin.com/in/johannes-schmidt-7b84b33/)
 - [Andreas Stephan](https://www.linkedin.com/in/andreasstephan/)
 - [Benedikt Stemmildt](https://www.linkedin.com/in/benedikt-stemmildt/)
+- [Jens Himmelreich](https://www.linkedin.com/in/jens-himmelreich-a310251/)
+- [Johannes Schmidt](https://www.linkedin.com/in/johannes-schmidt-7b84b33/)
+- [Sven Christian Andrä](https://www.linkedin.com/in/svenandrae/)
 
 ## License
 
