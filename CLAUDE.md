@@ -13,6 +13,7 @@ index.html       ← Current version: manifesto + model + framework (always late
 changelog.html   ← Version history (same styling)
 style.css        ← Single stylesheet, shared by all pages
 versions/        ← Archived previous versions (v1.html, v2.html, ...)
+drafts/          ← Discussion drafts for the author group (HTML, same styling)
 ```
 
 ## Tone & Voice
@@ -21,6 +22,8 @@ versions/        ← Archived previous versions (v1.html, v2.html, ...)
 - Honest, open, not dogmatic — "We do not have answers. We have hypotheses."
 - Direct and precise. No hedging when certainty exists, no false certainty when it doesn't
 - No jargon, no buzzwords, no emojis
+- Every sentence must carry its own weight. If removing a sentence loses no meaning, remove it. Restatements of the headline, transitions ("What is new is that..."), and examples that illustrate without adding are the first to cut
+- Equal weight: observations must be similar length to each other, hypotheses must be similar length to each other. No essays next to one-liners. Move depth into future content (Walk the Talk, blog posts), not into observations or hypotheses
 - hycle is always lowercase, even at the start of a sentence
 
 ## Content Architecture
