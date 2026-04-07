@@ -312,6 +312,77 @@ body {
   color: var(--color-text-secondary);
 }
 
+/* === PART HEADERS === */
+.part-header {
+  padding: 3rem 0 0;
+  border-top: 2px solid var(--color-accent);
+}
+
+.part-header .container {
+  margin-bottom: 0;
+}
+
+.part-label {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.part-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0;
+}
+
+.part-header + .section {
+  border-top: none;
+}
+
+/* === CONCEPTS === */
+.concept {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.concept:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.concept h3 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.concept p {
+  color: var(--color-text-secondary);
+}
+
+/* === WHAT IT TAKES === */
+.level-takes {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--color-border);
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+}
+
+.level-takes strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
 /* === WHAT HYCLE IS NOT === */
 .not-item {
   margin-bottom: 1rem;
@@ -333,6 +404,11 @@ body {
 .coming-soon {
   font-style: italic;
   color: var(--color-text-secondary);
+}
+
+/* === SECTION DIVIDER (non-part separator) === */
+.section-divider {
+  border-top: 2px solid var(--color-accent);
 }
 
 /* === AUTHORS === */
