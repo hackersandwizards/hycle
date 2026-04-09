@@ -105,6 +105,8 @@ These shaped the thinking behind hycle but are deliberately NOT referenced on th
 - Agile Fluency Model — precedent for maturity thinking with investment profiles
 - Alistair Cockburn: "Everything we've ever written that is too disciplined for humans is perfect for AI"
 - Richard Rumelt: "Good Strategy Bad Strategy" — the Kernel of Strategy (diagnosis, guiding policy, coherent actions) informs how hycle defines "strategy" in The Concepts
+- Stephen Bungay: "The Art of Action" — directed opportunism, Autonomy + Alignment. Informs Level 3 (teams own decisions within strategic frame) and the tension between coherence and autonomy throughout the model
+- Itamar Gilad: "Evidence Guided" — evidence-driven product decisions, hypothesis-based development
 
 ## Lessons from the Agile Manifesto
 
@@ -161,4 +163,4 @@ Archived versions additionally link back to the current version.
 
 ## Authors
 
-Andreas Stephan, Benedikt Stemmildt, Jens Himmelreich, Johannes Schmidt, Sven Christian Andrä.
+Andreas Stephan, Benedikt Stemmildt, Björn Rochel, Jens Himmelreich, Johannes Schmidt, Sven Christian Andrä.
