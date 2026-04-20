@@ -85,11 +85,12 @@ if [[ -n $git_status ]]; then
     fi
 fi
 
-# Context: rescale percentage to usable window (degradation starts at ~147k tokens).
+# Context: rescale percentage to usable window (autocompact buffer is 33k tokens).
+# 200k window: 167k usable (83.5%), 1M window: 967k usable (96.7%)
 if (( ctx_size >= 1000000 )); then
     usable_permille=967 thresh_red=15 thresh_yellow=10
 else
-    usable_permille=970 thresh_red=76 thresh_yellow=52
+    usable_permille=835 thresh_red=76 thresh_yellow=52
 fi
 if (( pct > 0 )); then
     pct=$(( (pct * 1000 + usable_permille / 2) / usable_permille ))
