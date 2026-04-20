@@ -4,14 +4,6 @@
     "type": "command",
     "command": "bash .claude/statusline-command.sh"
   },
-  "enabledMcpjsonServers": [
-    "google-mail",
-    "fathom",
-    "notion",
-    "google-drive",
-    "google-calendar",
-    "todoist"
-  ],
   "env": {
     "DISABLE_TELEMETRY": "1",
     "DISABLE_ERROR_REPORTING": "1",
