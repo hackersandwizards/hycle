@@ -1,11 +1,45 @@
 {
+  "model": "claude-opus-4-5",
   "statusLine": {
     "type": "command",
     "command": "bash .claude/statusline-command.sh"
   },
+  "enabledMcpjsonServers": [
+    "google-mail",
+    "fathom",
+    "notion",
+    "google-drive",
+    "google-calendar",
+    "todoist"
+  ],
   "env": {
     "DISABLE_TELEMETRY": "1",
     "DISABLE_ERROR_REPORTING": "1",
-    "CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": "1"
+    "CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": "1",
+    "CLAUDE_CODE_ENABLE_AWAY_SUMMARY": "1",
+    "CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING": "1",
+    "MAX_THINKING_TOKENS": "128000",
+    "CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD": "1"
+  },
+  "permissions": {
+    "defaultMode": "auto"
+  },
+  "tui": "fullscreen",
+  "autoDreamEnabled": true,
+  "skipDangerousModePermissionPrompt": true,
+  "skipAutoPermissionPrompt": true,
+  "voiceEnabled": true,
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "rtk hook claude"
+          }
+        ]
+      }
+    ]
   }
 }
