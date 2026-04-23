@@ -164,5 +164,3 @@ Archived versions additionally link back to the current version.
 ## Authors
 
 Andreas Stephan, Benedikt Stemmildt, Björn Rochel, Jens Himmelreich, Johannes Schmidt, Sven Christian Andrä.
-
-@.claude/RTK.md
