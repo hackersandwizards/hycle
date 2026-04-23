@@ -165,8 +165,4 @@ Archived versions additionally link back to the current version.
 
 Andreas Stephan, Benedikt Stemmildt, Björn Rochel, Jens Himmelreich, Johannes Schmidt, Sven Christian Andrä.
 
-<!-- rtk-instructions v2 -->
-# RTK (Rust Token Killer) - Token-Optimized Commands
-
-**Always prefix commands with `rtk`**. If RTK has a dedicated filter, it uses it. If not, it passes through unchanged. This means RTK is always safe to use. Even in command chains with `&&`, prefix each command with `rtk`. A `PreToolUse` hook auto-rewrites Bash tool calls through `rtk hook claude`.
-<!-- /rtk-instructions -->
+@.claude/RTK.md
