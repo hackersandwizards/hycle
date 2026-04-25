@@ -1,5 +1,7 @@
 # hycle — Project Rules
 
+**Disagree out loud.** If you see a better angle on framing, structure, or phrasing, raise it before acting. Editorial discipline here is strict by design — but push back when a rule is fighting the content.
+
 ## What This Is
 
 A manifesto, maturity model, and framework for product development organizations navigating the shift from process-driven to decision-driven work in the age of AI agents. Published at hycle.org. Three distinct parts on one page.
@@ -38,7 +40,7 @@ hycle has three parts, presented on one page with visual separators:
 - Lead with the universal, illustrate with the specific
 
 #### The Name
-- Simon + Eigen intellectual anchoring. Do not dilute
+- Simon + Eigen intellectual anchoring. Preserve in full
 
 #### The Concepts
 - Definitions of Decision, Strategy, Authority — placed between The Name and What We See
@@ -50,12 +52,12 @@ hycle has three parts, presented on one page with visual separators:
 #### What We See (observations)
 - Each observation: short, equal length, one point per observation
 - These are practice-based — from software/product development organizations
-- Do not make them artificially cross-industry. The honesty is in the specificity
+- Keep them specific to software/product-development practice. The honesty is in the specificity
 
 #### What We Believe (hypotheses)
 - Short, equal length — headline carries the thesis, body is one clarifying statement
 - Grouped: foundation → dimensions of decisions → navigation → maturity path → opportunity
-- "Held loosely and tested rigorously" — do not present hypotheses as facts
+- "Held loosely and tested rigorously" — present hypotheses as hypotheses, not facts
 
 #### What hycle Is Not
 - Includes meta-principle: hycle provides principles, diagnosis, and reference patterns. Operationalization is context-specific — developed by people and AI in that context
@@ -63,7 +65,7 @@ hycle has three parts, presented on one page with visual separators:
 ### Part II: The Maturity Model
 
 #### The Model (Levels 0–4)
-- Do not change the level structure without explicit author consensus
+- The level structure changes only with explicit author consensus
 - Two co-evolving dimensions: Decision Authority and Human-AI Trust
 - Levels 0–1 are "Observed", Levels 2–4 are "Hypothesized"
 - Progression is not monotonic — regression is real and must be acknowledged
@@ -74,10 +76,10 @@ hycle has three parts, presented on one page with visual separators:
 
 #### The Roles / The Language / Walk the Talk
 - All are "Coming soon" — the direction is identified, the specifics are not ready
-- Do not fill these with placeholder content. Empty honesty beats premature answers
+- Leave these empty until real substance exists. Empty honesty beats premature answers
 - The framework is explicitly positioned as reference patterns, not prescriptive methodology
 - Operative vocabulary (The Language) belongs here, not in the manifesto
-- The Roles and Walk the Talk: do not change until real substance exists
+- The Roles and Walk the Talk: hold unchanged until real substance exists
 
 ## Characteristic Phrases per Level
 
@@ -93,11 +95,11 @@ These phrases capture the voice of each maturity level. Preserve them when editi
 
 - Herbert Simon (1978): Organizations are systems of decisions
 - Manfred Eigen (1971): Hypercycles — self-sustaining cycles enabling emergent complexity
-- These two references anchor "The Name" section. Do not remove or dilute them
+- These two references anchor "The Name" section. Preserve them in full
 
 ## Uncited but Formative Influences
 
-These shaped the thinking behind hycle but are deliberately NOT referenced on the website. Do not add citations for them.
+These shaped the thinking behind hycle but are deliberately unreferenced on the website. Omit citations for them.
 
 - David Marquet: Ladder of Leadership / "Turn the Ship Around!" — inspired the two-dimension model (Decision Authority + Human-AI Trust as co-evolving dimensions)
 - Djordje Babic: "The Loom" (Substack, March 2026) — catalyst for the co-evolution concept
@@ -119,7 +121,7 @@ What went wrong with Agile — and what hycle must avoid:
 
 ## Design Decisions
 
-Choices made deliberately, with rationale. Do not revisit without author consensus.
+Choices made deliberately, with rationale. Revisit only with author consensus.
 
 - **Three-part structure**: Manifesto (principles) / Maturity Model (diagnosis) / Framework (reference patterns). Separates what hycle prescribes from what it leaves to context-specific derivation
 - **Format**: "Problem-Statement + Hypotheses" ("We observe... We believe...") — chosen over "X over Y" (too early to commit to trade-offs) and numbered principles (not ready)
