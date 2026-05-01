@@ -8,9 +8,9 @@ hycle is an organizational model for the age of AI agents. It addresses the deci
 
 Three parts, one page:
 
-- **The Manifesto** — 7 observations and 8 hypotheses about what happens when AI agents remove the execution constraint. Preceded by definitions of the core concepts: Decision, Strategy, Authority
+- **The Manifesto** — 7 observations and 8 hypotheses about what happens when AI agents remove the execution constraint. Preceded by definitions of the core concepts: Decision, Strategy, Authority, Agency
 - **The Maturity Model** — 5 levels describing the co-evolution of decision authority and human-AI trust. Each level includes perceived decision quality and what it takes to progress
-- **The Framework** — Reference patterns for operationalization. The Roles, The Language, Walk the Talk (in progress)
+- **The Inversion** — Three Cadences, Three Shifts, and a map of what inverts in Scrum's events and artifacts. The Roles, The Language, and Walk the Talk are still to come
 
 ## The Core Insight
 
@@ -23,7 +23,7 @@ Organizations are systems of decisions (Herbert Simon, 1978). For decades, this 
 Plain HTML/CSS. No frameworks. No build step.
 
 ```
-index.html       ← Current version (manifesto + model + framework)
+index.html       ← Current version (manifesto + model + inversion)
 changelog.html   ← Version history
 style.css        ← Minimal styling
 versions/        ← Archived previous versions (v1, v2, ...)

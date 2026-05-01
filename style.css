@@ -65,6 +65,19 @@ body {
   line-height: 1.5;
 }
 
+.hero-title a,
+.section h2 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* === FOCUS === */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
 /* === SECTIONS === */
 .section {
   padding: 4rem 0;
@@ -296,22 +309,6 @@ body {
   color: var(--color-text-secondary);
 }
 
-.model-question {
-  padding: 1.5rem;
-  background: var(--color-callout-bg);
-  border-radius: 4px;
-  margin-top: 1rem;
-}
-
-.model-question p:first-child {
-  font-family: var(--font-heading);
-  font-size: 1.1rem;
-}
-
-.model-question p:last-child {
-  color: var(--color-text-secondary);
-}
-
 /* === PART HEADERS === */
 .part-header {
   padding: 3rem 0 0;
@@ -398,12 +395,6 @@ body {
 
 .not-item strong {
   color: var(--color-text);
-}
-
-/* === WALK THE TALK === */
-.coming-soon {
-  font-style: italic;
-  color: var(--color-text-secondary);
 }
 
 /* === SECTION DIVIDER (non-part separator) === */
@@ -497,6 +488,44 @@ footer p {
   margin-bottom: 0.5rem;
 }
 
+/* === INVERSION TABLE === */
+.inversion-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.inversion-table thead th {
+  text-align: left;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-secondary);
+  padding: 0.5rem 1rem 0.75rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.inversion-table tbody td {
+  padding: 0.85rem 1rem 0.85rem 0;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: top;
+  color: var(--color-text-secondary);
+}
+
+.inversion-table tbody td:first-child {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--color-text);
+  white-space: nowrap;
+  width: 1%;
+}
+
+.inversion-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
 /* === RESPONSIVE === */
 @media (max-width: 640px) {
   html {
@@ -532,5 +561,56 @@ footer p {
   .level-status {
     margin-left: 0;
     margin-top: 0.5rem;
+  }
+
+  .inversion-table thead {
+    display: none;
+  }
+
+  .inversion-table,
+  .inversion-table tbody,
+  .inversion-table tr,
+  .inversion-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .inversion-table tbody tr {
+    margin-bottom: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .inversion-table tbody tr:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .inversion-table tbody td {
+    padding: 0.25rem 0;
+    border-bottom: none;
+  }
+
+  .inversion-table tbody td:first-child {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-secondary);
+    margin-bottom: 0.25rem;
+    white-space: normal;
+    width: auto;
+  }
+
+  .inversion-table tbody td:nth-child(2)::before {
+    content: "Before: ";
+    color: var(--color-text-secondary);
+    font-weight: 500;
+  }
+
+  .inversion-table tbody td:nth-child(3)::before {
+    content: "After: ";
+    color: var(--color-text-secondary);
+    font-weight: 500;
   }
 }
