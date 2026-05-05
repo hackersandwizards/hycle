@@ -1,42 +1,42 @@
-# hycle — The Hyper Cycle
+# hycle — Der hyper cycle
 
-**When execution becomes instant, only decisions remain.**
+**Wenn Ausführung sofort wird, bleiben nur die Entscheidungen.**
 
-hycle is an organizational model for the age of AI agents. It addresses the decision-making problem that becomes visible when AI execution speed removes throughput as the bottleneck.
+hycle ist ein Organisationsmodell für das Zeitalter der KI-Agenten. Es adressiert das Entscheidungsproblem, das sichtbar wird, wenn die Ausführungsgeschwindigkeit von KI den Durchsatz als Engpass beseitigt.
 
-## What is this?
+## Was ist das?
 
-Three parts, one page:
+Drei Teile, eine Seite:
 
-- **The Manifesto** — 7 observations and 8 hypotheses about what happens when AI agents remove the execution constraint. Preceded by definitions of the core concepts: Decision, Strategy, Authority, Agency
-- **The Maturity Model** — 5 levels describing the co-evolution of decision authority and human-AI trust. Each level includes perceived decision quality and what it takes to progress
-- **The Inversion** — Three Cadences, Three Shifts, and a map of what inverts in Scrum's events and artifacts. The Roles, The Language, and Walk the Talk are still to come
+- **Das Manifest** — 7 Beobachtungen und 8 Hypothesen darüber, was passiert, wenn KI-Agenten die Ausführungsbeschränkung beseitigen. Vorangestellt sind Definitionen der Kernbegriffe: Entscheidung, Strategie, Autorität, Wirksamkeit
+- **Das Reifegradmodell** — 5 Reifegrade, die die gemeinsame Entwicklung von Entscheidungsautorität und Mensch-KI-Vertrauen beschreiben. Jeder Reifegrad enthält die wahrgenommene Entscheidungsqualität und das, was nötig ist, um weiterzukommen
+- **Die Umkehrung** — Drei Taktungen, drei Verschiebungen und eine Zuordnung dessen, was sich in den Events und Artefakten von Scrum umkehrt. Die Rollen, die Sprache und Walk the Talk folgen
 
-## The Core Insight
+## Die Kernerkenntnis
 
-Organizations are systems of decisions (Herbert Simon, 1978). For decades, this was invisible — buried under coordination overhead and the fiction that execution speed was the bottleneck. AI agents removed that fiction. The water level dropped. The rocks are visible now.
+Organisationen sind Systeme aus Entscheidungen (Herbert Simon, 1978). Über Jahrzehnte war das unsichtbar — verdeckt durch Koordinationsaufwand und die Fiktion, Ausführungsgeschwindigkeit sei der Engpass. KI-Agenten haben diese Fiktion beseitigt. Der Wasserstand ist gefallen. Die Felsen sind jetzt sichtbar.
 
-## The Website
+## Die Website
 
 [hycle.org](https://hycle.org)
 
-Plain HTML/CSS. No frameworks. No build step.
+Schlichtes HTML/CSS. Keine Frameworks. Kein Build-Schritt.
 
 ```
-index.html       ← Current version (manifesto + model + inversion)
-changelog.html   ← Version history
-style.css        ← Minimal styling
-versions/        ← Archived previous versions (v1, v2, ...)
-CNAME            ← Custom domain config
+index.html       ← Aktuelle Version (Manifest + Modell + Umkehrung)
+changelog.html   ← Versionshistorie
+style.css        ← Minimales Styling
+versions/        ← Archivierte frühere Versionen (v1, v2, ...)
+CNAME            ← Konfiguration der Custom-Domain
 ```
 
-## Contributing
+## Mitwirken
 
-hycle is not finished. It is an invitation to collective sense-making. If you see what we see, if you have observations that confirm or contradict our hypotheses — open a discussion.
+hycle ist nicht fertig. Es ist eine Einladung zu kollektiver Sinnsuche. Wenn ihr seht, was wir sehen, wenn ihr Beobachtungen habt, die unsere Hypothesen bestätigen oder ihnen widersprechen — eröffnet eine Diskussion.
 
-[Join the Discussion](https://github.com/hackersandwizards/hycle/discussions)
+[An der Diskussion teilnehmen](https://github.com/hackersandwizards/hycle/discussions)
 
-## Authors
+## Autoren
 
 - [Andreas Stephan](https://www.linkedin.com/in/andreasstephan/)
 - [Benedikt Stemmildt](https://www.linkedin.com/in/benedikt-stemmildt/)
@@ -45,6 +45,6 @@ hycle is not finished. It is an invitation to collective sense-making. If you se
 - [Johannes Schmidt](https://www.linkedin.com/in/johannes-schmidt-7b84b33/)
 - [Sven Christian Andrä](https://www.linkedin.com/in/svenandrae/)
 
-## License
+## Lizenz
 
 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)

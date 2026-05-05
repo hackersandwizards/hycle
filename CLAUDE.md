@@ -1,168 +1,169 @@
-# hycle — Project Rules
+# hycle — Projektregeln
 
-**Disagree out loud.** If you see a better angle on framing, structure, or phrasing, raise it before acting. Editorial discipline here is strict by design — but push back when a rule is fighting the content.
+**Widersprich laut.** Wenn du eine bessere Sicht auf Rahmen, Struktur oder Formulierung siehst, sprich es an, bevor du handelst. Die redaktionelle Disziplin hier ist bewusst streng — aber widersprich, wenn eine Regel gegen den Inhalt arbeitet.
 
-## What This Is
+## Was das ist
 
-A manifesto, maturity model, and framework for product development organizations navigating the shift from process-driven to decision-driven work in the age of AI agents. Published at hycle.org. Three distinct parts on one page.
+Ein Manifest, ein Reifegradmodell und ein Framework für Produktentwicklungsorganisationen, die den Wandel von prozessgetriebener zu entscheidungsgetriebener Arbeit im Zeitalter der KI-Agenten navigieren. Veröffentlicht auf hycle.org. Drei eigenständige Teile auf einer Seite.
 
-## Tech Stack
+## Tech-Stack
 
-Plain HTML/CSS. No frameworks. No build step. No JavaScript. Keep it that way.
+Schlichtes HTML/CSS. Keine Frameworks. Kein Build-Schritt. Kein JavaScript. Das bleibt so.
 
 ```
-index.html       ← Current version: manifesto + model + framework (always latest)
-changelog.html   ← Version history (same styling)
-style.css        ← Single stylesheet, shared by all pages
-versions/        ← Archived previous versions (v1.html, v2.html, ...)
-drafts/          ← Discussion drafts for the author group (HTML, same styling)
+index.html       ← Aktuelle Version: Manifest + Modell + Umkehrung (immer der jüngste Stand)
+changelog.html   ← Versionshistorie (gleiches Styling)
+style.css        ← Ein Stylesheet, gemeinsam für alle Seiten
+versions/        ← Archivierte frühere Versionen (v1.html, v2.html, ...)
+drafts/          ← Diskussionsentwürfe für die Autorengruppe (HTML, gleiches Styling)
 ```
 
-## Tone & Voice
+## Ton und Stimme
 
-- English language, always
-- Honest, open, not dogmatic — "We do not have answers. We have hypotheses."
-- Direct and precise. No hedging when certainty exists, no false certainty when it doesn't
-- No jargon, no buzzwords, no emojis
-- Every sentence must carry its own weight. If removing a sentence loses no meaning, remove it. Restatements of the headline, transitions ("What is new is that..."), and examples that illustrate without adding are the first to cut
-- Equal weight: observations must be similar length to each other, hypotheses must be similar length to each other. No essays next to one-liners. Move depth into future content (Walk the Talk, blog posts), not into observations or hypotheses
-- hycle is always lowercase, even at the start of a sentence
+- Deutsche Sprache, immer
+- Ehrlich, offen, undogmatisch — "Wir haben keine Antworten. Wir haben Hypothesen."
+- Direkt und präzise. Keine Weichmacher, wo Sicherheit besteht; keine falsche Sicherheit, wo keine besteht
+- Kein Jargon, keine Buzzwords, keine Emojis
+- Jeder Satz muss sein Gewicht tragen. Wenn ein Satz beim Streichen keine Bedeutung verliert, streich ihn. Wiederholungen der Überschrift, Übergänge ("Was neu ist, ist..."), illustrierende Beispiele ohne Mehrwert — das sind die Erstkandidaten zum Kürzen
+- Gleichgewicht: Beobachtungen müssen untereinander ähnlich lang sein, Hypothesen ebenso. Keine Aufsätze neben Einzeilern. Tiefe gehört in spätere Inhalte (Walk the Talk, Blog-Posts), nicht in Beobachtungen oder Hypothesen
+- hycle ist immer kleingeschrieben, auch am Satzanfang
+- Englische Fachbegriffe (Backlog, Sprint, Retrospective, Pair, Scrum, Trunk-based Development, Cooldown, Stakeholder, Discovery, Framework) bleiben im Original, wenn sie etablierte Eigennamen sind
 
-## Content Architecture
+## Inhaltsarchitektur
 
-hycle has three parts, presented on one page with visual separators:
+hycle hat drei Teile, präsentiert auf einer Seite mit visuellen Trennern:
 
-### Part I: The Manifesto
+### Teil I: Das Manifest
 
-#### The Observation (opening section)
-- Universal framing: technology removes constraints, decision bottleneck becomes visible
-- Software is ONE manifestation, not the only one. Acknowledge other industries knew this first
-- Lead with the universal, illustrate with the specific
+#### Die Beobachtung (Eröffnung)
+- Universeller Einstieg: Technologie beseitigt Beschränkungen, der Entscheidungsengpass wird sichtbar
+- Software ist EINE Ausprägung, nicht die einzige. Anerkennen, dass andere Branchen das zuerst wussten
+- Mit dem Universellen führen, mit dem Spezifischen illustrieren
 
-#### The Name
-- Simon + Eigen intellectual anchoring. Preserve in full
+#### Der Name
+- Simon + Eigen als geistige Anker. In voller Länge bewahren
 
-#### The Concepts
-- Definitions of Decision, Strategy, Authority — placed between The Name and What We See
-- These are manifesto-level definitions, not operative vocabulary
-- Decision: primarily what and why, not how. But the what/how boundary is itself a decision
-- Strategy: diagnosis + guiding policy + coherent actions (Rumelt sense, uncited)
-- Authority: actual vs. declared. The gap is the first symptom
+#### Die Begriffe
+- Definitionen von Entscheidung, Strategie, Autorität — platziert zwischen Der Name und Was wir sehen
+- Das sind Manifest-Definitionen, nicht operatives Vokabular
+- Entscheidung: vor allem Was und Warum, nicht Wie. Aber wo die Was/Wie-Grenze verläuft, ist selbst eine Entscheidung
+- Strategie: Diagnose + leitende Politik + kohärente Handlungen (Rumelt, ohne Zitat)
+- Autorität: tatsächlich vs. erklärt. Die Lücke ist das erste Symptom
 
-#### What We See (observations)
-- Each observation: short, equal length, one point per observation
-- These are practice-based — from software/product development organizations
-- Keep them specific to software/product-development practice. The honesty is in the specificity
+#### Was wir sehen (Beobachtungen)
+- Jede Beobachtung: kurz, gleich lang, ein Punkt pro Beobachtung
+- Diese sind praxisbasiert — aus Software- und Produktentwicklungsorganisationen
+- Spezifisch zur Software- und Produktentwicklungspraxis halten. Die Ehrlichkeit liegt in der Spezifität
 
-#### What We Believe (hypotheses)
-- Short, equal length — headline carries the thesis, body is one clarifying statement
-- Grouped: foundation → dimensions of decisions → navigation → maturity path → opportunity
-- "Held loosely and tested rigorously" — present hypotheses as hypotheses, not facts
+#### Was wir glauben (Hypothesen)
+- Kurz, gleich lang — die Überschrift trägt die These, der Body ist eine klärende Aussage
+- Gruppiert: Fundament → Entscheidungsdimensionen → Navigation → Reifepfad → Chance
+- "Locker gehalten und rigoros geprüft" — Hypothesen als Hypothesen darstellen, nicht als Fakten
 
-#### What hycle Is Not
-- Includes meta-principle: hycle provides principles, diagnosis, and reference patterns. Operationalization is context-specific — developed by people and AI in that context
+#### Was hycle nicht ist
+- Enthält Meta-Prinzip: hycle bietet Prinzipien, Diagnose und Referenzmuster. Operationalisierung ist kontextspezifisch — wird von Menschen und KI in diesem Kontext entwickelt
 
-### Part II: The Maturity Model
+### Teil II: Das Reifegradmodell
 
-#### The Model (Levels 0–4)
-- The level structure changes only with explicit author consensus
-- Two co-evolving dimensions: Decision Authority and Human-AI Trust
-- Levels 0–1 are "Observed", Levels 2–4 are "Hypothesized"
-- Progression is not monotonic — regression is real and must be acknowledged
-- Each level includes "Decision quality perceived by teams" — how teams experience the quality of decisions reaching them
-- Levels 1–3 include "What it takes to move beyond" — prerequisites for progression, with concrete patterns as illustrations (not prescriptions)
+#### Das Modell (Reifegrade 0–4)
+- Die Reifegradstruktur ändert sich nur mit explizitem Konsens der Autoren
+- Zwei sich gemeinsam entwickelnde Dimensionen: Entscheidungsautorität und Mensch-KI-Vertrauen
+- Reifegrade 0–1 sind "Beobachtet", Reifegrade 2–4 sind "Hypothetisch"
+- Fortschritt ist nicht monoton — Rückschritt ist real und muss benannt werden
+- Jeder Reifegrad enthält "Wahrgenommene Entscheidungsqualität in den Teams" — wie Teams die Qualität der sie erreichenden Entscheidungen erleben
+- Reifegrade 1–3 enthalten "Weiterkommen" — Voraussetzungen für den Fortschritt, mit konkreten Mustern als Illustration (keine Vorschriften)
 
-### Part III: The Framework
+### Teil III: Das Framework
 
-#### The Roles / The Language / Walk the Talk
-- All are "Coming soon" — the direction is identified, the specifics are not ready
-- Leave these empty until real substance exists. Empty honesty beats premature answers
-- The framework is explicitly positioned as reference patterns, not prescriptive methodology
-- Operative vocabulary (The Language) belongs here, not in the manifesto
-- The Roles and Walk the Talk: hold unchanged until real substance exists
+#### Die Rollen / Die Sprache / Walk the Talk
+- Alle stehen unter "Folgt" — die Richtung ist erkennbar, die Details noch nicht reif
+- Diese leer lassen, bis echte Substanz vorliegt. Leere Ehrlichkeit schlägt verfrühte Antworten
+- Das Framework ist explizit als Sammlung von Referenzmustern positioniert, keine vorschreibende Methodik
+- Operatives Vokabular (Die Sprache) gehört hierher, nicht ins Manifest
+- Die Rollen und Walk the Talk: unverändert lassen, bis echte Substanz da ist
 
-## Characteristic Phrases per Level
+## Charakteristische Sätze pro Reifegrad
 
-These phrases capture the voice of each maturity level. Preserve them when editing the model.
+Diese Sätze fangen die Stimme jedes Reifegrads ein. Bei Bearbeitungen am Modell bewahren.
 
-- Level 0 — "Tell me what to build"
-- Level 1 — "I see the real problem"
-- Level 2 — "I intend to..."
-- Level 3 — "I've been doing..."
-- Level 4 — emergent (no single phrase — the system speaks)
+- Reifegrad 0 — "Sag mir, was ich bauen soll"
+- Reifegrad 1 — "Ich sehe das eigentliche Problem"
+- Reifegrad 2 — "Ich beabsichtige..."
+- Reifegrad 3 — "Ich habe..."
+- Reifegrad 4 — emergent (kein einzelner Satz — das System spricht)
 
-## Foundational References
+## Grundlegende Referenzen
 
-- Herbert Simon (1978): Organizations are systems of decisions
-- Manfred Eigen (1971): Hypercycles — self-sustaining cycles enabling emergent complexity
-- These two references anchor "The Name" section. Preserve them in full
+- Herbert Simon (1978): Organisationen sind Systeme aus Entscheidungen
+- Manfred Eigen (1971): Hyperzyklen — selbsterhaltende Kreisläufe, die emergente Komplexität ermöglichen
+- Diese beiden Referenzen verankern den Abschnitt "Der Name". In voller Länge bewahren
 
-## Uncited but Formative Influences
+## Nicht zitierte, aber prägende Einflüsse
 
-These shaped the thinking behind hycle but are deliberately unreferenced on the website. Omit citations for them.
+Diese haben das Denken hinter hycle geprägt, sind aber bewusst nicht auf der Website referenziert. Bei ihnen Zitate weglassen.
 
-- David Marquet: Ladder of Leadership / "Turn the Ship Around!" — inspired the two-dimension model (Decision Authority + Human-AI Trust as co-evolving dimensions)
-- Djordje Babic: "The Loom" (Substack, March 2026) — catalyst for the co-evolution concept
-- Theory of Constraints / Toyota — origin of the water-level metaphor ("lowering the water reveals the rocks")
-- Agile Fluency Model — precedent for maturity thinking with investment profiles
-- Alistair Cockburn: "Everything we've ever written that is too disciplined for humans is perfect for AI"
-- Richard Rumelt: "Good Strategy Bad Strategy" — the Kernel of Strategy (diagnosis, guiding policy, coherent actions) informs how hycle defines "strategy" in The Concepts
-- Stephen Bungay: "The Art of Action" — directed opportunism, Autonomy + Alignment. Informs Level 3 (teams own decisions within strategic frame) and the tension between coherence and autonomy throughout the model
-- Itamar Gilad: "Evidence Guided" — evidence-driven product decisions, hypothesis-based development
+- David Marquet: Ladder of Leadership / "Turn the Ship Around!" — inspirierte das Zwei-Dimensionen-Modell (Entscheidungsautorität + Mensch-KI-Vertrauen als sich gemeinsam entwickelnde Dimensionen)
+- Djordje Babic: "The Loom" (Substack, März 2026) — Auslöser für das Konzept der Ko-Evolution
+- Theory of Constraints / Toyota — Ursprung der Wasserstand-Metapher ("den Wasserstand senken legt die Felsen frei")
+- Agile Fluency Model — Vorbild für Reifegrad-Denken mit Investitionsprofilen
+- Alistair Cockburn: "Alles, was wir je geschrieben haben und was für Menschen zu diszipliniert ist, ist perfekt für KI"
+- Richard Rumelt: "Good Strategy Bad Strategy" — der Kernel of Strategy (Diagnose, leitende Politik, kohärente Handlungen) prägt, wie hycle in den Begriffen "Strategie" definiert
+- Stephen Bungay: "The Art of Action" — directed opportunism, Autonomie + Alignment. Prägt Reifegrad 3 (Teams besitzen Entscheidungen im strategischen Rahmen) und die Spannung zwischen Kohärenz und Autonomie im gesamten Modell
+- Itamar Gilad: "Evidence Guided" — evidenzgetriebene Produktentscheidungen, hypothesenbasierte Entwicklung
 
-## Lessons from the Agile Manifesto
+## Lehren aus dem Agile Manifest
 
-What went wrong with Agile — and what hycle must avoid:
+Was bei Agile schiefging — und was hycle vermeiden muss:
 
-- Too abstract — everyone made their own interpretation, coherence was lost
-- Immediately commercialized (Certified Scrum Master etc.) — hycle must resist certification culture
-- No maturity model — the manifesto had no path, no progression. hycle's maturity model is the direct answer to this gap
-- "X over Y" format was viral but premature for hycle — the group is not yet confident enough in the trade-offs to commit to that structure
+- Zu abstrakt — jeder hat seine eigene Auslegung gemacht, die Kohärenz ging verloren
+- Sofort kommerzialisiert (Certified Scrum Master usw.) — hycle muss Zertifizierungskultur widerstehen
+- Kein Reifegradmodell — das Manifest hatte keinen Pfad, keinen Fortschritt. Das Reifegradmodell von hycle ist die direkte Antwort auf diese Lücke
+- Das Format "X über Y" war viral, aber für hycle verfrüht — die Gruppe ist noch nicht zuversichtlich genug bei den Trade-offs, um sich auf diese Struktur festzulegen
 
-## Design Decisions
+## Designentscheidungen
 
-Choices made deliberately, with rationale. Revisit only with author consensus.
+Bewusste Entscheidungen mit Begründung. Nur mit Konsens der Autoren neu öffnen.
 
-- **Three-part structure**: Manifesto (principles) / Maturity Model (diagnosis) / Framework (reference patterns). Separates what hycle prescribes from what it leaves to context-specific derivation
-- **Format**: "Problem-Statement + Hypotheses" ("We observe... We believe...") — chosen over "X over Y" (too early to commit to trade-offs) and numbered principles (not ready)
-- **Concepts placement**: Between The Name and What We See. Terms must be defined before they are used extensively. Not operative vocabulary — that belongs in the Framework
-- **Simon/Eigen placement**: Callout after the opening section, not the opener itself. The opener goes to the problem; the callout gives the intellectual backing
-- **Author bio style**: No company names. Short, role-focused. No "20+ years experience" patterns
-- **Language**: English, for international reach
-- **Domains**: hycle.org is primary. hycle.ai and hycle.dev redirect to .org
-- **Meta-principle**: hycle provides thinking, not doing. Operationalization is context-specific. This prevents hycle from becoming the next Scrum
+- **Drei-Teile-Struktur**: Manifest (Prinzipien) / Reifegradmodell (Diagnose) / Framework (Referenzmuster). Trennt, was hycle vorschreibt, von dem, was es kontextspezifischer Ableitung überlässt
+- **Format**: "Problem-Aussage + Hypothesen" ("Wir beobachten... Wir glauben...") — gewählt gegenüber "X über Y" (zu früh, sich auf Trade-offs festzulegen) und nummerierten Prinzipien (noch nicht reif)
+- **Begriffe-Verortung**: Zwischen Der Name und Was wir sehen. Begriffe müssen definiert sein, bevor sie ausgiebig verwendet werden. Kein operatives Vokabular — das gehört ins Framework
+- **Simon/Eigen-Verortung**: Callout nach der Eröffnung, nicht die Eröffnung selbst. Die Eröffnung adressiert das Problem; der Callout liefert die geistige Verankerung
+- **Stil der Autoren-Bios**: Keine Firmennamen. Kurz, rollen-fokussiert. Kein "20+ Jahre Erfahrung"-Muster
+- **Sprache**: Deutsch
+- **Domains**: hycle.org ist primär. hycle.ai und hycle.dev leiten auf .org weiter
+- **Meta-Prinzip**: hycle liefert das Denken, nicht das Tun. Operationalisierung ist kontextspezifisch. Das verhindert, dass hycle das nächste Scrum wird
 
-## Strategic Positioning
+## Strategische Positionierung
 
-- hycle aims to be "Taktgeber der Diskussion" — pacemaker of the discourse, not the final answer
-- Community standard, not a product. Model: scs-architecture.org
-- "Wir gestehen uns ein, dass wir nur auf Sicht fahren" — we admit we are navigating by sight
-- Practical applicability — especially through the authors themselves — for immediate purpose
-- Demand-driven, not top-down. The work follows where the need is
+- hycle will "Taktgeber der Diskussion" sein, nicht die endgültige Antwort
+- Community-Standard, kein Produkt. Vorbild: scs-architecture.org
+- "Wir gestehen uns ein, dass wir nur auf Sicht fahren"
+- Praktische Anwendbarkeit — vor allem durch die Autoren selbst — für unmittelbaren Nutzen
+- Bedarfsgetrieben, nicht von oben. Die Arbeit folgt dort, wo der Bedarf ist
 
-## Working Documents
+## Arbeitsdokumente
 
-Source materials for the author group:
+Quellmaterial für die Autorengruppe:
 
-- Fathom recording: Founding session, February 27, 2026 (153 minutes)
+- Fathom-Aufzeichnung: Gründungssitzung, 27. Februar 2026 (153 Minuten)
 - Google Doc: https://docs.google.com/document/d/1IY_5XbKPO1Lbj4QV-cpJ7s60EPZ_a6NTiByhe0ZkqKY/edit
-- Email thread: "Follow-up codename hycle" (between all authors)
+- E-Mail-Thread: "Follow-up codename hycle" (zwischen allen Autoren)
 
-## Versioning Protocol
+## Versionierungs-Protokoll
 
-When making content changes to the manifesto:
+Bei inhaltlichen Änderungen am Manifest:
 
-1. Archive the current index.html to `versions/vN.html` before overwriting
-2. Fix relative paths in archived version (CSS: `../style.css`, links: `../changelog.html`)
-3. Update `changelog.html` with a new section — version header links to the version file
-4. Update footer in index.html to include link to new previous version
-5. Update README.md counts (observations, hypotheses) if they changed
+1. Aktuelle index.html nach `versions/vN.html` archivieren, bevor sie überschrieben wird
+2. Relative Pfade in der archivierten Version anpassen (CSS: `../style.css`, Links: `../changelog.html`)
+3. `changelog.html` mit einem neuen Abschnitt aktualisieren — Versionsüberschrift verlinkt auf die Versionsdatei
+4. Footer in index.html um den Link zur neuen Vorversion ergänzen
+5. README.md-Zählungen (Beobachtungen, Hypothesen) aktualisieren, falls geändert
 
-## Footer Convention
+## Footer-Konvention
 
-Every page links to: Changelog · previous versions (v1, v2, ...) · Source on GitHub.
-Archived versions additionally link back to the current version.
+Jede Seite verlinkt: Changelog · frühere Versionen (v1, v2, ...) · Quelltext auf GitHub.
+Archivierte Versionen verlinken zusätzlich zurück auf die aktuelle Version.
 
-## Authors
+## Autoren
 
 Andreas Stephan, Benedikt Stemmildt, Björn Rochel, Jens Himmelreich, Johannes Schmidt, Sven Christian Andrä.

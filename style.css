@@ -603,13 +603,13 @@ footer p {
   }
 
   .inversion-table tbody td:nth-child(2)::before {
-    content: "Before: ";
+    content: "Vorher: ";
     color: var(--color-text-secondary);
     font-weight: 500;
   }
 
   .inversion-table tbody td:nth-child(3)::before {
-    content: "After: ";
+    content: "Nachher: ";
     color: var(--color-text-secondary);
     font-weight: 500;
   }
