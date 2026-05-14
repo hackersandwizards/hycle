@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hycle: Wenn Ausführung sofort wird, zählt nur noch Handlungsfähigkeit.</title>
+  <meta name="description" content="Beobachtungen, Hypothesen und ein erster Praxistest, wie sich Arbeit verschiebt, wenn KI-Agenten die Ausführung lösen.">
+  <meta property="og:title" content="hycle, der hyper cycle">
+  <meta property="og:description" content="Wenn Ausführung sofort wird, zählt nur noch Handlungsfähigkeit.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <!--
+    v5-DRAFT, DISKUSSIONSSTAND. Nicht öffentlich.
+    Offen zur Klärung:
+      - Tagline: "zählt nur noch Handlungsfähigkeit." (Kandidat A) vs. Alternativen
+      - Begriff "Wirksamkeit" in v4: hier in "Handlungsfähigkeit" aufgegangen, nicht eigenständig wiederholt
+      - Drei Cycles (technisch/menschlich/Geschäft): Erweiterung gegenüber Round-2-Dual-Cadence, in Round 3 nicht verhandelt. Bestätigung durch Autorengruppe nötig.
+      - Werte-Bullet in "Was sich nicht umkehrt": Auflistung der vier Werte gestrichen (Round 3: "wenn wir schon die Werte weglassen ..."). Falls anders gewollt, restaurieren.
+      - Final-Read durch Andreas + mindestens einen zweiten Autor (Jens, Johannes, Benedikt, Björn, Sven)
+  -->
+
+  <header class="hero">
+    <div class="container">
+      <h1 class="hero-title">hycle</h1>
+      <p class="hero-tagline">Wenn Ausführung sofort wird, zählt nur noch Handlungsfähigkeit.</p>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================================ -->
+    <!-- TEIL I: BEOBACHTUNGEN UND HYPOTHESEN          -->
+    <!-- ============================================ -->
+
+    <div class="part-header" id="observations-hypotheses">
+      <div class="container">
+        <p class="part-label">Teil I</p>
+        <p class="part-title">Beobachtungen und Hypothesen</p>
+      </div>
+    </div>
+
+    <!-- DIE BEOBACHTUNG -->
+    <section class="section" id="observation">
+      <div class="container">
+        <h2>Die Beobachtung</h2>
+        <p>Alle paar Jahrzehnte eliminiert eine neue Technologie Beschränkungen, um die Organisationen ihre Strukturen und Prozesse gebaut haben. Das sehen wir gerade wieder: Agentische Softwareentwicklung verschiebt den bisherigen Engpass von der Execution zu der Frage, wer überhaupt handeln kann, wer darf und wer genug weiß. Wir nennen das Handlungsfähigkeit.</p>
+        <p>Eine Entwicklerin schafft jetzt an einem Tag, wofür ein Team früher zwei Wochen gebraucht hat. Backlogs leeren sich, und die erste Reaktion vieler Organisationen ist, Scrum abzuschaffen. Damit verbergen sie das Problem, statt es zu lösen.</p>
+      </div>
+    </section>
+
+    <!-- DER NAME -->
+    <section class="section callout" id="name">
+      <div class="container">
+        <h2>Der Name</h2>
+        <p>Herbert Simon hat 1978 gezeigt: Organisationen sind nicht in erster Linie Strukturen aus Menschen, sie sind Systeme aus Entscheidungen.</p>
+        <p>Manfred Eigen hat 1971 beschrieben, wie einfache Kreisläufe sich zu Hyperzyklen schließen, sich selbst tragen und so den Übergang vom Mechanischen zum Lebendigen schaffen.</p>
+        <p>Wir vermuten, dass Organisationen jetzt vor einem ähnlichen Übergang stehen: von prozessgetrieben hin zu entscheidungsgetrieben. Wir nennen das <strong>hycle</strong>, den hyper cycle.</p>
+        <p class="aside">Im Deutschen klingt das Wort nach <em>heikel</em>. Das ist beabsichtigt.</p>
+        <p class="aside">Und ja, <em>hype cycle</em> steckt auch darin. Wir nehmen das als Erinnerung daran, worum es bei hycle eigentlich geht: um das, was bleibt, wenn der Hype vorbei ist.</p>
+        <p class="aside">Einen Namen haben wir verworfen: <em>MURCS</em>, Scrum rückwärts. Im Deutschen liest sich das wie <em>Murks</em>. Heikel war die ehrlichere Wahl.</p>
+      </div>
+    </section>
+
+    <!-- DIE BEGRIFFE -->
+    <section class="section" id="concepts">
+      <div class="container">
+        <h2>Die Begriffe</h2>
+
+        <div class="concept">
+          <h3>Handlungsfähigkeit</h3>
+          <p>Handeln kann, wer drei Dinge zusammen hat: er weiß genug, er darf und er kann (Kompetenz, Autorität, Information). Fehlt eine der drei, hilft auch das schnellste Werkzeug nichts. International läuft das unter <em>Agency</em>; wir nennen es Handlungsfähigkeit.</p>
+          <p class="aside">Ein Inhaber baut am Wochenende mit KI-Agenten Lösungen, an denen seine Teams unter der Woche scheitern. Er weiß genug, er darf, er kann. Seine Teams können das eine oder andere, selten alles zusammen.</p>
+        </div>
+
+        <div class="concept">
+          <h3>Entscheidung</h3>
+          <p>Das Was und Warum, nicht das Wie. An der Entscheidung wird Handlungsfähigkeit sichtbar, aber sie entsteht davor: dort, wo Kompetenz, Autorität und Information zusammenkommen. Wo das Was aufhört und das Wie anfängt, ist in den meisten Organisationen offen, und genau das ist eine der ersten Entscheidungen, die jemand bewusst treffen muss.</p>
+        </div>
+
+        <div class="concept">
+          <h3>Strategie</h3>
+          <p>Keine Vision-Statements. Strategie heißt: ehrlich diagnostizieren, eine Politik wählen, die Kräfte bündelt, und daraus Handlungen ableiten, die zusammenpassen.</p>
+        </div>
+
+        <div class="concept">
+          <h3>Autorität</h3>
+          <p>Wer entscheiden darf, ist nicht automatisch, wer es auch tut. Autorität ist eine der drei Dimensionen von Handlungsfähigkeit, und die Lücke zwischen formaler und gelebter Autorität fällt schnell auf, ist aber schwer in Worte zu fassen.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WAS WIR SEHEN -->
+    <section class="section" id="seen">
+      <div class="container">
+        <h2>Was wir sehen</h2>
+
+        <div class="observation">
+          <h3><span class="number">1</span> KI-Agenten verschieben den Engpass.</h3>
+          <p>Der Engpass ist nicht mehr Execution-Geschwindigkeit, sondern Handlungsfähigkeit. Kompetenz, Autorität und Information liegen aber aktuell selten in derselben Person oder im selben Team.</p>
+        </div>
+
+        <div class="observation">
+          <h3><span class="number">2</span> Agile Werte werden wertvoller, agile Artefakte werden volatil.</h3>
+          <p>Sprint, Daily, Retro, Backlog werden volatil, wenn die Execution sofort geschieht. Werte und Haltung dahinter bleiben, und sie tragen jetzt den Wandel.</p>
+        </div>
+
+        <div class="observation">
+          <h3><span class="number">3</span> Teams schrumpfen. Verantwortung wächst.</h3>
+          <p>Eine Person verantwortet heute Scope, für den früher acht Leute gebraucht wurden. Die Strukturen drum herum berücksichtigen das bisher aber weder bei Karrierepfaden noch bei der Vergütung.</p>
+        </div>
+
+        <div class="observation">
+          <h3><span class="number">4</span> Rollengrenzen lösen sich auf.</h3>
+          <p>Entwicklung und Produktrollen überlappen zunehmend: PMs analysieren Bugs im Code, Entwickler sprechen mit Usern. Domänenwissen und Raum für Experimente sind dafür die Voraussetzung.</p>
+        </div>
+
+        <div class="observation">
+          <h3><span class="number">5</span> Die Koordinationsebene steht vor einer existenziellen Frage.</h3>
+          <p>Wenn Teams sich schneller bewegen, als die Hierarchie sie steuern kann, muss Führung etwas anderes werden, als sie war. Was genau, weiß noch niemand.</p>
+        </div>
+
+        <div class="observation">
+          <h3><span class="number">6</span> Der naive Reflex: Führung baut Solo.</h3>
+          <p>Unter Druck greifen Führungskräfte zum KI-Agenten und bauen alleine, statt ihre Teams dorthin zu bringen, wo sie es selbst können. Was passiert, wenn diese eine Person Urlaub macht, fragt niemand.</p>
+        </div>
+
+        <div class="observation">
+          <h3><span class="number">7</span> Die KI-Kluft spaltet Organisationen von innen.</h3>
+          <p>In derselben Organisation spalten sich die Mitarbeitenden in zwei Lager: die einen probieren, die anderen erstarren. Wer das als Charakterfrage abtut, verliert die halbe Mannschaft.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WAS WIR GLAUBEN -->
+    <section class="section" id="hypotheses">
+      <div class="container">
+        <h2>Was wir glauben</h2>
+        <p class="section-intro">Wir haben noch keine Antworten, aber wir haben erste Hypothesen.</p>
+
+        <div class="hypothesis">
+          <h3><span class="label">H1</span> Richtet eure Organisation auf Handlungsfähigkeit aus, nicht auf Ausführungsprozesse.</h3>
+          <p>An Entscheidungen sieht man, wer handlungsfähig ist. Die Handlungsfähigkeit selbst entsteht dort, wo Kompetenz, Autorität und Information zusammenkommen. Wer nur bestehende Prozesse umbaut, optimiert am Symptom, nicht an der Ursache.</p>
+        </div>
+
+        <div class="hypothesis">
+          <h3><span class="label">H2</span> Handlungsfähigkeit muss sich verteilen, sonst hängt die Organisation an einer Person.</h3>
+          <p>Wenn Kompetenz, Autorität und Information nur in einer Person zusammenkommen, fährt das Unternehmen auf Sicht dieser Einen. Teams dahin zu bringen, wo sie selbst handlungsfähig sind, ist die eigentliche Aufgabe.</p>
+        </div>
+
+        <div class="hypothesis">
+          <h3><span class="label">H3</span> Autonomie ohne klaren Rahmen erzeugt nur schnelleres Durcheinander.</h3>
+          <p>Den Rahmen setzt die Strategie: ehrliche Diagnose, leitende Politik, kohärente Handlungen. Ohne ihn bewegen sich Teams zwar schnell, aber nicht in dieselbe Richtung.</p>
+        </div>
+
+        <div class="hypothesis">
+          <h3><span class="label">H4</span> Wenn eine Entscheidung mehrere Bereiche berührt, muss klar sein, wer sie trägt.</h3>
+          <p>Verantwortung sitzt dort, wo die Wirkung zuerst über die eigene Einheit hinausreicht. Wer den größten Teil der Folgen trägt, muss auch die Entscheidung tragen.</p>
+        </div>
+
+        <div class="hypothesis">
+          <h3><span class="label">H5</span> Frustration ist ein Signal.</h3>
+          <p>Hört hin. Wo Menschen sich aufreiben, liegt meist ein Engpass, den die offizielle Geschichte verleugnet. Frustration zeigt euch, wo eine der drei Dimensionen fehlt.</p>
+        </div>
+
+        <div class="hypothesis">
+          <h3><span class="label">H6</span> Der Weg ist iterativ, von unten nach oben.</h3>
+          <p>Es gibt keinen Masterplan. Es geht Engpass für Engpass, und wer den nächsten benennen kann, gibt die Richtung vor.</p>
+        </div>
+
+        <div class="hypothesis">
+          <h3><span class="label">H7</span> Die Chance heißt Wachstum.</h3>
+          <p>Mit denselben Menschen grundsätzlich mehr erreichen. Das ist eine Lernreise: wir sammeln neue Erfahrungen und verbessern unser Vorgehen Stück für Stück.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WAS HYCLE NICHT IST -->
+    <section class="section" id="not">
+      <div class="container">
+        <h2>Was hycle nicht ist</h2>
+        <div class="not-item">
+          <p><strong>Kein Rollout am Montagmorgen.</strong> Wir glauben, dass es weiter Zyklen, Kadenzen und menschlichen Austausch braucht. Wie das konkret aussieht, wissen wir noch nicht. Inhalte lassen sich nicht von oben verordnen.</p>
+        </div>
+        <div class="not-item">
+          <p><strong>Kein Technologie-Framework.</strong> Keine vorgeschriebenen Tools, keine vorgeschriebenen Plattformen.</p>
+        </div>
+        <div class="not-item">
+          <p><strong>Nicht gegen Agile.</strong> Die Werte werden wertvoller, die Artefakte ändern sich. hycle baut auf agilen Werten auf, nicht gegen sie.</p>
+        </div>
+        <div class="not-item">
+          <p><strong>Nicht präskriptiv.</strong> Wir liefern Prinzipien, Diagnose und Referenzmuster. Wie daraus ein Vorgehen wird, ist eure Arbeit.</p>
+        </div>
+        <div class="not-item">
+          <p><strong>Nicht fertig.</strong> Eine Einladung, gemeinsam zu suchen, was funktioniert.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================ -->
+    <!-- TEIL II: WAS WIR AUSPROBIEREN                 -->
+    <!-- ============================================ -->
+
+    <div class="part-header" id="trying">
+      <div class="container">
+        <p class="part-label">Teil II</p>
+        <p class="part-title">Was wir ausprobieren</p>
+      </div>
+    </div>
+
+    <!-- LEAD-IN -->
+    <section class="section" id="trying-intro">
+      <div class="container">
+        <p>Die agilen Werte tragen weiter. Die Artefakte ändern sich. Darunter verschiebt sich, wo Entscheidungen fallen.</p>
+        <p>Was wir an die Stelle setzen, ist eine Skizze, locker gehalten und rigoros geprüft. Keine Methode.</p>
+      </div>
+    </section>
+
+    <!-- DREI CYCLES -->
+    <section class="section" id="cycles">
+      <div class="container">
+        <h2>Drei Cycles</h2>
+        <p class="section-intro">Wenn die Execution sofort passiert, reicht ein Cycle nicht mehr. Wir sehen drei, die gleichzeitig laufen, aber nicht im Gleichtakt.</p>
+
+        <div class="concept">
+          <h3>Der technische Cycle</h3>
+          <p>Minuten bis Stunden, Agenten-getrieben. Wir nennen das die Software-Factory: das Modell schlägt vor, läuft, scheitert, korrigiert sich, konvergiert von selbst. Auf dieser Ebene lebt kein menschliches Ritual.</p>
+        </div>
+
+        <div class="concept">
+          <h3>Der menschliche Cycle</h3>
+          <p>Ein Tag, eine Woche. Verankert in dem, was Menschen im Kopf behalten, nicht in dem, was das System produziert. Stabil über Kontexte hinweg, weil sich nicht wir verändert haben, sondern die Werkzeuge. Hier verhandeln wir Koordination, Urteilskraft und Vertrauen.</p>
+        </div>
+
+        <div class="concept">
+          <h3>Der Geschäfts-Cycle</h3>
+          <p>Ein Quartal, ein Jahr. Vorgegeben durch Märkte, Regulierung, Eigentumsverhältnisse, Verträge. Aus dem Team heraus nicht verhandelbar. Hyperzyklen heben Geschäftsberichte nicht auf.</p>
+        </div>
+
+        <p>Organisieren heißt, diese drei Cycles zusammenzubringen, ohne dass einer dem anderen seinen Takt aufzwingt.</p>
+      </div>
+    </section>
+
+    <!-- DREI VERSCHIEBUNGEN -->
+    <section class="section" id="three-shifts">
+      <div class="container">
+        <h2>Drei Verschiebungen</h2>
+
+        <div class="concept">
+          <h3>Das Backlog kehrt sich um.</h3>
+          <p>Was ihr im Pair lösen könnt, baut ihr sofort. Was ihr nicht lösen könnt, schreibt ihr auf. Das Backlog ist keine Warteschlange aus Features mehr, sondern ein Annahmenregister. Bauen ist billig. Zu wissen, was zu bauen ist, ist der Engpass.</p>
+        </div>
+
+        <div class="concept">
+          <h3>Das Pair kehrt sich um.</h3>
+          <p>Entwicklerinnen pairen nicht mehr am Code. Das macht der Agent. Das Pair, das jetzt zählt, sitzt zwischen Dev und Stakeholder: die Bauende neben der Person, die das Problem lebt. Wenn dieses Pair zusammensitzt, fallen Entscheidungen in Sekunden. Wenn nicht, bleibt die Arbeit stehen, schneller und sichtbarer als zuvor.</p>
+        </div>
+
+        <div class="concept">
+          <h3>Beide Retros kehren sich um.</h3>
+          <p>Der Daily Scrum war eine Status-Prüfung unter Menschen. Mit Agenten in der Schleife wird er zur Retro über die Agentenläufe von gestern: was zu justieren ist, was zu reparieren. Die Sprint Retrospective wird zum Cooldown, einem längeren Cycle, um Code aufzuräumen, offen gelassene Annahmen einzusammeln und das Backlog zu beschneiden. Zwei Retros, zwei Cycles, zwei Reichweiten.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WAS SICH UMKEHRT (TABELLE) -->
+    <section class="section" id="inversion-table">
+      <div class="container">
+        <h2>Was sich umkehrt</h2>
+        <p class="section-intro">Scrums Events und Artefakte verschwinden nicht. Ihr Inhalt kehrt sich nach innen.</p>
+
+        <table class="inversion-table">
+          <thead>
+            <tr><th>Element</th><th>Vorher</th><th>Nachher</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Sprint</td><td>Zwei-Wochen-Timebox</td><td>Schleife pro Ticket</td></tr>
+            <tr><td>Sprint Planning</td><td>Vorab entscheiden, was in den Sprint passt</td><td>Just-in-time, in der Software-Factory</td></tr>
+            <tr><td>Sprint Review</td><td>Demo für Stakeholder am Ende</td><td>Fällt ins Pair; der Stakeholder ist dabei, während die Arbeit entsteht</td></tr>
+            <tr><td>Increment</td><td>Ein lieferbares Ergebnis pro Sprint</td><td>Das Produkt läuft kontinuierlich; was inkrementiert, ist die Software-Factory</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- WAS SICH NICHT UMKEHRT -->
+    <section class="section" id="what-does-not-invert">
+      <div class="container">
+        <h2>Was sich nicht umkehrt</h2>
+        <div class="not-item">
+          <p><strong>Die Haltung des Agile Manifests.</strong> Werte und Mindset werden wertvoller, nicht weniger.</p>
+        </div>
+        <div class="not-item">
+          <p><strong>Trunk-based Development.</strong> Kleine Schritte, schnelles Feedback, Continuous Integration.</p>
+        </div>
+        <div class="not-item">
+          <p><strong>Bauen mit den Menschen, die es nutzen.</strong> In den kleinsten Schritten, die einem etwas beibringen.</p>
+        </div>
+        <p>Ohne diese hält die Umkehrung nicht. Sie beschleunigt nur das Falsche.</p>
+      </div>
+    </section>
+
+    <!-- WO WIR STEHEN (PRAXISTEST) -->
+    <section class="section" id="praxistest">
+      <div class="container">
+        <h2>Wo wir stehen</h2>
+        <p>Wir setzen dieses Modell gerade bei mehreren Kunden auf. Was im Pitch durchweg gut ankommt: dass Bauen und Entscheiden zusammensitzen, dass das Backlog Features gegen Annahmen tauscht. Was offen bleibt: wie der menschliche Cycle stabil wird, wenn die Software-Factory ihre eigene Geschwindigkeit hat. Daten liefern wir nach.</p>
+      </div>
+    </section>
+
+
+    <!-- ============================================ -->
+    <!-- TEIL III: CALL FOR PARTICIPATION              -->
+    <!-- ============================================ -->
+
+    <div class="part-header" id="participation">
+      <div class="container">
+        <p class="part-label">Teil III</p>
+        <p class="part-title">Call for Participation</p>
+      </div>
+    </div>
+
+    <!-- WAS WIR SUCHEN -->
+    <section class="section" id="what-we-seek">
+      <div class="container">
+        <h2>Was wir suchen</h2>
+        <p>hycle ist eine Hypothese, kein Produkt. Was wir aufgeschrieben haben, hat in unserer Praxis Anker, aber keinen Beweis. Was uns fehlt, ist eure.</p>
+      </div>
+    </section>
+
+    <!-- DREI FRAGEN -->
+    <section class="section" id="three-questions">
+      <div class="container">
+        <h2>Drei Fragen</h2>
+
+        <div class="concept">
+          <h3>Was klappt bei euch?</h3>
+          <p>Welche Verschiebung trägt, welcher Cycle hält, welche Pair-Konstellation funktioniert? Schreibt es so, dass es jemand kopieren kann.</p>
+        </div>
+
+        <div class="concept">
+          <h3>Was klappt nicht?</h3>
+          <p>Wo holt die Organisation euch ein? Wo bricht der Cycle? Sagt es, bevor ihr aufgebt.</p>
+        </div>
+
+        <div class="concept">
+          <h3>Wo seid ihr auf die Nase gefallen?</h3>
+          <p>Misserfolge sind die teuersten Daten, die wir haben. Wenn ihr sie teilt, spart ihr anderen die gleiche Mauer.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EINLADUNG / CTA -->
+    <section class="section invitation" id="sign">
+      <div class="container">
+        <p>Schreibt uns, was bei euch passiert. Wir lesen mit.</p>
+        <div class="cta-group">
+          <a href="https://github.com/hackersandwizards/hycle/discussions" class="cta-button">Eure Erfahrungen teilen</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================ -->
+    <!-- DIE AUTOREN (Seitenende, außerhalb Teil III)  -->
+    <!-- ============================================ -->
+
+    <section class="section section-divider" id="authors">
+      <div class="container">
+        <h2>Die Autoren</h2>
+        <div class="authors-grid">
+          <div class="author">
+            <h3><a href="https://www.linkedin.com/in/andreasstephan/" target="_blank" rel="noopener">Andreas Stephan</a></h3>
+            <p>Agentic Product Manager an der Schnittstelle von Produkt und Engineering.</p>
+          </div>
+          <div class="author">
+            <h3><a href="https://www.linkedin.com/in/benedikt-stemmildt/" target="_blank" rel="noopener">Benedikt Stemmildt</a></h3>
+            <p>Engineering Leader mit Fokus darauf, wie Teams gedeihen, wenn KI verändert, wie Software gebaut wird.</p>
+          </div>
+          <div class="author">
+            <h3><a href="https://www.linkedin.com/in/bjoern-rochel/" target="_blank" rel="noopener">Björn Rochel</a></h3>
+            <p>Product Engineer an der Brücke zwischen strategischer Ausrichtung und Team-Autonomie in KI-getriebenen Organisationen.</p>
+          </div>
+          <div class="author">
+            <h3><a href="https://www.linkedin.com/in/jens-himmelreich-a310251/" target="_blank" rel="noopener">Jens Himmelreich</a></h3>
+            <p>Systemdenker mit tiefen Wurzeln in Organisationstheorie und Jahrzehnten beim Aufbau digitaler Organisationen.</p>
+          </div>
+          <div class="author">
+            <h3><a href="https://www.linkedin.com/in/johannes-schmidt-7b84b33/" target="_blank" rel="noopener">Johannes Schmidt</a></h3>
+            <p>Product Leader mit Fokus darauf, wie sich Produktorganisationen entwickeln, wenn Ausführungsbeschränkungen verschwinden.</p>
+          </div>
+          <div class="author">
+            <h3><a href="https://www.linkedin.com/in/svenandrae/" target="_blank" rel="noopener">Sven Christian Andrä</a></h3>
+            <p>Organisationsberater mit Fokus auf Entscheidungsarchitektur auf Executive- und Eigentümer-Ebene.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Die hycle-Autoren. Veröffentlicht unter <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p>
+      <!-- TODO bei Promotion zu index.html: Link "aktuelle Version" entfernen (zeigt während Draft auf v4 zum Vergleich). -->
+      <p><a href="../changelog.html">Changelog</a> &middot; <a href="../versions/v1.html">v1</a> &middot; <a href="../versions/v2.html">v2</a> &middot; <a href="../versions/v3.html">v3</a> &middot; <a href="../index.html">aktuelle Version</a> &middot; <a href="https://github.com/hackersandwizards/hycle">Quelltext auf GitHub</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
