@@ -1,20 +1,20 @@
 # hycle — Der hyper cycle
 
-**Wenn Ausführung sofort wird, bleiben nur die Entscheidungen.**
+**Wenn Execution sofort passiert, zählt nur noch Handlungsfähigkeit.**
 
-hycle ist ein Organisationsmodell für das Zeitalter der KI-Agenten. Es adressiert das Entscheidungsproblem, das sichtbar wird, wenn die Ausführungsgeschwindigkeit von KI den Durchsatz als Engpass beseitigt.
+hycle ist eine Hypothese darüber, wie sich Arbeit verschiebt, wenn KI-Agenten die Execution lösen. Der Engpass war immer Handlungsfähigkeit: dort, wo Kompetenz, Autorität und Information zusammenkommen.
 
 ## Was ist das?
 
 Drei Teile, eine Seite:
 
-- **Das Manifest** — 7 Beobachtungen und 8 Hypothesen darüber, was passiert, wenn KI-Agenten die Ausführungsbeschränkung beseitigen. Vorangestellt sind Definitionen der Kernbegriffe: Entscheidung, Strategie, Autorität, Wirksamkeit
-- **Das Reifegradmodell** — 5 Reifegrade, die die gemeinsame Entwicklung von Entscheidungsautorität und Mensch-KI-Vertrauen beschreiben. Jeder Reifegrad enthält die wahrgenommene Entscheidungsqualität und das, was nötig ist, um weiterzukommen
-- **Die Umkehrung** — Drei Taktungen, drei Verschiebungen und eine Zuordnung dessen, was sich in den Events und Artefakten von Scrum umkehrt. Die Rollen, die Sprache und Walk the Talk folgen
+- **Beobachtungen und Hypothesen** — 7 Beobachtungen und 7 Hypothesen darüber, was passiert, wenn KI-Agenten die Execution lösen. Vorangestellt: Definitionen der Kernbegriffe Handlungsfähigkeit, Entscheidung, Strategie, Autorität
+- **Was wir ausprobieren** — Drei Cycles (technisch, menschlich, geschäftlich), drei Verschiebungen (Backlog, Pair, Retros) und eine Tabelle, was in Scrums Events und Artefakten kippt
+- **Call for Participation** — Drei Fragen an die Leserschaft: Was klappt bei euch? Was klappt nicht? Wo seid ihr auf die Nase gefallen?
 
 ## Die Kernerkenntnis
 
-Organisationen sind Systeme aus Entscheidungen (Herbert Simon, 1978). Über Jahrzehnte war das unsichtbar — verdeckt durch Koordinationsaufwand und die Fiktion, Ausführungsgeschwindigkeit sei der Engpass. KI-Agenten haben diese Fiktion beseitigt. Der Wasserstand ist gefallen. Die Felsen sind jetzt sichtbar.
+Organisationen sind Systeme aus Entscheidungen (Herbert Simon, 1978). Über Jahrzehnte war das verdeckt durch die Fiktion, Execution sei der Engpass. KI-Agenten haben die Fiktion gelöst. Jetzt liegt offen, wo wirklich entschieden wird, und wer überhaupt handeln kann, wer darf und wer genug weiß.
 
 ## Die Website
 
@@ -23,16 +23,16 @@ Organisationen sind Systeme aus Entscheidungen (Herbert Simon, 1978). Über Jahr
 Schlichtes HTML/CSS. Keine Frameworks. Kein Build-Schritt.
 
 ```
-index.html       ← Aktuelle Version (Manifest + Modell + Umkehrung)
+index.html       ← Aktuelle Version (Beobachtungen und Hypothesen, Was wir ausprobieren, Call for Participation)
 changelog.html   ← Versionshistorie
 style.css        ← Minimales Styling
-versions/        ← Archivierte frühere Versionen (v1, v2, ...)
+versions/        ← Archivierte frühere Versionen (v1, v2, v3, v4)
 CNAME            ← Konfiguration der Custom-Domain
 ```
 
 ## Mitwirken
 
-hycle ist nicht fertig. Es ist eine Einladung zu kollektiver Sinnsuche. Wenn ihr seht, was wir sehen, wenn ihr Beobachtungen habt, die unsere Hypothesen bestätigen oder ihnen widersprechen — eröffnet eine Diskussion.
+hycle ist nicht fertig. Es ist eine Einladung, gemeinsam zu suchen, was funktioniert. Wenn ihr seht, was wir sehen, wenn eure Praxis Hypothesen bestätigt oder ihnen widerspricht, eröffnet eine Diskussion.
 
 [An der Diskussion teilnehmen](https://github.com/hackersandwizards/hycle/discussions)
 
