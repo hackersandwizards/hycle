@@ -6,15 +6,17 @@ hycle ist eine Hypothese darüber, wie sich Arbeit verschiebt, wenn KI-Agenten d
 
 ## Was ist das?
 
-Drei Teile, eine Seite:
+Drei Teile, gerahmt von Präambel, Abgrenzung und Call for Participation. Der Schwerpunkt liegt im Framework:
 
-- **Beobachtungen und Hypothesen** — 7 Beobachtungen und 7 Hypothesen darüber, was passiert, wenn KI-Agenten die Execution lösen. Vorangestellt: Definitionen der Kernbegriffe Handlungsfähigkeit, Entscheidung, Strategie, Autorität
-- **Was wir ausprobieren** — Drei Cycles (technisch, menschlich, geschäftlich), drei Verschiebungen (Backlog, Pair, Retros) und eine Tabelle, was in Scrums Events und Artefakten kippt
-- **Call for Participation** — Drei Fragen an die Leserschaft: Was klappt bei euch? Was klappt nicht? Wo seid ihr auf die Nase gefallen?
+- **Was wir sehen** — 9 Beobachtungen aus der Praxis, jede an einer Hypothese verankert
+- **Was wir glauben** — 9 Hypothesen, geordnet nach dem Framework-Schnitt
+- **Das Framework** — Zielgruppe, Factory, Rollen, Kadenzen, Artefakte. Die Sammlung von Referenzmustern für die agentische Software-Entwicklung
+
+Vorangestellt ist die Präambel mit Eröffnung, dem Namen und den Kernbegriffen. Den Abschluss bilden die Abgrenzung („Was hycle nicht ist“) und der Call for Participation mit drei Leitfragen: Was hat bei euch funktioniert? Wo erkennt ihr Keimformen neuer Muster? Was hat nicht geklappt?
 
 ## Die Kernerkenntnis
 
-Organisationen sind Systeme aus Entscheidungen (Herbert Simon, 1978). Über Jahrzehnte war das verdeckt durch die Fiktion, Execution sei der Engpass. KI-Agenten haben die Fiktion gelöst. Jetzt liegt offen, wo wirklich entschieden wird, und wer überhaupt handeln kann, wer darf und wer genug weiß.
+Der Engpass war immer Handlungsfähigkeit, nicht Execution. KI-Agenten lösen die Execution, und damit liegt offen, wo wirklich entschieden wird und wer überhaupt handeln kann, wer darf und wer genug weiß. Manfred Eigen hat 1971 die Hyperzyklen beschrieben: gekoppelte Kreisläufe, die die Voraussetzungen für etwas Neues schaffen. Wir vermuten, dass Organisationen vor einem ähnlichen Übergang stehen, von prozessgetrieben hin zu entscheidungsgetrieben.
 
 ## Die Website
 
@@ -23,10 +25,10 @@ Organisationen sind Systeme aus Entscheidungen (Herbert Simon, 1978). Über Jahr
 Schlichtes HTML/CSS. Keine Frameworks. Kein Build-Schritt.
 
 ```
-index.html       ← Aktuelle Version (Beobachtungen und Hypothesen, Was wir ausprobieren, Call for Participation)
+index.html       ← Aktuelle Version (Beobachtungen, Hypothesen, Das Framework)
 changelog.html   ← Versionshistorie
 style.css        ← Minimales Styling
-versions/        ← Archivierte frühere Versionen (v1, v2, v3, v4)
+versions/        ← Archivierte frühere Versionen (v1, v2, v3, v4, v5)
 CNAME            ← Konfiguration der Custom-Domain
 ```
 
