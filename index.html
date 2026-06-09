@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>hycle: Wenn Execution sofort passiert, zählt nur noch Handlungsfähigkeit.</title>
-  <meta name="description" content="Beobachtungen, Hypothesen und ein Framework für die agentische Software-Entwicklung.">
+  <meta name="description" content="Beobachtungen, Hypothesen und ein erster Praxistest, wie sich Arbeit verschiebt, wenn KI-Agenten die Execution lösen.">
   <meta property="og:title" content="hycle, der hyper cycle">
   <meta property="og:description" content="Wenn Execution sofort passiert, zählt nur noch Handlungsfähigkeit.">
   <meta property="og:type" content="website">
@@ -25,22 +25,15 @@
   <main>
 
     <!-- ============================================ -->
-    <!-- PRÄAMBEL                                       -->
+    <!-- PRÄAMBEL: Eröffnung, Name, Begriffe           -->
     <!-- ============================================ -->
 
-    <div class="part-header" id="praeambel">
+    <!-- DIE KERNBEOBACHTUNG (Eröffnung) -->
+    <section class="section" id="observation">
       <div class="container">
-        <p class="part-label">Präambel</p>
-        <p class="part-title">Worum es geht</p>
-      </div>
-    </div>
-
-    <!-- DIE ERÖFFNUNG -->
-    <section class="section" id="opening">
-      <div class="container">
-        <h2>Die Eröffnung</h2>
-        <p>Sprachmodelle sind ein technischer Umbruch in der Software- und Produktentwicklung. Etablierte Arbeitsweisen, Rollen und Artefakte verlieren ihre Selbstverständlichkeit. Niemand weiß im Detail, was davon tragfähig bleibt.</p>
-        <p>Wir überspielen diese Verunsicherung nicht. Was hier steht, sind erste Vorschläge, die sich in unserer eigenen Praxis als gangbare Wege abzeichnen. Keine Heilsversprechen, keine Antworten. Hypothesen.</p>
+        <h2>Die Kernbeobachtung</h2>
+        <p>Alle paar Jahrzehnte eliminiert eine neue Technologie Beschränkungen, um die Organisationen ihre Strukturen und Prozesse gebaut haben. Das sehen wir gerade wieder: Agentische Softwareentwicklung verschiebt den bisherigen Engpass von der Execution zu der Frage, wer überhaupt handeln kann, wer darf und wer genug weiß. Wir nennen das Handlungsfähigkeit.</p>
+        <p>Eine Entwicklerin schafft jetzt an einem Tag, wofür ein Team früher zwei Wochen gebraucht hat. Backlogs leeren sich, und die erste Reaktion vieler Organisationen ist, Scrum abzuschaffen. Damit verbergen sie das Problem, statt es zu lösen.</p>
       </div>
     </section>
 
@@ -64,11 +57,12 @@
         <div class="concept">
           <h3>Handlungsfähigkeit</h3>
           <p>Handeln kann, wer drei Dinge zusammen hat: er weiß genug, er darf und er kann (Kompetenz, Autorität, Information). Fehlt eine der drei, hilft auch das schnellste Werkzeug nichts. International läuft das unter <em>Agency</em>; wir nennen es Handlungsfähigkeit.</p>
+          <p class="aside">Ein Inhaber baut am Wochenende mit KI-Agenten Lösungen, an denen seine Teams unter der Woche scheitern. Er weiß genug, er darf, er kann. Seine Teams können das eine oder andere, selten alles zusammen.</p>
         </div>
 
         <div class="concept">
           <h3>Entscheidung</h3>
-          <p>Das Was und Warum, nicht das Wie. An der Entscheidung wird Handlungsfähigkeit sichtbar. Wo das Was aufhört und das Wie anfängt, ist in den meisten Organisationen offen, und genau das ist eine der ersten Entscheidungen, die jemand bewusst treffen muss.</p>
+          <p>Das Was und Warum, nicht das Wie. An der Entscheidung wird Handlungsfähigkeit sichtbar, aber sie entsteht davor: dort, wo Kompetenz, Autorität und Information zusammenkommen. Wo das Was aufhört und das Wie anfängt, ist in den meisten Organisationen offen, und genau das ist eine der ersten Entscheidungen, die jemand bewusst treffen muss.</p>
         </div>
 
         <div class="concept">
@@ -78,7 +72,7 @@
 
         <div class="concept">
           <h3>Autorität</h3>
-          <p>Wer entscheiden darf, ist nicht automatisch, wer es auch tut. Die Lücke zwischen formaler und gelebter Autorität fällt schnell auf, ist aber schwer in Worte zu fassen. Sie ist das erste Symptom.</p>
+          <p>Wer entscheiden darf, ist nicht automatisch, wer es auch tut. Autorität ist eine der drei Dimensionen von Handlungsfähigkeit, und die Lücke zwischen formaler und gelebter Autorität fällt schnell auf, ist aber schwer in Worte zu fassen.</p>
         </div>
       </div>
     </section>
@@ -91,58 +85,70 @@
     <div class="part-header" id="observations">
       <div class="container">
         <p class="part-label">Teil 1</p>
-        <p class="part-title">Was wir sehen</p>
+        <p class="part-title">Beobachtungen</p>
       </div>
     </div>
 
+    <!-- WAS WIR SEHEN -->
     <section class="section" id="seen">
       <div class="container">
-        <p class="section-intro">Beobachtungen aus unserer Praxis in der Software-Entwicklung. Jede steht für eine Hypothese, die im Framework wirksam wird.</p>
+        <h2>Was wir sehen</h2>
 
         <div class="observation">
-          <h3><span class="number">1</span> Bauen ist billig geworden.</h3>
-          <p>Eine Entwicklerin liefert an einem Tag, wofür ein Team früher zwei Wochen gebraucht hat. Der Engpass liegt nicht mehr in der Umsetzung.</p>
+          <h3><span class="number">1</span> KI-Agenten verschieben den Engpass.</h3>
+          <p>Der Engpass ist nicht mehr Execution-Geschwindigkeit, sondern Handlungsfähigkeit. Kompetenz, Autorität und Information liegen aber aktuell selten bei derselben Person oder im selben Team.</p>
         </div>
 
         <div class="observation">
-          <h3><span class="number">2</span> Die Arbeit verschiebt sich vom Code zur Umgebung.</h3>
-          <p>Die meiste Zeit fließt nicht mehr ins Schreiben von Code, sondern ins Konsistenthalten der Umgebung, aus der die Agenten bauen.</p>
+          <h3><span class="number">2</span> Agile Werte werden wertvoller, agile Artefakte werden volatil.</h3>
+          <p>Sprint, Daily, Retro, Backlog werden volatil, wenn die Execution sofort geschieht. Werte und Haltung dahinter bleiben, und sie tragen jetzt den Wandel.</p>
         </div>
 
         <div class="observation">
-          <h3><span class="number">3</span> Agenten folgen Mustern.</h3>
-          <p>Sie liefern verlässlich, wo klare Muster und Tests sie führen, und driften, wo der Code uneinheitlich ist. Schlechter Code braucht mehr Steuerung.</p>
+          <h3><span class="number">3</span> Teams schrumpfen. Verantwortung wächst.</h3>
+          <p>Eine Person verantwortet heute Scope, für den früher acht Leute gebraucht wurden. Die Strukturen drum herum berücksichtigen das bisher aber weder bei Karrierepfaden noch bei der Vergütung.</p>
         </div>
 
         <div class="observation">
-          <h3><span class="number">4</span> Die Beschreibung wird zum Nadelöhr.</h3>
-          <p>Unscharf beschriebene Stories erzeugen unscharfe Ergebnisse. Was am Eingang ungenau ist, wird am Ausgang nicht besser.</p>
+          <h3><span class="number">4</span> Rollengrenzen lösen sich auf.</h3>
+          <p>Entwicklung und Produktrollen überlappen: PMs analysieren Bugs im Code, Entwickler sprechen mit Usern. Domänenwissen und Raum für Experimente sind dafür die Voraussetzung.</p>
         </div>
 
         <div class="observation">
-          <h3><span class="number">5</span> Wer Stakeholder nicht erreicht, baut am Bedarf vorbei.</h3>
-          <p>Teams ohne erreichbare Fachlichkeit bauen schneller das Falsche als je zuvor. Das Tempo deckt den Fehler nicht zu, es vergrößert ihn.</p>
+          <h3><span class="number">5</span> Die Koordinationsebene steht vor einer existenziellen Frage.</h3>
+          <p>Wenn Teams sich schneller bewegen, als die Hierarchie sie steuern kann, muss Führung etwas anderes werden, als sie war. Was genau, weiß noch niemand.</p>
         </div>
 
         <div class="observation">
-          <h3><span class="number">6</span> Rollengrenzen lösen sich auf.</h3>
-          <p>Product-Engineers analysieren Bugs im Code, Entwickler sprechen mit Usern. Die alte Trennung zwischen Produkt und Entwicklung trägt nicht mehr.</p>
+          <h3><span class="number">6</span> Der naive Reflex: Führung baut Solo.</h3>
+          <p>Unter Druck greifen Führungskräfte zum KI-Agenten und bauen alleine, statt ihre Teams dorthin zu bringen, wo sie es selbst können. Was passiert, wenn diese eine Person Urlaub macht, fragt niemand.</p>
         </div>
 
         <div class="observation">
-          <h3><span class="number">7</span> Teams schrumpfen, Verantwortung wächst.</h3>
-          <p>Eine Person verantwortet Scope, für den früher ein ganzes Team stand. Karrierepfade und Vergütung berücksichtigen das bisher nicht.</p>
+          <h3><span class="number">7</span> Die KI-Kluft spaltet Organisationen von innen.</h3>
+          <p>In derselben Organisation spalten sich die Mitarbeitenden: die einen probieren, die anderen erstarren. Das liegt selten am Charakter, meist fehlt eine der drei Dimensionen oder die alte Rolle trägt nicht mehr.</p>
         </div>
+      </div>
+    </section>
 
-        <div class="observation">
-          <h3><span class="number">8</span> Tasks verschwinden, die Story bleibt.</h3>
-          <p>Die kleinteilige Umsetzung wandert in die Agenten. Was als Artefakt zählt, ist die Story und ihr Wert, nicht der Task.</p>
-        </div>
 
-        <div class="observation">
-          <h3><span class="number">9</span> Ohne Rückkopplung kippt Tempo in Abbau.</h3>
-          <p>Fehlt die schnelle Schleife zur Fachabteilung, wird das gewonnene Tempo zum Rationalisierungsinstrument statt zum Hebel.</p>
-        </div>
+    <!-- ============================================ -->
+    <!-- DIE DIAGNOSE  (BLOCK 2 — wird ergänzt)        -->
+    <!-- ============================================ -->
+    <section class="section" id="diagnosis">
+      <div class="container">
+        <h2>Die Diagnose</h2>
+        <p class="section-intro">Eine Beobachtung ist noch keine Diagnose. Was folgt aus dem, was wir sehen?</p>
+
+        <p>Wenn Bauen billig wird, entscheidet, was davor liegt: zu wissen, was zu bauen ist, und handeln zu können. Der Druck dazu kommt von außen. Kleine, stark gehebelte Teams bauen einen großen Teil etablierter Produkte zu einem Bruchteil des Preises nach, und Burggräben, die jahrelang gehalten haben, bröckeln. Zugleich automatisiert der Fachbereich seine eigenen Probleme, am offiziellen Prozess vorbei.</p>
+
+        <p>Das trifft auch uns. Die Sonderkonjunktur, in der Digitalagenturen und Softwarehäuser am Ende genug auslieferten, um ihr Budget zu verdienen, ist vorbei. Derselbe Druck, der die Kunden zur Veränderung zwingt, gilt für die, die ihnen Software bauen.</p>
+
+        <p>Die Reaktionen laufen weit auseinander. Die einen stellen offensiv um, die anderen warten ab. Ein einzelnes Modell gibt es nicht, eher ein Spektrum, und die Frage ist, welche Antwort zur eigenen Lage passt.</p>
+
+        <p>Ehrlich bleibt: agentische Entwicklung hebelt vor allem die, die ihre Hausaufgaben gemacht haben. Wo Tests, klare Muster und sauberes Produktverständnis fehlen, vervielfacht sie den Schaden. Und wer nicht messen kann, wo er steht, kann nicht auf ein Ergebnis hin steuern. Für viele heißt der erste Schritt deshalb: erst die Basis, dann die Agenten.</p>
+
+        <p>Ob dieser Druck neu ist oder derselbe wie bei früheren Umbrüchen, nur größer, darüber sind wir uns nicht einig.</p>
       </div>
     </section>
 
@@ -151,80 +157,71 @@
     <!-- TEIL 2: HYPOTHESEN                             -->
     <!-- ============================================ -->
 
-    <div class="part-header" id="hypotheses-header">
+    <div class="part-header" id="hypotheses-part">
       <div class="container">
         <p class="part-label">Teil 2</p>
-        <p class="part-title">Was wir glauben</p>
+        <p class="part-title">Hypothesen</p>
       </div>
     </div>
 
+    <!-- WAS WIR GLAUBEN (H1–H7 unverändert aus v5; Neuschnitt vertagt) -->
     <section class="section" id="hypotheses">
       <div class="container">
-        <p class="section-intro">Locker gehalten und rigoros geprüft. Jede Hypothese stützt einen Eckpfeiler im Framework; sie ist geordnet nach dessen Schnitt: Factory, Rollen, Kadenzen, Artefakte.</p>
+        <h2>Was wir glauben</h2>
+        <p class="section-intro">Wir haben noch keine Antworten, aber wir haben erste Hypothesen.</p>
 
         <div class="hypothesis">
-          <h3><span class="label">H1</span> Baut die Factory, nicht das Feature.</h3>
-          <p>Wer agentisch entwickelt, baut zuerst die Umgebung, die eine Story selbständig umsetzt. Das Feature fällt dann ab.</p>
+          <h3><span class="label">H1</span> Richtet eure Organisation auf Handlungsfähigkeit aus, nicht auf Execution.</h3>
+          <p>An Entscheidungen sieht man, wer handlungsfähig ist. Die Handlungsfähigkeit entsteht dort, wo Kompetenz, Autorität und Information zusammenkommen. Wer nur bestehende Prozesse umbaut, optimiert am Symptom, nicht an der Ursache.</p>
         </div>
 
         <div class="hypothesis">
-          <h3><span class="label">H2</span> Konsistenz steuert die Factory stärker als Vorgaben.</h3>
-          <p>Sprachmodelle vervielfältigen, was sie vorfinden. Klare Muster und Tests lenken sie, uneinheitlicher Code treibt sie auseinander.</p>
+          <h3><span class="label">H2</span> Handlungsfähigkeit muss sich verteilen, sonst hängt die Organisation an einer Person.</h3>
+          <p>Wenn Kompetenz, Autorität und Information nur in einer Person zusammenkommen, fährt das Unternehmen auf Sicht dieser Einen. Teams dahin zu bringen, wo sie selbst handlungsfähig sind, ist die eigentliche Aufgabe.</p>
         </div>
 
         <div class="hypothesis">
-          <h3><span class="label">H3</span> Wer baut, kümmert sich um die Factory, nicht um die einzelne Story.</h3>
-          <p>Der Entwicklerfokus verschiebt sich von der Umsetzung zur Maschine, die umsetzt. Dorthin gehört das tiefe Engineering-Wissen.</p>
+          <h3><span class="label">H3</span> Autonomie ohne klaren Rahmen erzeugt nur schnelleres Durcheinander.</h3>
+          <p>Den Rahmen setzt die Strategie: ehrliche Diagnose, leitende Politik, kohärente Handlungen. Ohne ihn bewegen sich Teams zwar schnell, aber nicht in dieselbe Richtung.</p>
         </div>
 
         <div class="hypothesis">
-          <h3><span class="label">H4</span> Klare Sprache wird zur Kernkompetenz.</h3>
-          <p>Wer die Factory füttert, gewinnt oder verliert an der Präzision der Beschreibung. Im Zeitalter der Sprachmodelle ist Sprache das Werkzeug.</p>
+          <h3><span class="label">H4</span> Wenn eine Entscheidung mehrere Bereiche berührt, muss klar sein, wer sie trägt.</h3>
+          <p>Verantwortung sitzt dort, wo die Wirkung zuerst über die eigene Einheit hinausreicht. Wer den größten Teil der Folgen trägt, muss auch die Entscheidung tragen.</p>
         </div>
 
         <div class="hypothesis">
-          <h3><span class="label">H5</span> Ohne Kunde vor Ort trägt das Modell nicht.</h3>
-          <p>Die Stakeholder müssen erreichbar sein. Sonst beschleunigt die Factory nur den Irrweg.</p>
+          <h3><span class="label">H5</span> Frustration ist ein Signal.</h3>
+          <p>Hört hin. Wo Menschen sich aufreiben, liegt meist ein Engpass, den die offizielle Geschichte verleugnet. Frustration zeigt euch, wo eine der drei Dimensionen fehlt.</p>
         </div>
 
         <div class="hypothesis">
-          <h3><span class="label">H6</span> Die Rollen schneiden sich um die Factory neu, nicht entlang der alten Grenzen.</h3>
-          <p>Entwicklung und Produkt rücken zusammen, und weniger Menschen tragen mehr Scope. Die Strukturen drum herum, Karrierepfade und Vergütung, müssen nachziehen.</p>
+          <h3><span class="label">H6</span> Der Weg ist iterativ, von unten nach oben.</h3>
+          <p>Es gibt keinen Masterplan. Es geht Engpass für Engpass, und wer den nächsten benennen kann, gibt die Richtung vor.</p>
         </div>
 
         <div class="hypothesis">
-          <h3><span class="label">H7</span> Bei hohem Tempo ist Tempo herausnehmen der wertvollere Schritt.</h3>
-          <p>Die Reflexion über die Agentenläufe schlägt die nächste Runde Geschwindigkeit. Kleine Teams brauchen dafür weniger formale Rhythmen.</p>
-        </div>
-
-        <div class="hypothesis">
-          <h3><span class="label">H8</span> Die Artefakte werden gröber, nicht feiner.</h3>
-          <p>Was früher Task war, wird Story. Das Epic steigt vom Nice-to-have zum tragenden Artefakt auf.</p>
-        </div>
-
-        <div class="hypothesis">
-          <h3><span class="label">H9</span> Die Rückkopplung zur Fachabteilung entscheidet, ob Tempo nützt.</h3>
-          <p>Ohne schnelle Schleife zum Bedarf wird agentische Entwicklung zum Rationalisierungsinstrument. Mit ihr wird sie zum Hebel.</p>
+          <h3><span class="label">H7</span> Die Chance heißt Wachstum.</h3>
+          <p>Mit denselben Menschen ein Vielfaches erreichen. Das ist eine Lernreise: wir sammeln neue Erfahrungen und verbessern unser Vorgehen Stück für Stück.</p>
         </div>
       </div>
     </section>
 
 
     <!-- ============================================ -->
-    <!-- TEIL 3: DAS FRAMEWORK                          -->
+    <!-- TEIL 3: FRAMEWORK  (BLOCK 1 — wird ergänzt)   -->
     <!-- ============================================ -->
 
     <div class="part-header" id="framework">
       <div class="container">
         <p class="part-label">Teil 3</p>
-        <p class="part-title">Das Framework</p>
+        <p class="part-title">Framework</p>
       </div>
     </div>
 
     <section class="section" id="framework-intro">
       <div class="container">
-        <p>Hier liegt der Schwerpunkt. Das Framework ist eine Sammlung von Referenzmustern, keine vorschreibende Methode. Wo uns noch Substanz fehlt, lassen wir den Platz leer, statt ihn mit verfrühten Antworten zu füllen.</p>
-        <p>Der aktuelle Stand bezieht sich auf die Software-Entwicklung. Dort ist der Umbruch am größten, und dort liegt unsere tiefste Erfahrung.</p>
+        <p class="section-intro">Die agilen Werte tragen weiter, die Artefakte ändern sich. Darunter zeichnet sich ein Betriebsmodell ab: wer welche Rolle hat, in welchen Rhythmen gearbeitet wird, welche Artefakte den Takt vorgeben. Eine Skizze, locker gehalten und rigoros geprüft. Keine Methode.</p>
       </div>
     </section>
 
@@ -232,8 +229,9 @@
     <section class="section" id="audience">
       <div class="container">
         <h2>Zielgruppe</h2>
-        <p>Produkt- und Tech-Organisationen mit Software-Legacy. Mittelständische und große Unternehmen. Globale Konzerne und Startups schließen wir aus.</p>
-        <p>Der Einstieg führt über die Software-Entwicklung, nicht über das Geschäftsmodell. Die Frage „Wie baue ich heute ein Unternehmen auf?“ beantwortet hycle nicht. Die Frage „Wie organisiere ich den Prozess rund um die Software-Entwicklung?“ schon.</p>
+        <p>hycle richtet sich an Produkt- und Tech-Organisationen, die selbst Software bauen und unter Druck geraten, weil kleine, stark gehebelte Wettbewerber sie einholen. Mittelstand und Großunternehmen, die schon etwas haben und es selbst verändern können.</p>
+        <p>Wir steigen über die Prozesse rund um die Softwareentwicklung ein, nicht über das Geschäftsmodell. Dort ist der Umbruch am größten, und dort sitzt unsere eigene Erfahrung. Die Frage ist nicht, wie man heute ein Unternehmen aufbaut, sondern wie eine bestehende Organisation sich verändert, damit agentisches Arbeiten möglich wird.</p>
+        <p>Gemeint ist Produktarbeit mit offenen Fragen. Reine Auftragsarbeit, die eine fertige Spezifikation abarbeitet, fällt nicht darunter. Wo Produkt- und Tech-Organisation genau anfängt, ist noch nicht scharf umrissen.</p>
       </div>
     </section>
 
@@ -241,17 +239,25 @@
     <section class="section" id="factory">
       <div class="container">
         <h2>Factory</h2>
-        <p class="section-intro">Aus Produktsicht sehen wir drei Factories: eine Ideation Factory, eine Software Factory und eine Validation Factory. Wir arbeiten zuerst an der Mitte.</p>
+        <p class="section-intro">Die Factory hat drei Teile: Ideation, Execution, Validation. Heute decken wir agentisch vor allem die Execution ab, und auch die nicht durchgängig. Wie weit sich die anderen beiden mitziehen lassen, ist die offene Frage.</p>
 
         <div class="concept">
-          <h3>Software Factory</h3>
-          <p>Der Nordstern ist eine Factory, die eine Story selbständig implementiert. Sie ist das eigentliche Bauwerk; das einzelne Feature fällt daraus ab. Das ist nicht trivial, und hier sind unsere Erfahrungen am weitesten.</p>
+          <h3>Ideation</h3>
+          <p>Herausfinden, welches Problem zu lösen ist und woran sich messen lässt, dass es besser wird.</p>
         </div>
 
         <div class="concept">
-          <h3>Ideation und Validation</h3>
-          <p>Beide Factories rahmen die Software Factory ein. Wir beschreiben sie später, wenn wir mehr dazu sagen können. Die folgenden Rollen, Kadenzen und Artefakte beziehen sich vorerst auf die Software Factory.</p>
+          <h3>Execution</h3>
+          <p>Überlegen, was genau dafür zu bauen ist, und es bauen. Hier steckt unsere Erfahrung, und auch die ist nicht trivial.</p>
         </div>
+
+        <div class="concept">
+          <h3>Validation</h3>
+          <p>Prüfen, ob das, was erreicht werden sollte, auch wirklich erreicht wurde.</p>
+        </div>
+
+        <p>Der Nordstern für die Execution ist eine Factory, die im Hintergrund läuft und vorne nur noch Richtung und Aufgaben bekommt. So weit sind wir nicht: heute braucht ihr Aufbau viel Engineering-Wissen, denn ein nicht-deterministisches System muss erst lernen, sich verlässlich zu verhalten.</p>
+        <p>Eine Organisation will, dass dieselbe Aufgabe dasselbe Ergebnis bringt, egal wer sie baut. Also konsolidiert und standardisiert sie die Factory, während sich darunter noch alles bewegt. Sie sitzt dabei auf beiden Ebenen: zentrale Vorgaben wie Zertifizierungen gehören in den kodifizierten Prozess, die Teams brauchen trotzdem eigenen Spielraum. Die gemeinsame Plattform entsteht durch Extraktion, erst lokal gelöst, dann herausgezogen, was für alle taugt.</p>
       </div>
     </section>
 
@@ -259,26 +265,29 @@
     <section class="section" id="roles">
       <div class="container">
         <h2>Rollen</h2>
+        <p class="section-intro">Drei Rollen zeichnen sich ab, dazu eine Voraussetzung.</p>
 
         <div class="concept">
-          <h3>Factory-Engineer</h3>
-          <p>Baut und wartet die Factory, Plattform und Enabling. Mit der einzelnen Story hat er nichts zu tun: stimmt das Ergebnis nicht, ändert sich etwas an der Factory, nicht an der Story. Er sorgt dafür, dass dasselbe herauskommt, egal wer baut. Das verlangt viel Engineering-Wissen und Applikationsarchitektur, eine abstraktere Art, Software zu entwickeln. Die Rolle wandert: anfangs in die Teams vervielfältigt für Tempo, später als Plattform extrahiert, langfristig nur noch in besonderen Situationen konsultiert.</p>
+          <h3>Product Lead</h3>
+          <p>Verantwortet die Epics und spricht mit Stakeholdern und Fachbereich. Er klärt, was gebaut wird und warum.</p>
         </div>
 
         <div class="concept">
           <h3>Product-Engineer</h3>
-          <p>Füttert die Factory und verantwortet die Implementierung der Story samt ihrer technischen Teile. Kernkompetenz ist klare Kommunikation; Sprache wird im Zeitalter der Sprachmodelle immer wichtiger.</p>
+          <p>Verantwortet die Story und füttert die Factory. Seine wichtigste Fähigkeit ist klare Sprache, denn er führt mehrere Agenten parallel.</p>
         </div>
 
         <div class="concept">
-          <h3>Produkt-Verantwortlicher</h3>
-          <p>Führt die Kommunikation mit Stakeholdern und Fachbereich und verantwortet die Epics.</p>
+          <h3>Factory-Engineer</h3>
+          <p>Baut und pflegt die Factory, eine abstraktere Art, Software zu entwickeln. Er sorgt dafür, dass identisch gebaut wird, egal wer baut. Mit der einzelnen Story hat er nichts zu tun: er ist der Mechaniker, der an der Factory schraubt, wenn das Ergebnis nicht stimmt. Anfangs geht er in die Teams, später zieht er sich heraus und wird nur in besonderen Fällen gerufen.</p>
         </div>
 
         <div class="concept">
           <h3>Kunde vor Ort</h3>
-          <p>Grundvoraussetzung, wie schon in XP. Ohne diesen Bezug funktioniert das Modell nicht. Mindestens müssen die Stakeholder verfügbar sein.</p>
+          <p>Keine Rolle, sondern eine Bedingung. Stakeholder müssen verfügbar sein, in kurzer Schleife, nicht erst im Review nach zwei Wochen. Fehlt dieser Draht, trägt das Modell nicht.</p>
         </div>
+
+        <p>Wo der Schnitt zwischen Product Lead und Product-Engineer verläuft und wie weit die Factory-Rolle reicht, ist noch nicht ausverhandelt.</p>
       </div>
     </section>
 
@@ -286,21 +295,21 @@
     <section class="section" id="cadences">
       <div class="container">
         <h2>Kadenzen</h2>
-        <p class="section-intro">Natürliche Rhythmen. Kleinere Teams brauchen weniger starke Synchronisation; vieles läuft informell.</p>
+        <p class="section-intro">Die Rhythmen sind natürliche Rhythmen: einmal am Tag, einmal in der Woche. Kleine Teams brauchen davon weniger, vieles läuft bei ihnen informell.</p>
 
         <div class="concept">
-          <h3>Tägliche Synchronisation mit der Fachlichkeit</h3>
-          <p>Zwei feste Punkte pro Tag funktionieren gut.</p>
+          <h3>Tägliche Synchronisation</h3>
+          <p>Zwei Punkte am Tag funktionieren gut. Aus dem alten Daily wird die Reflexion über die Agentenläufe von gestern, also was sie gebaut haben, wie gut sie geführt waren und wo man nachjustieren muss.</p>
         </div>
 
         <div class="concept">
-          <h3>Wöchentliches Retro-Treffen</h3>
-          <p>Technisch-fachliche Reflexion des Arbeitsprozesses: Was hat geklappt, was nicht, was haben wir gelernt, was ausprobiert. Bei hoher Geschwindigkeit nehmen wir hier bewusst Tempo heraus.</p>
+          <h3>Wöchentliche Retro</h3>
+          <p>Bei hohem Tempo nimmt es bewusst Geschwindigkeit heraus und schaut auf den Arbeitsprozess, was geklappt hat und was nicht. Je paralleler gearbeitet wird, desto wichtiger wird dieser eine Punkt, der das Team wieder zusammenführt.</p>
         </div>
 
         <div class="concept">
           <h3>Review</h3>
-          <p>Etablieren wir bewusst nicht. In dieser Form ergibt es für uns keinen Sinn.</p>
+          <p>Das klassische Review am Ende eines Zwei-Wochen-Zyklus trägt nicht mehr. Was an seine Stelle tritt, ist offen: mehrmals täglich ein Blick mit denen, die das Problem verstehen, oder das Ritual ganz streichen. Darüber sind wir uns noch nicht einig.</p>
         </div>
       </div>
     </section>
@@ -309,22 +318,24 @@
     <section class="section" id="artifacts">
       <div class="container">
         <h2>Artefakte</h2>
-        <p class="section-intro">Die Granularität wächst. Was früher fein zerlegt wurde, fasst sich jetzt gröber. Pflichtenhefte kommen wieder in Mode.</p>
+        <p class="section-intro">Die Artefakte werden gröber. Was früher eine Story war, ist jetzt ein Epic; was eine Task war, eine Story; die Tasks macht der Agent. Fehlt eine Antwort aus dem Fachbereich, arbeitet das Team auf einer Annahme weiter und hält sie in einem Annahmenregister fest. Solche Blocker müssen schnell weg, nicht in zwei Wochen.</p>
 
         <div class="concept">
           <h3>Epic</h3>
-          <p>Die Schnittstelle zwischen Produkt und Engineering, auf der die Kommunikation mit dem Fachbereich läuft, auf Ebene der Oberfläche. Das Epic wird aufgewertet: vom Nice-to-have zum echten Artefakt im Prozess.</p>
+          <p>Das tragende Artefakt, auf der Ebene der Benutzeroberfläche. Hier arbeitet der Product Lead mit dem Fachbereich. Lange war das Epic ein Nice-to-have, jetzt ist es die kanonische Form: nichts kommt ohne Epic in den Prozess. Oft erzeugt erst das Epic den Outcome, die Stories darin sind Schritte dorthin.</p>
         </div>
 
         <div class="concept">
           <h3>Story</h3>
-          <p>Die Schnittstelle zur Factory. Sie verschiebt sich zum Entwickler: Was vorher ein Task war, wird jetzt zur Story, ein eigener Story-Breakdown entsteht. Anders als ein Task muss eine Story wertstiftend sein, und ihre Akzeptanzkriterien entstehen mit ihr.</p>
+          <p>Die Schnittstelle zur Factory. Anders als eine Task muss eine Story für sich Wert stiften, ein eigenständiges Feature. Ihre Akzeptanzkriterien entstehen mit ihr, am besten als ausführbare Tests aus Sicht des Endkunden. Wo der Schnitt vom Epic zur Story fällt, im Produkt oder im Engineering, ist noch offen.</p>
         </div>
 
         <div class="concept">
           <h3>Task</h3>
-          <p>Die Tasks macht der Agent.</p>
+          <p>Die macht der Agent. Für die Menschen spielt diese Ebene keine Rolle mehr.</p>
         </div>
+
+        <p>Oft dreht sich die Reihenfolge um: erst ein aus Nutzersicht validierter Prototyp, daraus ein PRD, daraus die Epics und Stories. Und weil der Agent alles Unspezifizierte mit eigenen Annahmen füllt, muss der Input klarer sein als früher.</p>
       </div>
     </section>
 
@@ -332,31 +343,24 @@
     <section class="section" id="misc">
       <div class="container">
         <h2>Sonstiges</h2>
-        <p>Sprachmodelle sind komplexe Mustererkenner. Gibt es wenige konsistente Muster im Code, vervielfältigen sie diese. Schlechter Code braucht entsprechend mehr Steuerung; Musterkonsistenz und Tests sind die größte Hilfe.</p>
-        <p>Ohne schnelle Rückkopplungsschleife zur Fachabteilung kann agentische Software-Entwicklung zum Rationalisierungsinstrument werden, statt zum Hebel.</p>
-        <div class="not-item">
-          <p><strong>Offene Frage.</strong> Pflichtenhefte (PID): finden wir das gut?</p>
-        </div>
-        <p class="aside">Die Sprache (das operative Vokabular) und Walk the Talk folgen, sobald die Substanz steht. Weitere Bausteine kommen dazu.</p>
+        <p>LLMs sind Mustererkenner. Wo der Code wenige, konsistente Muster zeigt, bauen sie sauber weiter; wo er chaotisch ist, vervielfältigen sie das Chaos. Musterkonsistenz und Tests sind deshalb eine große Hilfe.</p>
+        <p>Kleine, klar geschnittene Aufgaben sind Risikomanagement: je enger der Auftrag, desto eher kommt heraus, was gemeint war. Die technische Detailplanung überlässt man dem Agenten bewusst spät, sonst läuft der Plan der Realität davon.</p>
+        <p>Ohne schnelle Rückkopplung zum Fachbereich wird agentische Entwicklung leicht zum bloßen Rationalisierungswerkzeug.</p>
+        <p>Offen bleibt, ob Pflichtenhefte (PID) zurückkommen sollten.</p>
       </div>
     </section>
 
 
     <!-- ============================================ -->
-    <!-- ABGRENZUNG                                     -->
+    <!-- ABGRENZUNG                                    -->
     <!-- ============================================ -->
 
-    <div class="part-header" id="boundary">
-      <div class="container">
-        <p class="part-label">Abgrenzung</p>
-        <p class="part-title">Was hycle nicht ist</p>
-      </div>
-    </div>
-
+    <!-- WAS HYCLE NICHT IST -->
     <section class="section" id="not">
       <div class="container">
+        <h2>Was hycle nicht ist</h2>
         <div class="not-item">
-          <p><strong>Kein Rollout am Montagmorgen.</strong> Es braucht weiter Zyklen und menschlichen Austausch. Wie das konkret aussieht, wissen wir noch nicht. Verordnen lässt es sich nicht.</p>
+          <p><strong>Kein Rollout am Montagmorgen.</strong> Wir glauben, dass es weiter Rhythmen und menschlichen Austausch braucht. Wie das konkret aussieht, wissen wir noch nicht. Inhalte lassen sich nicht von oben verordnen.</p>
         </div>
         <div class="not-item">
           <p><strong>Kein Technologie-Framework.</strong> Keine vorgeschriebenen Tools, keine vorgeschriebenen Plattformen.</p>
@@ -365,7 +369,10 @@
           <p><strong>Nicht gegen Agile.</strong> Die Werte werden wertvoller, die Artefakte ändern sich. hycle baut auf agilen Werten auf, nicht gegen sie.</p>
         </div>
         <div class="not-item">
-          <p><strong>Nicht präskriptiv.</strong> Wir liefern Prinzipien, Diagnose und Referenzmuster. Wie daraus ein Vorgehen wird, entwickeln Menschen und KI in ihrem Kontext. Das ist eure Arbeit.</p>
+          <p><strong>Nicht präskriptiv.</strong> Wir liefern Prinzipien, Diagnose und Referenzmuster. Wie daraus ein Vorgehen wird, ist eure Arbeit.</p>
+        </div>
+        <div class="not-item">
+          <p><strong>Nicht universell.</strong> Uns geht es um die Prozesse rund um die Software, nicht um die Software selbst. Die ganz Kleinen machen das ohnehin schon, die ganz Großen lassen sich wie ein Tanker kaum steuern, da passen unsere Antworten oft nicht. Wir zielen auf die dazwischen: die schon etwas haben und selbst etwas ändern können.</p>
         </div>
         <div class="not-item">
           <p><strong>Nicht fertig.</strong> Eine Einladung, gemeinsam zu suchen, was funktioniert.</p>
@@ -375,43 +382,55 @@
 
 
     <!-- ============================================ -->
-    <!-- CALL FOR PARTICIPATION                         -->
+    <!-- CALL FOR PARTICIPATION                        -->
     <!-- ============================================ -->
 
     <div class="part-header" id="participation">
       <div class="container">
-        <p class="part-label">Call for Participation</p>
-        <p class="part-title">Was wir suchen</p>
+        <p class="part-label">Mitwirken</p>
+        <p class="part-title">Call for Participation</p>
       </div>
     </div>
 
-    <section class="section" id="what-we-seek">
+    <!-- WO WIR STEHEN (PRAXISTEST) -->
+    <section class="section" id="praxistest">
       <div class="container">
-        <p>hycle ist aus unseren eigenen Erfahrungen entstanden. Es ist ein Diskussionsangebot, kein abgeschlossenes Modell, Work in Progress. Eure Erfahrungen sind dabei wichtig, und wir wollen sie hören.</p>
+        <h2>Wo wir stehen</h2>
+        <p>Wir setzen dieses Modell gerade bei mehreren Kunden auf. Was im Pitch hängen bleibt: dass Bauen und Entscheiden zusammensitzen, dass das Backlog Features gegen Annahmen tauscht. Was offen bleibt: wie die menschliche Abstimmung stabil bleibt, wenn die Factory ihre eigene Geschwindigkeit hat. Daten liefern wir nach.</p>
       </div>
     </section>
 
+    <!-- WAS WIR SUCHEN -->
+    <section class="section" id="what-we-seek">
+      <div class="container">
+        <h2>Was wir suchen</h2>
+        <p>hycle ist eine Hypothese, kein Produkt. Was wir aufgeschrieben haben, hat in unserer Praxis Anker, aber keinen Beweis. Was uns fehlt, ist eure.</p>
+      </div>
+    </section>
+
+    <!-- DREI FRAGEN -->
     <section class="section" id="three-questions">
       <div class="container">
         <h2>Drei Fragen</h2>
 
         <div class="concept">
-          <h3>Was hat bei euch funktioniert?</h3>
-          <p>Welches Muster trägt, welche Kadenz hält, welche Rolle greift? Schreibt es so, dass es jemand übernehmen kann.</p>
+          <h3>Was klappt bei euch?</h3>
+          <p>Welche Rolle trägt, welcher Rhythmus hält, welche Zusammenarbeit mit dem Fachbereich funktioniert? Schreibt es so, dass es jemand kopieren kann.</p>
         </div>
 
         <div class="concept">
-          <h3>Wo erkennt ihr Keimformen neuer Muster?</h3>
-          <p>Wo zeichnet sich etwas ab, das noch keinen Namen hat? Auch ein halber Befund hilft.</p>
+          <h3>Was klappt nicht?</h3>
+          <p>Wo holt die Organisation euch ein? Wo bricht das Modell? Sagt es, bevor ihr aufgebt.</p>
         </div>
 
         <div class="concept">
-          <h3>Was hat nicht geklappt?</h3>
+          <h3>Wo seid ihr auf die Nase gefallen?</h3>
           <p>Misserfolge sind die teuersten Daten, die wir haben. Wenn ihr sie teilt, spart ihr anderen die gleiche Mauer.</p>
         </div>
       </div>
     </section>
 
+    <!-- EINLADUNG / CTA -->
     <section class="section invitation" id="sign">
       <div class="container">
         <p>Schreibt uns, was bei euch passiert. Wir lesen mit.</p>
@@ -423,7 +442,7 @@
 
 
     <!-- ============================================ -->
-    <!-- DIE AUTOREN                                    -->
+    <!-- DIE AUTOREN (Seitenende)                      -->
     <!-- ============================================ -->
 
     <section class="section section-divider" id="authors">
@@ -463,7 +482,7 @@
   <footer>
     <div class="container">
       <p>&copy; 2026 Die hycle-Autoren. Veröffentlicht unter <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p>
-      <p><a href="changelog.html">Changelog</a> &middot; <a href="versions/v1.html">v1</a> &middot; <a href="versions/v2.html">v2</a> &middot; <a href="versions/v3.html">v3</a> &middot; <a href="versions/v4.html">v4</a> &middot; <a href="versions/v5.html">v5</a> &middot; <a href="https://github.com/hackersandwizards/hycle">Quelltext auf GitHub</a></p>
+      <p><a href="changelog.html">Changelog</a> &middot; <a href="versions/v1.html">v1</a> &middot; <a href="versions/v2.html">v2</a> &middot; <a href="versions/v3.html">v3</a> &middot; <a href="versions/v4.html">v4</a> &middot; <a href="versions/v5.html">v5</a> &middot; <a href="versions/v6.html">v6</a> &middot; <a href="https://github.com/hackersandwizards/hycle">Quelltext auf GitHub</a></p>
     </div>
   </footer>
 
