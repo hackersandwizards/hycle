@@ -31,14 +31,15 @@ function toLoc(rel) {
   return `${ORIGIN}/${rel}`;
 }
 
-function build() {
-  const urls = htmlFiles()
+function build(files) {
+  const urls = files
     .map((rel) => `  <url>\n    <loc>${toLoc(rel)}</loc>\n  </url>`)
     .join("\n");
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
 }
 
-const expected = build();
+const files = htmlFiles();
+const expected = build(files);
 
 if (process.argv.includes("--check")) {
   const actual = existsSync(OUT) ? readFileSync(OUT, "utf8") : "";
@@ -51,5 +52,5 @@ if (process.argv.includes("--check")) {
   console.log("sitemap.xml is up to date.");
 } else {
   writeFileSync(OUT, expected);
-  console.log(`wrote sitemap.xml (${htmlFiles().length} urls)`);
+  console.log(`wrote sitemap.xml (${files.length} urls)`);
 }
