@@ -10,6 +10,7 @@
     "node": ">=22"
   },
   "scripts": {
+    "prepare": "lefthook install || exit 0",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint:html": "html-validate index.html changelog.html",
@@ -24,6 +25,7 @@
   },
   "devDependencies": {
     "html-validate": "11.5.3",
+    "lefthook": "2.1.9",
     "linkinator": "7.6.1",
     "prettier": "3.8.4",
     "sharp": "0.35.1",

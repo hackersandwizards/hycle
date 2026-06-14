@@ -11,7 +11,7 @@ hycle ist ein Diskussionsangebot, kein fertiges Modell. Erfahrungen, Korrekturen
 ## Technische Regeln
 
 - **Schlichtes HTML und CSS.** Kein Framework, kein Build-Schritt, kein JavaScript auf der Seite. Das Tooling im Repo prüft nur Qualität, es baut die Seite nicht.
-- **Vor dem Push:** `npm ci`, dann `npm run check` (Prettier, Lint, interne Links, Sitemap). Dieselben Checks laufen in CI.
+- **Git-Hooks (lefthook).** Nach `npm ci` sind sie installiert: pre-commit formatiert geänderte Dateien automatisch (Prettier, Stylelint), pre-push führt `npm run check` aus. Dieselben Checks laufen in CI.
 - **Frühere Versionen sind eingefroren.** Dateien unter `versions/` werden nicht nachformatiert oder geändert.
 
 ## Eine neue Version veröffentlichen

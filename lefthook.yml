@@ -1,0 +1,19 @@
+# Git hooks. Auto-format at commit time; run the full check before push.
+# Prettier and Stylelint honour .prettierignore, so versions/ is never touched.
+
+pre-commit:
+  parallel: false
+  jobs:
+    - name: prettier
+      glob: "*.{html,css,js,mjs,json,md,yml,yaml}"
+      run: npx prettier --write {staged_files}
+      stage_fixed: true
+    - name: stylelint
+      glob: "*.css"
+      run: npx stylelint --fix {staged_files}
+      stage_fixed: true
+
+pre-push:
+  jobs:
+    - name: check
+      run: npm run check
