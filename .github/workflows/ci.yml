@@ -1,10 +1,18 @@
 name: ci
 
+# One pipeline, verify -> deploy (modelled on factory's GitLab stages).
+# verify jobs run in parallel; deploy waits for them (needs:) and only runs on
+# main. Merge is gated by branch protection (the verify checks are required),
+# so deploy on main just publishes the green commit.
+
 on:
   push:
     branches: [main]
   pull_request:
     branches: [main]
+  schedule:
+    - cron: "0 6 * * 1" # Mondays 06:00 UTC — external-links only
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -13,7 +21,9 @@ env:
   LEFTHOOK: "0" # don't install git hooks during npm ci in CI
 
 jobs:
+  # --- verify stage ---------------------------------------------------------
   format:
+    if: github.event_name != 'schedule'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -25,6 +35,7 @@ jobs:
       - run: npm run format:check
 
   lint:
+    if: github.event_name != 'schedule'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -39,6 +50,7 @@ jobs:
         run: npm run gen:sitemap -- --check
 
   links:
+    if: github.event_name != 'schedule'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -51,6 +63,7 @@ jobs:
         run: npm run links
 
   security:
+    if: github.event_name != 'schedule'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -60,3 +73,60 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm audit --audit-level=high
+
+  lighthouse:
+    # Runs on every push and PR (and manual dispatch). Gates deploy and is a
+    # required check on PRs via branch protection.
+    if: github.event_name != 'schedule'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Run Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          configPath: ./lighthouserc.json
+          uploadArtifacts: true
+          temporaryPublicStorage: false
+
+  external-links:
+    # External links are flaky -> non-blocking, weekly schedule + on demand.
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run links:external
+
+  # --- deploy stage ---------------------------------------------------------
+  deploy:
+    # Only on main, only after the verify jobs pass. Publishes to GitHub Pages.
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: [format, lint, links, security, lighthouse]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v6
+      - name: Assemble site (git archive honours .gitattributes export-ignore)
+        run: |
+          mkdir _site
+          git archive HEAD | tar -x -C _site
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4
