@@ -1,5 +1,24 @@
+/* === FONTS (self-hosted, latin subset, variable) === */
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/inter.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/space-grotesk.woff2") format("woff2");
+}
+
 /* === RESET & BASE === */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -16,8 +35,8 @@
   --color-hypothesized: #7c5c1e;
   --color-cta-bg: #1a1a1a;
   --color-cta-text: #fafaf9;
-  --font-heading: 'Space Grotesk', system-ui, sans-serif;
-  --font-body: 'Inter', system-ui, sans-serif;
+  --font-heading: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
   --max-width: 740px;
 }
 
@@ -280,12 +299,12 @@ body {
 
 .level-status.observed {
   color: var(--color-observed);
-  background: rgba(45, 106, 79, 0.1);
+  background: rgb(45 106 79 / 10%);
 }
 
 .level-status.hypothesized {
   color: var(--color-hypothesized);
-  background: rgba(124, 92, 30, 0.1);
+  background: rgb(124 92 30 / 10%);
 }
 
 .level-body {

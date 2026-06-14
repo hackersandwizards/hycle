@@ -1,0 +1,22 @@
+# hycle
+
+> hycle, der hyper cycle. Ein Manifest für Produkt- und Tech-Organisationen im Übergang von prozessgetriebener zu entscheidungsgetriebener Arbeit im Zeitalter der KI-Agenten. Beobachtungen, Hypothesen, Framework. Ein Diskussionsangebot, kein fertiges Modell.
+
+## Manifest
+
+- [Manifest](https://hycle.org/): Beobachtungen, Hypothesen und Framework auf einer Seite
+- [Changelog](https://hycle.org/changelog.html): Versionshistorie
+
+## Frühere Versionen
+
+- [v6](https://hycle.org/versions/v6.html)
+- [v5](https://hycle.org/versions/v5.html)
+- [v4](https://hycle.org/versions/v4.html)
+- [v3](https://hycle.org/versions/v3.html)
+- [v2](https://hycle.org/versions/v2.html)
+- [v1](https://hycle.org/versions/v1.html)
+
+## Mitwirken
+
+- [GitHub Discussions](https://github.com/hackersandwizards/hycle/discussions): Erfahrungen teilen
+- [Quelltext](https://github.com/hackersandwizards/hycle)

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hycle — Changelog</title>
+    <link>https://hycle.org/changelog.html</link>
+    <atom:link href="https://hycle.org/rss.xml" rel="self" type="application/rss+xml" />
+    <description>Versionshistorie des hycle-Manifests.</description>
+    <language>de</language>
+    <item>
+      <title>v7 — Juni 2026</title>
+      <link>https://hycle.org/</link>
+      <guid>https://hycle.org/versions/v7</guid>
+      <description>Aktuelle Version des Manifests.</description>
+    </item>
+    <item>
+      <title>v6 — Juni 2026</title>
+      <link>https://hycle.org/versions/v6.html</link>
+      <guid>https://hycle.org/versions/v6.html</guid>
+    </item>
+    <item>
+      <title>v5 — Mai 2026</title>
+      <link>https://hycle.org/versions/v5.html</link>
+      <guid>https://hycle.org/versions/v5.html</guid>
+    </item>
+    <item>
+      <title>v4 — Mai 2026</title>
+      <link>https://hycle.org/versions/v4.html</link>
+      <guid>https://hycle.org/versions/v4.html</guid>
+    </item>
+    <item>
+      <title>v3 — April 2026</title>
+      <link>https://hycle.org/versions/v3.html</link>
+      <guid>https://hycle.org/versions/v3.html</guid>
+    </item>
+    <item>
+      <title>v2 — April 2026</title>
+      <link>https://hycle.org/versions/v2.html</link>
+      <guid>https://hycle.org/versions/v2.html</guid>
+    </item>
+    <item>
+      <title>v1 — März 2026</title>
+      <link>https://hycle.org/versions/v1.html</link>
+      <guid>https://hycle.org/versions/v1.html</guid>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hycle.org/sitemap.xml

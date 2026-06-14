@@ -1,1 +1,17 @@
+# Dev tooling — not part of the served site.
+node_modules/
+.lighthouseci/
+*.log
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+
+# Legacy draft kept out of history
 drafts-old/v7-draft.html

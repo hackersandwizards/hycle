@@ -1,0 +1,33 @@
+{
+  "name": "hycle-org",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Build- und Pipeline-Hygiene für hycle.org (plain HTML/CSS, kein Build).",
+  "license": "CC-BY-SA-4.0",
+  "homepage": "https://hycle.org",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint:html": "html-validate index.html changelog.html",
+    "lint:css": "stylelint \"style.css\"",
+    "lint": "npm run lint:html && npm run lint:css",
+    "links": "linkinator . --recurse --skip \"^https?://(?!localhost)\"",
+    "links:external": "linkinator . --recurse",
+    "lighthouse": "npx --yes @lhci/cli@0.15 autorun",
+    "gen:sitemap": "node scripts/gen-sitemap.mjs",
+    "gen:assets": "node scripts/gen-assets.mjs",
+    "check": "npm run format:check && npm run lint && npm run gen:sitemap -- --check && npm run links"
+  },
+  "devDependencies": {
+    "html-validate": "11.5.3",
+    "linkinator": "7.6.1",
+    "prettier": "3.8.4",
+    "sharp": "0.35.1",
+    "stylelint": "17.13.0",
+    "stylelint-config-standard": "40.0.0"
+  }
+}

@@ -22,15 +22,19 @@ Der Engpass war immer Handlungsfähigkeit, nicht Execution. KI-Agenten lösen di
 
 [hycle.org](https://hycle.org)
 
-Schlichtes HTML/CSS. Keine Frameworks. Kein Build-Schritt.
+Schlichtes HTML/CSS. Keine Frameworks. Kein Build-Schritt. Kein JavaScript auf der Seite.
 
 ```
 index.html       ← Aktuelle Version (Beobachtungen, Hypothesen, Das Framework)
 changelog.html   ← Versionshistorie
-style.css        ← Minimales Styling
+style.css        ← Minimales Styling, selbst gehostete Fonts
 versions/        ← Archivierte frühere Versionen (v1, v2, v3, v4, v5, v6)
+fonts/           ← Selbst gehostete Schriften (woff2)
+robots.txt, sitemap.xml, rss.xml, llms.txt ← Discovery für Crawler und Agenten
 CNAME            ← Konfiguration der Custom-Domain
 ```
+
+Das Repo enthält ein Tooling-Setup (Prettier, html-validate, Stylelint, Link-Check, Lighthouse), das die Seite nur auf Qualität prüft, nicht baut. Details in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Mitwirken
 
