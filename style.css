@@ -172,6 +172,21 @@ body {
   font-weight: 500;
 }
 
+/* === OBSERVATION GROUPS (Variante A, Teil 1) === */
+.obs-group {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-text-secondary);
+  margin: 2.5rem 0 1.5rem;
+}
+
+.obs-group:first-of-type {
+  margin-top: 0;
+}
+
 /* === HYPOTHESES === */
 .hypothesis {
   margin-bottom: 2rem;
@@ -505,6 +520,23 @@ footer a {
 
 footer p {
   margin-bottom: 0.5rem;
+}
+
+/* === DRAFT BANNER (Diskussionsentwürfe, nicht für Live-Seiten) === */
+.draft-banner {
+  background: var(--color-cta-bg);
+  color: var(--color-cta-text);
+  padding: 1rem 0;
+  font-size: 0.9rem;
+}
+
+.draft-banner strong {
+  font-family: var(--font-heading);
+}
+
+.draft-banner a {
+  color: var(--color-cta-text);
+  text-decoration: underline;
 }
 
 /* === INVERSION TABLE === */
