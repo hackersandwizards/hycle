@@ -117,7 +117,7 @@
           </div>
 
           <div class="observation">
-            <h3>Vibe-Prototypen treffen die Wünschbarkeit, nicht die Machbarkeit.</h3>
+            <h3>Vibe-Prototypen treffen die Desirability, nicht die Feasibility.</h3>
             <p>Was im schnellen Prototyp entsteht, zeigt, ob etwas gewollt ist. Ob es technisch und an den Daten trägt, zeigt es nicht; dieses Wissen muss auf anderem Weg in den Prozess.</p>
           </div>
 
@@ -129,8 +129,13 @@
           </div>
 
           <div class="observation">
-            <h3>Der Engineering-Kern verschiebt sich zur Verlässlichkeit.</h3>
-            <p>Die eigentliche Arbeit ist, aus einem nicht-deterministischen System ein verlässliches zu machen. Erst das macht aus schnellem Bauen ein wiederholbares.</p>
+            <h3>Zwischen Idee und Code entsteht eine neue Artefaktebene.</h3>
+            <p>Diese Ebene hat ihre eigene Logik, anders als eine IDE, die früher nur beim Tippen half. Wer entwickelt, baut zunehmend die Maschine, die das Programm baut.</p>
+          </div>
+
+          <div class="observation">
+            <h3>Der Engineering-Kern verschiebt sich zum Determinismus.</h3>
+            <p>Die eigentliche Arbeit ist, aus einem nicht-deterministischen System ein deterministisches zu machen. Erst das macht aus schnellem Bauen ein wiederholbares.</p>
           </div>
 
           <div class="observation">
@@ -180,6 +185,16 @@
           <div class="observation">
             <h3>Die KI-Kluft spaltet Organisationen von innen.</h3>
             <p>In derselben Organisation spalten sich die Mitarbeitenden: die einen probieren, die anderen erstarren. Das liegt selten am Charakter, meist fehlt eine der drei Dimensionen oder die alte Rolle trägt nicht mehr.</p>
+          </div>
+
+          <div class="observation">
+            <h3>Der Fachexperte bleibt nur auf Zeit im Team.</h3>
+            <p>Fachlich führt ihn seine eigene Abteilung, ins Produktteam kommt er für ein Projekt und geht, sobald die Software steht. Auf so eine Bindung passt kein fester, synchroner Termin.</p>
+          </div>
+
+          <div class="observation">
+            <h3>Das Tempo überholt das Business.</h3>
+            <p>Die Teams liefern schneller, als der Fachbereich die Software aufnehmen kann, und vieles bleibt als 80-Prozent-Lösung liegen. Adoption und Distribution werden zum neuen Engpass.</p>
           </div>
         </div>
       </section>
@@ -272,6 +287,16 @@
             <h3><span class="label">H10</span> Führt die Factory wie ein Produkt.</h3>
             <p>Das interne Produkt verdient dieselben Mechanismen wie das äußere: klare Verantwortung, eigene Rhythmen, Blick auf den Nutzen für das Team.</p>
           </div>
+
+          <div class="hypothesis">
+            <h3><span class="label">H11</span> Bindet die Fachlichkeit asynchron ein.</h3>
+            <p>Der Fachexperte gehört nie ganz zum Team. Sein Wissen erreicht euch in kurzer, entkoppelter Schleife besser als im festen Termin.</p>
+          </div>
+
+          <div class="hypothesis">
+            <h3><span class="label">H12</span> Treibt die Einführung und prüft ihre Wirkung.</h3>
+            <p>Fertige Software ist noch kein Wert. Wer schneller baut, muss sie bewusst zu den Nutzern bringen und nachhalten, dass sie genutzt wird und wirkt.</p>
+          </div>
         </div>
       </section>
 
@@ -306,7 +331,7 @@
       <section class="section" id="factory">
         <div class="container">
           <h2>Factory</h2>
-          <p class="section-intro">Die Factory hat drei Teile: Ideation, Execution, Validation. Heute decken wir agentisch vor allem die Execution ab, und auch die nicht durchgängig. Wie weit sich die anderen beiden mitziehen lassen, ist die offene Frage.</p>
+          <p class="section-intro">Die Factory hat drei Teile: Ideation, Execution, Validation. Heute decken wir agentisch vor allem die Execution ab, und auch die nicht durchgängig. Wie weit sich die anderen beiden mitziehen lassen, ist die offene Frage. Das Wort passt am ehesten auf die Execution, wo immer dasselbe herauskommen soll. Die Ideation ist divergent und weniger fließbandartig, auch wenn Agenten sie schneller machen.</p>
 
           <div class="concept">
             <h3>Ideation</h3>
@@ -320,12 +345,13 @@
 
           <div class="concept">
             <h3>Validation</h3>
-            <p>Prüfen, ob das, was erreicht werden sollte, auch wirklich erreicht wurde.</p>
+            <p>Prüfen, ob das, was erreicht werden sollte, auch wirklich erreicht wurde, und ob die Software genutzt wird und wirkt.</p>
           </div>
 
-          <p>Der Nordstern für die Execution ist eine Factory, die im Hintergrund läuft und vorne nur noch Richtung und Aufgaben bekommt. So weit sind wir nicht: heute braucht ihr Aufbau viel Engineering-Wissen. Aus einem nicht-deterministischen System ein verlässliches zu machen, ist der eigentliche Kern, und erst das rechtfertigt das Wort Factory.</p>
+          <p>Der Nordstern für die Execution ist eine Factory, die im Hintergrund läuft und vorne nur noch Richtung und Aufgaben bekommt. So weit sind wir nicht: heute braucht ihr Aufbau viel Engineering-Wissen. Aus einem nicht-deterministischen System ein deterministisches zu machen, ist der eigentliche Kern, und erst das rechtfertigt das Wort Factory.</p>
           <p>Ein Team hat damit zwei Produkte: eines für außen und die Factory selbst. Die Factory ist ein internes Produkt, dessen Nutzer das Team ist, und sie wird so geführt wie das äußere Produkt.</p>
           <p>Eine gemeinsame Plattform entsteht durch Extraktion: erst lokal gelöst, dann herausgezogen, was für alle taugt. Sie ist das Ergebnis, nicht der Ausgangspunkt.</p>
+          <p>Die Factory bleibt Teil einer Produktorganisation: Wir bauen, um zu lernen.</p>
         </div>
       </section>
 
@@ -337,7 +363,7 @@
 
           <div class="concept">
             <h3>Product Lead</h3>
-            <p>Verantwortet die Epics und spricht mit Stakeholdern und Fachbereich. Er klärt, was gebaut wird und warum, und steckt tiefer in der Domäne als ein klassischer Product Manager.</p>
+            <p>Verantwortet die Epics und spricht mit Stakeholdern und Fachbereich. Er klärt, was gebaut wird und warum, und steckt tiefer in der Domäne als ein klassischer Product Manager. Er treibt auch Einführung und Distribution, damit die Software bei den Nutzern ankommt und wirkt.</p>
           </div>
 
           <div class="concept">
@@ -347,7 +373,7 @@
 
           <div class="concept">
             <h3>Factory-Engineer</h3>
-            <p>Baut und pflegt die Factory, eine abstraktere Art, Software zu entwickeln. Er sorgt dafür, dass die Factory verlässliche, wiederholbare Ergebnisse liefert. Mit der einzelnen Story hat er nichts zu tun: er ist der Mechaniker, der an der Factory schraubt, wenn das Ergebnis nicht stimmt. Anfangs geht er in die Teams, später zieht er sich heraus und wird nur in besonderen Fällen gerufen.</p>
+            <p>Baut und pflegt die Factory, eine abstraktere Art, Software zu entwickeln. Er sorgt dafür, dass die Factory deterministische, wiederholbare Ergebnisse liefert. Mit der einzelnen Story hat er nichts zu tun: er ist der Mechaniker, der an der Factory schraubt, wenn das Ergebnis nicht stimmt. Anfangs geht er in die Teams, später zieht er sich heraus und wird nur in besonderen Fällen gerufen.</p>
           </div>
 
           <div class="concept">
