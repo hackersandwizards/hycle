@@ -8,8 +8,8 @@ hycle ist eine Hypothese darüber, wie sich Arbeit verschiebt, wenn KI-Agenten d
 
 Drei Teile, gerahmt von Präambel, Abgrenzung und Call for Participation. Der Schwerpunkt liegt im Framework:
 
-- **Was wir sehen** — 7 Beobachtungen aus der Praxis der agentischen Entwicklung
-- **Was wir glauben** — 7 Hypothesen auf der Linie der Handlungsfähigkeit
+- **Was wir sehen** — 13 Beobachtungen aus der Praxis der agentischen Entwicklung
+- **Was wir glauben** — 10 Hypothesen, aus dem Betriebsmodell abgeleitet
 - **Das Framework** — Zielgruppe, Factory, Rollen, Kadenzen, Artefakte, Sonstiges. Das Betriebsmodell für die agentische Software-Entwicklung
 
 Vorangestellt ist die Präambel mit Eröffnung, dem Namen und den Kernbegriffen. Zwischen Beobachtungen und Hypothesen steht die Diagnose. Den Abschluss bilden die Abgrenzung („Was hycle nicht ist“) und der Call for Participation mit drei Leitfragen: Was klappt bei euch? Was klappt nicht? Wo seid ihr auf die Nase gefallen?
@@ -28,7 +28,7 @@ Schlichtes HTML/CSS. Keine Frameworks. Kein Build-Schritt. Kein JavaScript auf d
 index.html       ← Aktuelle Version (Beobachtungen, Hypothesen, Das Framework)
 changelog.html   ← Versionshistorie
 style.css        ← Minimales Styling, selbst gehostete Fonts
-versions/        ← Archivierte frühere Versionen (v1, v2, v3, v4, v5, v6)
+versions/        ← Archivierte frühere Versionen (v1, v2, v3, v4, v5, v6, v7)
 fonts/           ← Selbst gehostete Schriften (woff2)
 robots.txt, sitemap.xml, rss.xml, llms.txt ← Discovery für Crawler und Agenten
 CNAME            ← Konfiguration der Custom-Domain
