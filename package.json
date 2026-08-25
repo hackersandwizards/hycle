@@ -24,12 +24,12 @@
     "check": "npm run format:check && npm run lint && npm run gen:sitemap -- --check && npm run links"
   },
   "devDependencies": {
-    "html-validate": "11.5.3",
-    "lefthook": "2.1.9",
-    "linkinator": "7.6.1",
-    "prettier": "3.8.4",
-    "sharp": "0.35.1",
-    "stylelint": "17.13.0",
+    "html-validate": "11.9.0",
+    "lefthook": "2.1.10",
+    "linkinator": "8.0.4",
+    "prettier": "3.9.6",
+    "sharp": "0.35.3",
+    "stylelint": "17.14.1",
     "stylelint-config-standard": "40.0.0"
   }
 }
