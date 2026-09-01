@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /drafts/
 
 Sitemap: https://hycle.org/sitemap.xml
