@@ -7,10 +7,15 @@
     <description>Versionshistorie des hycle-Manifests.</description>
     <language>de</language>
     <item>
-      <title>v7 — Juni 2026</title>
+      <title>v8 — Juli 2026</title>
       <link>https://hycle.org/</link>
-      <guid>https://hycle.org/versions/v7</guid>
+      <guid>https://hycle.org/versions/v8.html</guid>
       <description>Aktuelle Version des Manifests.</description>
+    </item>
+    <item>
+      <title>v7 — Juni 2026</title>
+      <link>https://hycle.org/versions/v7.html</link>
+      <guid>https://hycle.org/versions/v7</guid>
     </item>
     <item>
       <title>v6 — Juni 2026</title>
