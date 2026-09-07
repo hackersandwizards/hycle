@@ -1,18 +1,18 @@
 # hycle — Der hyper cycle
 
-**Wenn Execution sofort passiert, zählt nur noch Handlungsfähigkeit.**
+**Wenn Softwareentwicklung sofort passiert, zählt nur noch Handlungsfähigkeit.**
 
-hycle ist eine Hypothese darüber, wie sich Arbeit verschiebt, wenn KI-Agenten die Execution lösen. Der Engpass war immer Handlungsfähigkeit: dort, wo Kompetenz, Autorität und Information zusammenkommen.
+hycle ist eine Hypothese darüber, wie sich Arbeit verschiebt, wenn agentische Softwareentwicklung das Bauen billig macht. Der Engpass heißt Handlungsfähigkeit: Was weiß ich, was darf ich, was kann ich? In der Organisation sind das keine Eigenschaften von Personen, sondern Ergebnisse der Struktur.
 
 ## Was ist das?
 
 Drei Teile, gerahmt von Präambel, Abgrenzung und Call for Participation. Der Schwerpunkt liegt im Framework:
 
 - **Was wir sehen** — 13 Beobachtungen aus der Praxis der agentischen Entwicklung
-- **Was wir glauben** — 10 Hypothesen, aus dem Betriebsmodell abgeleitet
+- **Was wir glauben** — 8 Hypothesen, aus dem Betriebsmodell abgeleitet
 - **Das Framework** — Zielgruppe, Factory, Rollen, Kadenzen, Artefakte, Sonstiges. Das Betriebsmodell für die agentische Software-Entwicklung
 
-Vorangestellt ist die Präambel mit Eröffnung, dem Namen und den Kernbegriffen. Zwischen Beobachtungen und Hypothesen steht die Diagnose. Den Abschluss bilden die Abgrenzung („Was hycle nicht ist“) und der Call for Participation mit drei Leitfragen: Was klappt bei euch? Was klappt nicht? Wo seid ihr auf die Nase gefallen?
+Vorangestellt ist die Eröffnung. Zwischen Beobachtungen und Hypothesen steht die Diagnose, am Seitenende die Herkunft des Namens. Den Abschluss bilden die Abgrenzung („Was hycle nicht ist“) und der Call for Participation mit drei Leitfragen: Was klappt bei euch? Was klappt nicht? Wo seid ihr auf die Nase gefallen?
 
 ## Die Kernerkenntnis
 
@@ -28,7 +28,7 @@ Schlichtes HTML/CSS. Keine Frameworks. Kein Build-Schritt. Kein JavaScript auf d
 index.html       ← Aktuelle Version (Beobachtungen, Hypothesen, Das Framework)
 changelog.html   ← Versionshistorie
 style.css        ← Minimales Styling, selbst gehostete Fonts
-versions/        ← Archivierte frühere Versionen (v1, v2, v3, v4, v5, v6, v7)
+versions/        ← Archivierte frühere Versionen (v1, v2, v3, v4, v5, v6, v7, v8)
 fonts/           ← Selbst gehostete Schriften (woff2)
 robots.txt, sitemap.xml, rss.xml, llms.txt ← Discovery für Crawler und Agenten
 CNAME            ← Konfiguration der Custom-Domain
