@@ -13,7 +13,7 @@
     "prepare": "lefthook install || exit 0",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "lint:html": "html-validate index.html changelog.html",
+    "lint:html": "html-validate index.html changelog.html talks/index.html",
     "lint:css": "stylelint \"style.css\"",
     "lint": "npm run lint:html && npm run lint:css",
     "links": "linkinator . --recurse --skip \"^https?://(?!localhost)\"",

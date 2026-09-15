@@ -29,6 +29,7 @@ index.html       ← Aktuelle Version (Beobachtungen, Hypothesen, Das Framework)
 changelog.html   ← Versionshistorie
 style.css        ← Minimales Styling, selbst gehostete Fonts
 versions/        ← Archivierte frühere Versionen (v1, v2, v3, v4, v5, v6, v7, v8)
+talks/           ← Vorträge, in denen hycle vorgestellt wurde (Folien als PDF)
 fonts/           ← Selbst gehostete Schriften (woff2)
 robots.txt, sitemap.xml, rss.xml, llms.txt ← Discovery für Crawler und Agenten
 CNAME            ← Konfiguration der Custom-Domain
