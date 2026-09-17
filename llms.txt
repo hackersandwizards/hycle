@@ -7,6 +7,10 @@
 - [Manifest](https://hycle.org/): Beobachtungen, Hypothesen und Framework auf einer Seite
 - [Changelog](https://hycle.org/changelog.html): Versionshistorie
 
+## Vorträge
+
+- [Vorträge](https://hycle.org/talks/): Folien der Auftritte, in denen hycle vorgestellt wurde
+
 ## Frühere Versionen
 
 - [v6](https://hycle.org/versions/v6.html)

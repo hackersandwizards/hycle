@@ -14,20 +14,27 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const ORIGIN = "https://hycle.org";
 const OUT = join(root, "sitemap.xml");
 
+// Subdirectories that hold served pages. drafts/ stays out on purpose.
+const SUBDIRS = ["talks", "versions"];
+
 function htmlFiles() {
   const top = readdirSync(root).filter((f) => f.endsWith(".html"));
-  const versionsDir = join(root, "versions");
-  const versions = existsSync(versionsDir)
-    ? readdirSync(versionsDir)
-        .filter((f) => f.endsWith(".html"))
-        .map((f) => `versions/${f}`)
-    : [];
-  return [...top, ...versions].sort();
+  const nested = SUBDIRS.flatMap((dir) => {
+    const abs = join(root, dir);
+    return existsSync(abs)
+      ? readdirSync(abs)
+          .filter((f) => f.endsWith(".html"))
+          .map((f) => `${dir}/${f}`)
+      : [];
+  });
+  return [...top, ...nested].sort();
 }
 
 function toLoc(rel) {
-  // index.html is served at the directory root.
+  // index.html is served at the directory root, in the root and in subdirs.
   if (rel === "index.html") return `${ORIGIN}/`;
+  if (rel.endsWith("/index.html"))
+    return `${ORIGIN}/${rel.slice(0, -"index.html".length)}`;
   return `${ORIGIN}/${rel}`;
 }
 

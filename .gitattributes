@@ -9,6 +9,7 @@
 *.webp binary
 *.woff binary
 *.woff2 binary
+*.pdf binary
 
 # Keep dev-only files out of `git archive` exports.
 .editorconfig export-ignore

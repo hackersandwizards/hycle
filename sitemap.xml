@@ -7,6 +7,9 @@
     <loc>https://hycle.org/</loc>
   </url>
   <url>
+    <loc>https://hycle.org/talks/</loc>
+  </url>
+  <url>
     <loc>https://hycle.org/versions/v1.html</loc>
   </url>
   <url>
@@ -26,5 +29,8 @@
   </url>
   <url>
     <loc>https://hycle.org/versions/v7.html</loc>
+  </url>
+  <url>
+    <loc>https://hycle.org/versions/v8.html</loc>
   </url>
 </urlset>
