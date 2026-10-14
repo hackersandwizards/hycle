@@ -72,7 +72,8 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - run: npm audit --audit-level=high
+      # npm audit at level high, with dated per-advisory exceptions.
+      - run: npm run audit:gate
 
   lighthouse:
     # Runs on every push and PR (and manual dispatch). Gates deploy and is a
