@@ -5,12 +5,7 @@
 
 import { execFileSync } from "node:child_process";
 
-// braces <=3.0.3 has no patched release, and even the newest stylelint pulls it
-// in via micromatch. It only expands our own CSS globs in CI. Re-check upstream
-// before the expiry, then delete the entry.
-const EXCEPTIONS = {
-  "GHSA-vfj7-8cjw-p6xm": "2026-11-14",
-};
+const EXCEPTIONS = {};
 
 const today =
   process.env.AUDIT_GATE_TODAY ?? new Date().toISOString().slice(0, 10);
