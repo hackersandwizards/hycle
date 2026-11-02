@@ -13,6 +13,9 @@
 
 ## Frühere Versionen
 
+- [v9](https://hycle.org/versions/v9.html)
+- [v8](https://hycle.org/versions/v8.html)
+- [v7](https://hycle.org/versions/v7.html)
 - [v6](https://hycle.org/versions/v6.html)
 - [v5](https://hycle.org/versions/v5.html)
 - [v4](https://hycle.org/versions/v4.html)

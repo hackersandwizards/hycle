@@ -11,5 +11,5 @@ Sven Christian Andrä: https://www.linkedin.com/in/svenandrae/
 
 Standort: hycle.org
 Sprache: Deutsch
-Stack: HTML und CSS. Kein Build, kein JavaScript.
+Stack: HTML und CSS, gebaut mit Astro. Kein JavaScript auf der Seite.
 Mitwirken: https://github.com/hackersandwizards/hycle/discussions

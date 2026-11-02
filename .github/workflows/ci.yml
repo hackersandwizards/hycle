@@ -1,9 +1,7 @@
 name: ci
 
-# One pipeline, verify -> deploy (modelled on factory's GitLab stages).
-# verify jobs run in parallel; deploy waits for them (needs:) and only runs on
-# main. Merge is gated by branch protection (the verify checks are required),
-# so deploy on main just publishes the green commit.
+# One pipeline, verify -> deploy. The verify jobs run in parallel on every push and pull request;
+# deploy waits for them and publishes dist/ from main only.
 
 on:
   push:
@@ -11,83 +9,34 @@ on:
   pull_request:
     branches: [main]
   schedule:
-    - cron: "0 6 * * 1" # Mondays 06:00 UTC — external-links only
+    - cron: "0 6 * * 1" # Mondays 06:00 UTC — external links only
   workflow_dispatch:
 
 permissions:
   contents: read
 
 env:
-  LEFTHOOK: "0" # don't install git hooks during npm ci in CI
+  LEFTHOOK: "0" # no git hooks during bun install in CI
 
 jobs:
-  # --- verify stage ---------------------------------------------------------
-  format:
+  check:
     if: github.event_name != 'schedule'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
+      - uses: oven-sh/setup-bun@v2
         with:
-          node-version: 26
-          cache: npm
-      - run: npm ci
-      - run: npm run format:check
-
-  lint:
-    if: github.event_name != 'schedule'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
+          bun-version-file: package.json
+      - run: bun install --frozen-lockfile
+      # Format, build, html-validate on dist/, stylelint, sitemap drift guard, internal links.
+      - run: bun run check
+      - run: bun run audit
+      - run: bun run lighthouse
+      # Hidden files too, so /.well-known/security.txt and /.nojekyll are served.
+      - uses: actions/upload-pages-artifact@v5
         with:
-          node-version: 26
-          cache: npm
-      - run: npm ci
-      - name: Lint HTML and CSS
-        run: npm run lint
-      - name: Sitemap drift guard
-        run: npm run gen:sitemap -- --check
-
-  links:
-    if: github.event_name != 'schedule'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
-        with:
-          node-version: 26
-          cache: npm
-      - run: npm ci
-      - name: Internal link check
-        run: npm run links
-
-  security:
-    if: github.event_name != 'schedule'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
-        with:
-          node-version: 26
-          cache: npm
-      - run: npm ci
-      # npm audit at level high, with dated per-advisory exceptions.
-      - run: npm run audit:gate
-
-  lighthouse:
-    # Runs on every push and PR (and manual dispatch). Gates deploy and is a
-    # required check on PRs via branch protection.
-    if: github.event_name != 'schedule'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
-      - name: Run Lighthouse CI
-        uses: treosh/lighthouse-ci-action@v12
-        with:
-          configPath: ./lighthouserc.json
-          uploadArtifacts: true
-          temporaryPublicStorage: false
+          path: dist
+          include-hidden-files: true
 
   external-links:
     # External links are flaky -> non-blocking, weekly schedule + on demand.
@@ -96,18 +45,16 @@ jobs:
     continue-on-error: true
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
+      - uses: oven-sh/setup-bun@v2
         with:
-          node-version: 26
-          cache: npm
-      - run: npm ci
-      - run: npm run links:external
+          bun-version-file: package.json
+      - run: bun install --frozen-lockfile
+      - run: bun run build
+      - run: bun run links:external
 
-  # --- deploy stage ---------------------------------------------------------
   deploy:
-    # Only on main, only after the verify jobs pass. Publishes to GitHub Pages.
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    needs: [format, lint, links, security, lighthouse]
+    needs: [check]
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -120,14 +67,5 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v7
-      - name: Assemble site (git archive honours .gitattributes export-ignore)
-        run: |
-          mkdir _site
-          git archive HEAD | tar -x -C _site
-      - uses: actions/configure-pages@v6
-      - uses: actions/upload-pages-artifact@v5
-        with:
-          path: _site
       - id: deployment
         uses: actions/deploy-pages@v5

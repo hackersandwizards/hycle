@@ -10,14 +10,15 @@ hycle ist ein Diskussionsangebot, kein fertiges Modell. Erfahrungen, Korrekturen
 
 ## Technische Regeln
 
-- **Schlichtes HTML und CSS.** Kein Framework, kein Build-Schritt, kein JavaScript auf der Seite. Das Tooling im Repo prüft nur Qualität, es baut die Seite nicht.
-- **Git-Hooks (lefthook).** Nach `npm ci` sind sie installiert: pre-commit formatiert geänderte Dateien automatisch (Prettier, Stylelint), pre-push führt `npm run check` aus. Dieselben Checks laufen in CI.
-- **Frühere Versionen sind eingefroren.** Dateien unter `versions/` werden nicht nachformatiert oder geändert.
+- **HTML und CSS, gebaut mit Astro.** Der Inhalt jeder Seite steht als HTML in `src/body/` (`index.html`, `changelog.html`, `talks.html`), Titel und Meta-Angaben in `src/pages/`, der gemeinsame Kopf in `src/layouts/Layout.astro`. `bun run build` schreibt die Seite nach `dist/`. Auf der ausgelieferten Seite bleibt kein JavaScript.
+- **bun statt npm.** `bun install` einmal pro Klon, `bun run dev` zeigt die Seite lokal, `bun run check` prüft alles (Prettier, Build, html-validate auf `dist/`, Stylelint, Sitemap, interne Links). `bun run lighthouse` und `bun run audit` laufen zusätzlich in CI.
+- **Git-Hooks (lefthook).** Nach `bun install` sind sie installiert: pre-commit formatiert geänderte Dateien automatisch (Prettier, Stylelint), pre-push führt `bun run check` aus. Dieselben Checks laufen in CI.
+- **Frühere Versionen sind eingefroren.** Dateien unter `public/versions/` werden nicht nachformatiert oder geändert und so ausgeliefert, wie sie dort liegen. Alles in `public/` (Fonts, Icons, `style.css`, `rss.xml`, PDF) landet unverändert unter demselben Pfad.
 
 ## Eine neue Version veröffentlichen
 
-1. Aktuelle `index.html` nach `versions/vN.html` kopieren, relative Pfade anpassen (`../style.css`, `../changelog.html`).
-2. `changelog.html` um einen Abschnitt ergänzen, die Überschrift verlinkt auf die Versionsdatei.
-3. Footer in `index.html` um den Link zur neuen Vorversion ergänzen.
-4. `npm run gen:sitemap` ausführen und `rss.xml` um die neue Version ergänzen.
-5. `npm run check` laufen lassen.
+1. `bun run build`, dann die gebaute `dist/index.html` nach `public/versions/vN.html` kopieren, relative Pfade anpassen (`../style.css`, `../changelog.html`).
+2. `src/body/changelog.html` um einen Abschnitt ergänzen, die Überschrift verlinkt auf die Versionsdatei.
+3. Footer in `src/body/index.html` um den Link zur neuen Vorversion ergänzen.
+4. `bun run build && bun run gen:sitemap` ausführen und `public/rss.xml` um die neue Version ergänzen.
+5. `bun run check` laufen lassen.

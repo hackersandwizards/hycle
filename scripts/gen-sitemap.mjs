@@ -1,10 +1,10 @@
 #!/usr/bin/env node
-// Generate sitemap.xml from the HTML files actually present.
+// Generate public/sitemap.xml from the HTML pages the build wrote to dist/.
 // Single source of truth: the filesystem. Deterministic (no timestamps),
 // so CI can run `--check` as a drift guard — every *.html must be listed.
 //
-//   npm run gen:sitemap          # write sitemap.xml
-//   npm run gen:sitemap -- --check  # fail if sitemap.xml is out of date
+//   bun run build && bun run gen:sitemap          # write sitemap.xml
+//   bun run build && bun run gen:sitemap -- --check  # fail if sitemap.xml is out of date
 
 import { readdirSync, readFileSync, writeFileSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
@@ -12,15 +12,16 @@ import { dirname, join } from "node:path";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const ORIGIN = "https://hycle.org";
-const OUT = join(root, "sitemap.xml");
+const OUT = join(root, "public/sitemap.xml");
+const DIST = join(root, "dist");
 
 // Subdirectories that hold served pages. drafts/ stays out on purpose.
 const SUBDIRS = ["talks", "versions"];
 
 function htmlFiles() {
-  const top = readdirSync(root).filter((f) => f.endsWith(".html"));
+  const top = readdirSync(DIST).filter((f) => f.endsWith(".html"));
   const nested = SUBDIRS.flatMap((dir) => {
-    const abs = join(root, dir);
+    const abs = join(DIST, dir);
     return existsSync(abs)
       ? readdirSync(abs)
           .filter((f) => f.endsWith(".html"))
@@ -52,7 +53,7 @@ if (process.argv.includes("--check")) {
   const actual = existsSync(OUT) ? readFileSync(OUT, "utf8") : "";
   if (actual !== expected) {
     console.error(
-      "sitemap.xml is out of date. Run `npm run gen:sitemap` and commit.",
+      "sitemap.xml is out of date. Run `bun run build && bun run gen:sitemap` and commit.",
     );
     process.exit(1);
   }

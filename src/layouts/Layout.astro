@@ -1,0 +1,64 @@
+---
+// The one layout of every current page. The frozen archive in public/versions/ is served as written.
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  ogTitle: string;
+  ogDescription: string;
+  ogUrl: string;
+  rssTitle: string;
+  css: string;
+  /** The page body, as HTML from src/body/. */
+  body: string;
+}
+const p = Astro.props;
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data:; style-src 'self'; font-src 'self'; script-src 'none'; base-uri 'self'; form-action 'none'"
+    />
+    <title>{p.title}</title>
+    <meta name="description" content={p.description} />
+    <link rel="canonical" href={p.canonical} />
+    <meta name="theme-color" content="#1a1a1a" />
+    <meta property="og:title" content={p.ogTitle} />
+    <meta property="og:description" content={p.ogDescription} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={p.ogUrl} />
+    <meta property="og:image" content="https://hycle.org/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link
+      rel="preload"
+      href="/fonts/space-grotesk.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/inter.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={p.rssTitle}
+      href="/rss.xml"
+    />
+    <link rel="stylesheet" href={p.css} />
+  </head>
+  <body set:html={"\n" + p.body} />
+</html>

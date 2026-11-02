@@ -1,21 +1,23 @@
 # Frozen archive — point-in-time snapshots, never reformat.
-versions/
+public/versions/
 
 # Generated artifacts (owned by scripts/, verified by CI drift-guard).
-sitemap.xml
-rss.xml
+public/sitemap.xml
+public/rss.xml
 
 # Integrity-/format-sensitive plain files Prettier should not touch.
-robots.txt
-humans.txt
-llms.txt
-.well-known/
+public/robots.txt
+public/humans.txt
+public/llms.txt
+public/.well-known/
 
 # Dependencies, lockfile, license, deploy config.
 node_modules/
-package-lock.json
+bun.lock
+dist/
+.astro/
 LICENSE
-CNAME
+public/CNAME
 
 # Binary assets.
 *.png

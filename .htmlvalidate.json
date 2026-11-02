@@ -4,6 +4,6 @@
     "no-trailing-whitespace": "error",
     "void-style": "off",
     "long-title": "off",
-    "doctype-style": ["error", { "style": "lowercase" }]
+    "doctype-style": ["error", { "style": "uppercase" }]
   }
 }

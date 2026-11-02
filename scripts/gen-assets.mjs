@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Generate committed image assets from favicon.svg + an inline OG composition.
-// Run locally (`npm run gen:assets`); the PNGs are committed and served as-is.
+// Run locally (`bun run gen:assets`); the PNGs are committed and served as-is.
 // Not part of CI — text rasterization uses the host's sans-serif font.
 
 import { readFileSync, writeFileSync } from "node:fs";
@@ -8,7 +8,7 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import sharp from "sharp";
 
-const root = join(dirname(fileURLToPath(import.meta.url)), "..");
+const root = join(dirname(fileURLToPath(import.meta.url)), "..", "public");
 const faviconSvg = readFileSync(join(root, "favicon.svg"));
 
 const BG = "#1a1a1a";

@@ -1,4 +1,5 @@
 {
   "proseWrap": "preserve",
-  "htmlWhitespaceSensitivity": "css"
+  "htmlWhitespaceSensitivity": "css",
+  "plugins": ["prettier-plugin-astro"]
 }
