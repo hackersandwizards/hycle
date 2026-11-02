@@ -26,14 +26,14 @@ Der Engpass war immer Handlungsfähigkeit, nicht Execution. KI-Agenten lösen di
 HTML und CSS, mit Astro nach `dist/` gebaut. Kein JavaScript auf der Seite.
 
 ```
-src/body/        ← Inhalt der Seiten als HTML: index.html (aktuelle Version), changelog.html, talks.html
-src/pages/       ← Titel und Meta-Angaben je Seite, Adresse wie bisher (/, /changelog.html, /talks/)
+src/body/        ← Inhalt der Seiten als HTML: index.html (aktuelle Version), changelog.html, talks.html, 404.html
+src/pages/       ← Titel und Meta-Angaben je Seite, Adresse wie bisher (/, /changelog.html, /talks/, /404.html)
 src/layouts/     ← Der gemeinsame Kopf aller Seiten
 public/          ← Unverändert ausgeliefert: style.css, versions/ (v1 bis v9), talks/*.pdf, fonts/,
-                   robots.txt, sitemap.xml, rss.xml, llms.txt, Icons, CNAME
+                   Icons und Metadateien wie robots.txt, sitemap.xml, rss.xml und CNAME
 ```
 
-`bun install`, dann `bun run dev` für die lokale Vorschau und `bun run check` für alle Prüfungen (Prettier, html-validate, Stylelint, Sitemap, Link-Check; Lighthouse in CI). Details in [CONTRIBUTING.md](CONTRIBUTING.md).
+`bun install`, dann `bun run dev` für die lokale Vorschau und `bun run check` für alle Prüfungen (Prettier, Build, html-validate, Stylelint, Sitemap, Link-Check; Audit und Lighthouse in CI). Details in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Mitwirken
 

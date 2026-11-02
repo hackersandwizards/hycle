@@ -10,7 +10,7 @@ hycle ist ein Diskussionsangebot, kein fertiges Modell. Erfahrungen, Korrekturen
 
 ## Technische Regeln
 
-- **HTML und CSS, gebaut mit Astro.** Der Inhalt jeder Seite steht als HTML in `src/body/` (`index.html`, `changelog.html`, `talks.html`), Titel und Meta-Angaben in `src/pages/`, der gemeinsame Kopf in `src/layouts/Layout.astro`. `bun run build` schreibt die Seite nach `dist/`. Auf der ausgelieferten Seite bleibt kein JavaScript.
+- **HTML und CSS, gebaut mit Astro.** Der Inhalt jeder Seite steht als HTML in `src/body/` (`index.html`, `changelog.html`, `talks.html`, `404.html`), Titel und Meta-Angaben in `src/pages/`, der gemeinsame Kopf in `src/layouts/Layout.astro`. `bun run build` schreibt die Seite nach `dist/`. Auf der ausgelieferten Seite bleibt kein JavaScript.
 - **bun statt npm.** `bun install` einmal pro Klon, `bun run dev` zeigt die Seite lokal, `bun run check` prüft alles (Prettier, Build, html-validate auf `dist/`, Stylelint, Sitemap, interne Links). `bun run lighthouse` und `bun run audit` laufen zusätzlich in CI.
 - **Git-Hooks (lefthook).** Nach `bun install` sind sie installiert: pre-commit formatiert geänderte Dateien automatisch (Prettier, Stylelint), pre-push führt `bun run check` aus. Dieselben Checks laufen in CI.
 - **Frühere Versionen sind eingefroren.** Dateien unter `public/versions/` werden nicht nachformatiert oder geändert und so ausgeliefert, wie sie dort liegen. Alles in `public/` (Fonts, Icons, `style.css`, `rss.xml`, PDF) landet unverändert unter demselben Pfad.
