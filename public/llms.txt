@@ -23,6 +23,17 @@
 - [v2](https://hycle.org/versions/v2.html)
 - [v1](https://hycle.org/versions/v1.html)
 
+## Autoren
+
+- [Andreas Stephan](https://www.linkedin.com/in/andreasstephan/)
+- [Benedikt Stemmildt](https://benedikt.stemmildt.com/)
+- [Björn Rochel](https://www.linkedin.com/in/bjoern-rochel/)
+- [Jens Himmelreich](https://www.linkedin.com/in/jens-himmelreich-a310251/)
+- [Johannes Schmidt](https://www.linkedin.com/in/johannes-schmidt-7b84b33/)
+- [Sven Christian Andrä](https://www.linkedin.com/in/svenandrae/)
+
+Lizenz: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+
 ## Mitwirken
 
 - [GitHub Discussions](https://github.com/hackersandwizards/hycle/discussions): Erfahrungen teilen

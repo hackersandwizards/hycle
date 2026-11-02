@@ -31,7 +31,7 @@ const og = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630">
     <circle cx="74" cy="34" r="33" />
   </g>
   <text x="88" y="360" font-family="sans-serif" font-size="170" font-weight="700" fill="${FG}">hycle</text>
-  <text x="92" y="446" font-family="sans-serif" font-size="40" font-weight="400" fill="${MUTED}">Wenn Execution sofort passiert,</text>
+  <text x="92" y="446" font-family="sans-serif" font-size="40" font-weight="400" fill="${MUTED}">Wenn Softwareentwicklung sofort passiert,</text>
   <text x="92" y="500" font-family="sans-serif" font-size="40" font-weight="400" fill="${MUTED}">zählt nur noch Handlungsfähigkeit.</text>
   <text x="92" y="566" font-family="sans-serif" font-size="30" font-weight="400" fill="${MUTED}">hycle.org</text>
 </svg>`;

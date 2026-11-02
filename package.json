@@ -17,7 +17,7 @@
     "build": "bun --bun astro build",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "lint:html": "html-validate dist/index.html dist/changelog.html dist/talks/index.html",
+    "lint:html": "html-validate dist/index.html dist/changelog.html dist/talks/index.html dist/404.html",
     "lint:css": "stylelint public/style.css",
     "lint": "bun run lint:html && bun run lint:css",
     "links": "linkinator index.html talks/index.html --server-root dist --recurse --skip \"^https?://(?!localhost|127\\.0\\.0\\.1)\"",

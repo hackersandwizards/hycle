@@ -1,6 +1,67 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import body from "../body/index.html?raw";
+
+const li = (slug: string) => `https://www.linkedin.com/in/${slug}/`;
+const jsonld = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://hycle.org/#website",
+      url: "https://hycle.org/",
+      name: "hycle",
+      inLanguage: "de",
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://hycle.org/#manifest",
+      name: "hycle, der hyper cycle",
+      headline:
+        "Wenn Softwareentwicklung sofort passiert, zählt nur noch Handlungsfähigkeit.",
+      url: "https://hycle.org/",
+      inLanguage: "de",
+      version: "10",
+      license: "https://creativecommons.org/licenses/by-sa/4.0/",
+      discussionUrl: "https://github.com/hackersandwizards/hycle/discussions",
+      isPartOf: { "@id": "https://hycle.org/#website" },
+      author: [
+        {
+          "@type": "Person",
+          name: "Andreas Stephan",
+          sameAs: [li("andreasstephan")],
+        },
+        {
+          "@type": "Person",
+          "@id": "https://benedikt.stemmildt.com/#person",
+          name: "Benedikt Stemmildt",
+          url: "https://benedikt.stemmildt.com/",
+          sameAs: [li("benedikt-stemmildt")],
+        },
+        {
+          "@type": "Person",
+          name: "Björn Rochel",
+          sameAs: [li("bjoern-rochel")],
+        },
+        {
+          "@type": "Person",
+          name: "Jens Himmelreich",
+          sameAs: [li("jens-himmelreich-a310251")],
+        },
+        {
+          "@type": "Person",
+          name: "Johannes Schmidt",
+          sameAs: [li("johannes-schmidt-7b84b33")],
+        },
+        {
+          "@type": "Person",
+          name: "Sven Christian Andrä",
+          sameAs: [li("svenandrae")],
+        },
+      ],
+    },
+  ],
+};
 ---
 
 <Layout
@@ -13,4 +74,5 @@ import body from "../body/index.html?raw";
   rssTitle="hycle - Changelog"
   css="style.css"
   body={body}
+  jsonld={jsonld}
 />

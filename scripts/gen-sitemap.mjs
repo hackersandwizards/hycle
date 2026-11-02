@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 // Generate public/sitemap.xml from the HTML pages the build wrote to dist/.
+// A page marked noindex, or whose canonical names another URL (v7 onwards point at /), stays out.
 // Single source of truth: the filesystem. Deterministic (no timestamps),
 // so CI can run `--check` as a drift guard — every *.html must be listed.
 //
@@ -46,7 +47,14 @@ function build(files) {
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
 }
 
-const files = htmlFiles();
+function listed(rel) {
+  const html = readFileSync(join(DIST, rel), "utf8");
+  if (/<meta name="robots" content="[^"]*noindex/.test(html)) return false;
+  const canonical = html.match(/<link rel="canonical" href="([^"]+)"/);
+  return !canonical || canonical[1] === toLoc(rel);
+}
+
+const files = htmlFiles().filter(listed);
 const expected = build(files);
 
 if (process.argv.includes("--check")) {

@@ -153,12 +153,14 @@ body {
   padding-bottom: 0;
 }
 
+.observation h2,
 .observation h3 {
   font-family: var(--font-heading);
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
   line-height: 1.4;
+  letter-spacing: inherit;
 }
 
 .observation p {
