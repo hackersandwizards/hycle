@@ -6,13 +6,14 @@ hycle ist eine Hypothese darüber, wie sich Arbeit verschiebt, wenn agentische S
 
 ## Was ist das?
 
-Drei Teile, gerahmt von Präambel, Abgrenzung und Call for Participation. Der Schwerpunkt liegt im Framework:
+Vier Teile, gerahmt von Eröffnung, Abgrenzung und Call for Participation. Der Schwerpunkt liegt im Framework:
 
 - **Was wir sehen** — 13 Beobachtungen aus der Praxis der agentischen Entwicklung
 - **Was wir glauben** — 8 Hypothesen, aus dem Betriebsmodell abgeleitet
-- **Das Framework** — Zielgruppe, Factory, Rollen, Kadenzen, Artefakte, Sonstiges. Das Betriebsmodell für die agentische Software-Entwicklung
+- **Das Framework** — Zielgruppe, Factory, Rollen, Kadenzen, Artefakte, Sonstiges. Das Betriebsmodell für die agentische Softwareentwicklung
+- **In der Praxis** — ein Durchlauf von der Strategie bis zur Validation und warum alle Gewerke früher dabei sein müssen
 
-Vorangestellt ist die Eröffnung. Zwischen Beobachtungen und Hypothesen steht die Diagnose, am Seitenende die Herkunft des Namens. Den Abschluss bilden die Abgrenzung („Was hycle nicht ist“) und der Call for Participation mit drei Leitfragen: Was klappt bei euch? Was klappt nicht? Wo seid ihr auf die Nase gefallen?
+Vorangestellt ist die Eröffnung. Zwischen Beobachtungen und Hypothesen steht die Diagnose. Auf die vier Teile folgen die Abgrenzung („Was hycle nicht ist“) und der Call for Participation mit drei Leitfragen: Was klappt bei euch? Was klappt nicht? Wo seid ihr auf die Nase gefallen? Am Seitenende stehen die Autoren und die Herkunft des Namens.
 
 ## Die Kernerkenntnis
 
@@ -28,7 +29,7 @@ Schlichtes HTML/CSS. Keine Frameworks. Kein Build-Schritt. Kein JavaScript auf d
 index.html       ← Aktuelle Version (Beobachtungen, Hypothesen, Das Framework)
 changelog.html   ← Versionshistorie
 style.css        ← Minimales Styling, selbst gehostete Fonts
-versions/        ← Archivierte frühere Versionen (v1, v2, v3, v4, v5, v6, v7, v8)
+versions/        ← Archivierte frühere Versionen (v1, v2, v3, v4, v5, v6, v7, v8, v9)
 talks/           ← Vorträge, in denen hycle vorgestellt wurde (Folien als PDF)
 fonts/           ← Selbst gehostete Schriften (woff2)
 robots.txt, sitemap.xml, rss.xml, llms.txt ← Discovery für Crawler und Agenten
