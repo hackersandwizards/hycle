@@ -26,7 +26,7 @@
   </head>
   <body>
     <div class="draft-banner">
-      <div class="container"><strong>v10-Vorschau &middot; Diskussionsentwurf, nicht veröffentlicht.</strong> Neu gegenüber v9: Die Software Factory umfasst nur noch die Execution. Rollen und Kadenzen sind überarbeitet, mit dem Design System als Bedingung, einem täglichen Planning, asynchroner Abstimmung statt Review und einer größeren Kadenz über Teams hinweg. Teil 4 &bdquo;In der Praxis&ldquo; ist neu und ein Vorschlag: ein Durchlauf von der Strategie bis zur Validation. Er erweitert die Drei-Teile-Struktur und braucht dafür den Konsens der Autoren. Die Station Validation und die Angaben, wer mit wem in welchem Takt arbeitet, sind nach Runde 9 dazugekommen und brauchen die Abnahme der Autorengruppe.</div>
+      <div class="container"><strong>v10-Vorschau &middot; Diskussionsentwurf, nicht veröffentlicht.</strong> Neu gegenüber v9: Die Software Factory umfasst nur noch die Execution. Rollen und Kadenzen sind überarbeitet, mit einem täglichen Planning, asynchroner Abstimmung statt Review und einer größeren Kadenz über Teams hinweg. Teil 4 &bdquo;In der Praxis&ldquo; ist neu und ein Vorschlag: ein Durchlauf von der Strategie bis zur Validation. Er erweitert die Drei-Teile-Struktur und braucht dafür den Konsens der Autoren. Die Station Validation und die Angaben, wer mit wem in welchem Takt arbeitet, sind nach Runde 9 dazugekommen und brauchen die Abnahme der Autorengruppe.</div>
     </div>
     <header class="hero">
       <div class="container">
@@ -271,12 +271,7 @@
 
           <div class="concept">
             <h3>Factory-Engineer</h3>
-            <p>Baut und pflegt die Factory, die Maschine, die den Code baut. Das ist eine abstraktere Art, Software zu entwickeln. Er sorgt dafür, dass die Factory deterministische, wiederholbare Ergebnisse liefert. Mit der einzelnen Story hat er nichts zu tun: er ist der Mechaniker, der an der Factory schraubt, wenn das Ergebnis nicht stimmt.</p>
-          </div>
-
-          <div class="concept">
-            <h3>Design System</h3>
-            <p>Keine Rolle, sondern eine Bedingung. Was für den Code gilt, gilt für die Oberfläche: Der Agent baut sauber weiter, wo er wenige, konsistente Muster vorfindet. Ohne sie erzeugt er Oberflächen, die einzeln funktionieren und zusammen auseinanderfallen. Fehlt das Design System, sitzt bei jeder sichtbaren Änderung wieder jemand daneben, der sie von Hand richtig macht.</p>
+            <p>Baut und pflegt die Factory, die Maschine, die den Code baut. Das ist eine abstraktere Art, Software zu entwickeln. Er sorgt dafür, dass die Factory deterministische, wiederholbare Ergebnisse liefert. Unter anderem verantwortet er den Harness. Harness Engineering gibt dem Agenten vor, wie er arbeiten soll. Mit der einzelnen Story hat der Factory-Engineer nichts zu tun: er ist der Mechaniker, der an der Factory schraubt, wenn das Ergebnis nicht stimmt.</p>
           </div>
 
           <p>Offen bleibt, wie weit die Factory-Rolle reicht. Ob Factory- und Product-Engineer dieselbe Person sind und wie sich die Rollen auf Personen verteilen, muss jede Organisation selbst herausfinden.</p>
@@ -344,6 +339,7 @@
         <div class="container">
           <h2>Sonstiges</h2>
           <p>LLMs sind Mustererkenner. Wo der Code wenige, konsistente Muster zeigt, bauen sie sauber weiter. Wo er chaotisch ist, vervielfältigen sie das Chaos. Konsistente Muster und Tests sind deshalb eine große Hilfe.</p>
+          <p>Für die Oberfläche gilt dasselbe, nur strenger: Dort ist ein Design System die Bedingung. Ohne seine Muster erzeugt der Agent Oberflächen, die einzeln funktionieren und zusammen auseinanderfallen, und bei jeder sichtbaren Änderung sitzt wieder jemand daneben, der sie von Hand richtig macht.</p>
           <p>Kleine, klar geschnittene Aufgaben senken das Risiko: je enger der Auftrag, desto eher kommt heraus, was gemeint war. Die technische Detailplanung überlässt man dem Agenten bewusst erst spät, sonst läuft der Plan der Realität davon.</p>
           <p>Ohne schnelle Rückkopplung zum Fachbereich wird agentische Entwicklung leicht zum bloßen Rationalisierungswerkzeug.</p>
           <p>Offen bleibt, wie viel Pflichtenheft (PRD) es braucht. Der Durchlauf in Teil 4 schlägt ein schlankes vor.</p>
