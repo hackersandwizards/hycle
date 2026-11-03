@@ -11,6 +11,11 @@
 
 - [Vorträge](https://hycle.org/talks/): Folien der Auftritte, in denen hycle vorgestellt wurde
 
+## Rechtliches
+
+- [Impressum](https://hycle.org/impressum/): Anbieter und Verantwortlicher
+- [Datenschutz](https://hycle.org/datenschutz/): keine Cookies, kein Tracking; Hosting bei GitHub Pages über Cloudflare
+
 ## Frühere Versionen
 
 - [v9](https://hycle.org/versions/v9.html)

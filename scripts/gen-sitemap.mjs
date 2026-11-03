@@ -17,7 +17,7 @@ const OUT = join(root, "public/sitemap.xml");
 const DIST = join(root, "dist");
 
 // Subdirectories that hold served pages. drafts/ stays out on purpose.
-const SUBDIRS = ["talks", "versions"];
+const SUBDIRS = ["talks", "impressum", "datenschutz", "versions"];
 
 function htmlFiles() {
   const top = readdirSync(DIST).filter((f) => f.endsWith(".html"));

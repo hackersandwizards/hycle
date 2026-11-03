@@ -1,4 +1,4 @@
-Contact: https://github.com/hackersandwizards/hycle/security/advisories/new
+Contact: mailto:summon@hackersandwizards.dev
 Expires: 2027-06-14T00:00:00.000Z
 Preferred-Languages: de, en
 Canonical: https://hycle.org/.well-known/security.txt

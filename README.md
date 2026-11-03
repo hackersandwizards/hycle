@@ -26,8 +26,8 @@ Der Engpass war immer Handlungsfähigkeit, nicht Execution. KI-Agenten lösen di
 HTML und CSS, mit Astro nach `dist/` gebaut. Kein JavaScript auf der Seite.
 
 ```
-src/body/        ← Inhalt der Seiten als HTML: index.html (aktuelle Version), changelog.html, talks.html, 404.html
-src/pages/       ← Titel und Meta-Angaben je Seite, Adresse wie bisher (/, /changelog.html, /talks/, /404.html)
+src/body/        ← Inhalt der Seiten als HTML: index.html (aktuelle Version), changelog.html, talks.html, impressum.html, datenschutz.html, 404.html
+src/pages/       ← Titel und Meta-Angaben je Seite, Adresse wie bisher (/, /changelog.html, /talks/, /impressum/, /datenschutz/, /404.html)
 src/layouts/     ← Der gemeinsame Kopf aller Seiten
 public/          ← Unverändert ausgeliefert: style.css, versions/ (v1 bis v9), talks/*.pdf, fonts/,
                    Icons und Metadateien wie robots.txt, sitemap.xml, rss.xml und CNAME
