@@ -1,9 +1,7 @@
 {
   "extends": ["html-validate:recommended"],
   "rules": {
-    "no-trailing-whitespace": "error",
     "void-style": "off",
-    "long-title": "off",
-    "doctype-style": ["error", { "style": "uppercase" }]
+    "long-title": "off"
   }
 }
