@@ -15,10 +15,10 @@ const ORIGIN = "https://hycle.org";
 const OUT = join(root, "public/sitemap.xml");
 const DIST = join(root, "dist");
 
-// Every page the build wrote, at any depth. drafts/ stays out on purpose.
+// Every page the build wrote, at any depth; a draft is noindex and drops out in listed().
 function htmlFiles() {
   return readdirSync(DIST, { recursive: true })
-    .filter((f) => f.endsWith(".html") && !f.startsWith("drafts/"))
+    .filter((f) => f.endsWith(".html"))
     .sort();
 }
 

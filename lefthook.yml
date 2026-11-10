@@ -1,5 +1,5 @@
 # Git hooks. Scan for secrets and auto-format at commit time; run the full check before push.
-# public/versions/ is never touched: Prettier reads .prettierignore, Stylelint .stylelintignore.
+# Prettier skips public/versions/ through .prettierignore; Stylelint only ever sees public/style.css.
 
 pre-commit:
   parallel: false
@@ -13,7 +13,7 @@ pre-commit:
       stage_fixed: true
     - name: stylelint
       glob: "*.css"
-      run: bunx stylelint --fix --allow-empty-input {staged_files}
+      run: bunx stylelint --fix {staged_files}
       stage_fixed: true
 
 pre-push:
