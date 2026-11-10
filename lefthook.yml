@@ -1,9 +1,14 @@
-# Git hooks. Auto-format at commit time; run the full check before push.
+# Git hooks. Scan for secrets and auto-format at commit time; run the full check before push.
 # Prettier and Stylelint honour .prettierignore, so public/versions/ is never touched.
 
 pre-commit:
   parallel: false
   jobs:
+    # Fail closed: without gitleaks a secret would reach the public repository unscanned.
+    - name: gitleaks
+      run: |
+        command -v gitleaks >/dev/null || { echo "gitleaks fehlt: brew install gitleaks" >&2; exit 1; }
+        gitleaks git --pre-commit --staged --redact --verbose --no-banner --log-level warn
     - name: prettier
       glob: "*.{astro,html,css,js,mjs,ts,json,md,yml,yaml}"
       run: bunx prettier --write {staged_files}
