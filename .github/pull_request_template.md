@@ -8,4 +8,4 @@
 - [ ] Quellen für neue inhaltliche Aussagen sind belegt
 - [ ] Deutsch mit korrekten Umlauten, hycle kleingeschrieben
 - [ ] Kein JavaScript auf der Seite hinzugefügt
-- [ ] Bei neuer Version: `public/versions/`, `src/body/changelog.html`, Footer sowie `sitemap.xml` und `rss.xml` aktualisiert
+- [ ] Bei neuer Version: alle Schritte aus „Eine neue Version veröffentlichen“ in CONTRIBUTING.md
