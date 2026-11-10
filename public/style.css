@@ -174,21 +174,6 @@ body {
   font-weight: 500;
 }
 
-/* === OBSERVATION GROUPS (Variante A, Teil 1) === */
-.obs-group {
-  font-family: var(--font-heading);
-  font-size: 0.8rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--color-text-secondary);
-  margin: 2.5rem 0 1.5rem;
-}
-
-.obs-group:first-of-type {
-  margin-top: 0;
-}
-
 /* === HYPOTHESES === */
 .hypothesis {
   margin-bottom: 2rem;
@@ -268,10 +253,6 @@ body {
   border: 1px solid var(--color-border);
   border-radius: 4px;
   overflow: hidden;
-}
-
-.level:last-of-type {
-  margin-bottom: 2rem;
 }
 
 .level-header {

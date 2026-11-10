@@ -44,7 +44,7 @@ hycle ist nicht fertig. Es ist eine Einladung, gemeinsam zu suchen, was funktion
 ## Autoren
 
 - [Andreas Stephan](https://www.linkedin.com/in/andreasstephan/)
-- [Benedikt Stemmildt](https://www.linkedin.com/in/benedikt-stemmildt/)
+- [Benedikt Stemmildt](https://benedikt.stemmildt.com/)
 - [Björn Rochel](https://www.linkedin.com/in/bjoern-rochel/)
 - [Jens Himmelreich](https://www.linkedin.com/in/jens-himmelreich-a310251/)
 - [Johannes Schmidt](https://www.linkedin.com/in/johannes-schmidt-7b84b33/)

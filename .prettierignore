@@ -1,7 +1,7 @@
 # Frozen archive — point-in-time snapshots, never reformat.
 public/versions/
 
-# Generated artifacts (owned by scripts/, verified by CI drift-guard).
+# sitemap.xml is written by scripts/gen-sitemap.mjs; rss.xml is kept by hand in its own layout.
 public/sitemap.xml
 public/rss.xml
 

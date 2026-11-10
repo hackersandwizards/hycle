@@ -1,8 +1,7 @@
-#!/usr/bin/env node
 // Generate public/sitemap.xml from the HTML pages the build wrote to dist/.
 // A page marked noindex, or whose canonical names another URL (v7 onwards point at /), stays out.
 // Single source of truth: the filesystem. Deterministic (no timestamps),
-// so CI can run `--check` as a drift guard — every *.html must be listed.
+// so CI can run `--check` as a drift guard.
 //
 //   bun run build && bun run gen:sitemap          # write sitemap.xml
 //   bun run build && bun run gen:sitemap -- --check  # fail if sitemap.xml is out of date
@@ -16,20 +15,11 @@ const ORIGIN = "https://hycle.org";
 const OUT = join(root, "public/sitemap.xml");
 const DIST = join(root, "dist");
 
-// Subdirectories that hold served pages. drafts/ stays out on purpose.
-const SUBDIRS = ["talks", "impressum", "datenschutz", "versions"];
-
+// Every page the build wrote, at any depth. drafts/ stays out on purpose.
 function htmlFiles() {
-  const top = readdirSync(DIST).filter((f) => f.endsWith(".html"));
-  const nested = SUBDIRS.flatMap((dir) => {
-    const abs = join(DIST, dir);
-    return existsSync(abs)
-      ? readdirSync(abs)
-          .filter((f) => f.endsWith(".html"))
-          .map((f) => `${dir}/${f}`)
-      : [];
-  });
-  return [...top, ...nested].sort();
+  return readdirSync(DIST, { recursive: true })
+    .filter((f) => f.endsWith(".html") && !f.startsWith("drafts/"))
+    .sort();
 }
 
 function toLoc(rel) {

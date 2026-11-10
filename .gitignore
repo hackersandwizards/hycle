@@ -13,8 +13,6 @@ node_modules/
 Thumbs.db
 *.swp
 
-# Legacy draft kept out of history
-drafts-old/v7-draft.html
-.gstack/
+# Build output
 dist/
 .astro/

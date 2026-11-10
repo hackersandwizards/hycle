@@ -6,8 +6,6 @@ interface Props {
   canonical: string;
   ogTitle: string;
   ogDescription: string;
-  ogUrl: string;
-  rssTitle: string;
   css: string;
   /** The page body, as HTML from src/body/. */
   body: string;
@@ -44,7 +42,7 @@ const website = {
     <meta property="og:title" content={p.ogTitle} />
     <meta property="og:description" content={p.ogDescription} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={p.ogUrl} />
+    <meta property="og:url" content={p.canonical} />
     <meta property="og:site_name" content="hycle" />
     <meta property="og:locale" content="de_DE" />
     <meta property="og:image" content="https://hycle.org/og.png" />
@@ -76,7 +74,7 @@ const website = {
     <link
       rel="alternate"
       type="application/rss+xml"
-      title={p.rssTitle}
+      title="hycle — Changelog"
       href="/rss.xml"
     />
     <link rel="stylesheet" href={p.css} />
