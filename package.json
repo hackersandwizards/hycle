@@ -17,12 +17,12 @@
     "build": "bun --bun astro build",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "lint:html": "html-validate dist/index.html dist/changelog.html dist/talks/index.html dist/impressum/index.html dist/datenschutz/index.html dist/404.html",
+    "lint:html": "html-validate 'dist/*.html' 'dist/*/index.html'",
     "lint:css": "stylelint public/style.css",
     "lint": "bun run lint:html && bun run lint:css",
     "links": "bun run links:external --skip \"^https?://(?!localhost|127\\.0\\.0\\.1)\"",
     "links:external": "linkinator '**/*.html' --server-root dist",
-    "lighthouse": "bunx @lhci/cli@0.16.0 autorun",
+    "lighthouse": "lhci autorun",
     "gen:sitemap": "bun scripts/gen-sitemap.mjs",
     "gen:assets": "bun scripts/gen-assets.mjs",
     "audit": "bun audit --audit-level=high",
@@ -30,6 +30,7 @@
     "test": "bun test scripts"
   },
   "devDependencies": {
+    "@lhci/cli": "0.16.0",
     "astro": "7.4.7",
     "html-validate": "11.19.0",
     "lefthook": "2.2.2",
@@ -42,6 +43,7 @@
   },
   "overrides": {
     "glob": "14.0.4",
-    "minimatch": "11.0.5"
+    "minimatch": "11.0.5",
+    "basic-ftp": "6.2.6"
   }
 }
