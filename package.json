@@ -17,7 +17,7 @@
     "build": "bun --bun astro build",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "lint:html": "html-validate 'dist/*.html' 'dist/**/index.html'",
+    "lint:html": "html-validate dist",
     "lint:css": "stylelint public/style.css",
     "lint": "bun run lint:html && bun run lint:css",
     "links": "bun run links:external --skip \"^https?://(?!localhost|127\\.0\\.0\\.1)\"",
