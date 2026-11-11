@@ -29,7 +29,9 @@ test("the newest feed item is the current version", () => {
 });
 
 test("README names the archived range", () => {
-  expect(read("README.md")).toContain(`versions/ (v1 bis v${current - 1})`);
+  expect(read("README.md")).toContain(
+    `\`public/versions/\` (v1 bis v${current - 1})`,
+  );
 });
 
 // File and the link it must carry for each archived version v.

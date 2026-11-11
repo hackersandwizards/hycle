@@ -1,55 +1,29 @@
-# hycle — Der hyper cycle
+# hycle
 
-**Wenn Softwareentwicklung sofort passiert, zählt nur noch Handlungsfähigkeit.**
+hycle ist eine Hypothese darüber, wie sich Arbeit verschiebt, wenn agentische Softwareentwicklung das Bauen billig macht. [hycle.org](https://hycle.org) sammelt, was wir sehen, formuliert Hypothesen und skizziert ein Betriebsmodell, auf Deutsch. Dieses Repository enthält den Quelltext der Seite.
 
-hycle ist eine Hypothese darüber, wie sich Arbeit verschiebt, wenn agentische Softwareentwicklung das Bauen billig macht. Der Engpass heißt Handlungsfähigkeit: Was weiß ich, was darf ich, was kann ich? In der Organisation sind das keine Eigenschaften von Personen, sondern Ergebnisse der Struktur.
+| Ihr wollt                                      | Hier entlang                                                                 |
+| ---------------------------------------------- | ---------------------------------------------------------------------------- |
+| das Manifest lesen                             | [hycle.org](https://hycle.org)                                               |
+| sehen, was sich von Version zu Version ändert  | [Changelog](https://hycle.org/changelog.html)                                |
+| Erfahrungen teilen oder widersprechen          | [GitHub Discussions](https://github.com/hackersandwizards/hycle/discussions) |
+| einen Fehler korrigieren oder Text vorschlagen | [Seite ändern](#seite-ändern)                                                |
+| eine neue Version veröffentlichen              | [CONTRIBUTING.md](CONTRIBUTING.md#eine-neue-version-veröffentlichen)         |
+| eine Schwachstelle melden                      | [SECURITY.md](SECURITY.md)                                                   |
 
-## Was ist das?
+## Seite ändern
 
-Vier Teile, gerahmt von Eröffnung, Abgrenzung und Call for Participation. Der Schwerpunkt liegt im Framework:
+Ihr braucht [Bun](https://bun.sh) und für den Commit-Hook [gitleaks](https://github.com/gitleaks/gitleaks#installing).
 
-- **Was wir sehen** — 13 Beobachtungen aus der Praxis der agentischen Entwicklung
-- **Was wir glauben** — 8 Hypothesen, aus dem Betriebsmodell abgeleitet
-- **Das Framework** — Zielgruppe, Factory, Rollen, Kadenzen, Artefakte, Sonstiges. Das Betriebsmodell für die agentische Softwareentwicklung
-- **In der Praxis** — ein Durchlauf von der Strategie bis zur Validation und warum alle Gewerke früher dabei sein müssen
-
-Vorangestellt ist die Eröffnung. Zwischen Beobachtungen und Hypothesen steht die Diagnose. Auf die vier Teile folgen die Abgrenzung („Was hycle nicht ist“) und der Call for Participation mit drei Leitfragen: Was klappt bei euch? Was klappt nicht? Wo seid ihr auf die Nase gefallen? Am Seitenende stehen die Autoren und die Herkunft des Namens.
-
-## Die Kernerkenntnis
-
-Der Engpass war immer Handlungsfähigkeit, nicht Execution. KI-Agenten lösen die Execution, und damit liegt offen, wo wirklich entschieden wird und wer überhaupt handeln kann, wer darf und wer genug weiß. Manfred Eigen hat 1971 die Hyperzyklen beschrieben: gekoppelte Kreisläufe, die die Voraussetzungen für etwas Neues schaffen. Wir vermuten, dass Organisationen vor einem ähnlichen Übergang stehen, von prozessgetrieben hin zu entscheidungsgetrieben.
-
-## Die Website
-
-[hycle.org](https://hycle.org)
-
-HTML und CSS, mit Astro nach `dist/` gebaut. Kein JavaScript auf der Seite.
-
-```
-src/body/        ← Inhalt der Seiten als HTML: index.html (aktuelle Version), changelog.html, talks.html, impressum.html, datenschutz.html, 404.html
-src/pages/       ← Titel und Meta-Angaben je Seite, Adresse wie bisher (/, /changelog.html, /talks/, /impressum/, /datenschutz/, /404.html)
-src/layouts/     ← Der gemeinsame Kopf aller Seiten
-public/          ← Unverändert ausgeliefert: style.css, versions/ (v1 bis v9), talks/*.pdf, fonts/,
-                   Icons und Metadateien wie robots.txt, sitemap.xml, rss.xml und CNAME
+```sh
+bun install
+bun run dev
 ```
 
-`bun install`, dann `bun run dev` für die lokale Vorschau und `bun run check` für alle Prüfungen (Prettier, Build, html-validate, Stylelint, Sitemap, Link-Check; Audit und Lighthouse in CI). Details in [CONTRIBUTING.md](CONTRIBUTING.md).
+`bun run dev` zeigt die Seite lokal. Der Text des Manifests steht als HTML in `src/body/index.html`, die übrigen Seiten liegen daneben. Frühere Versionen liegen eingefroren unter `public/versions/` (v1 bis v9). Vor dem Pull Request prüft `bun run check` alles.
 
-## Mitwirken
-
-hycle ist nicht fertig. Es ist eine Einladung, gemeinsam zu suchen, was funktioniert. Wenn ihr seht, was wir sehen, wenn eure Praxis Hypothesen bestätigt oder ihnen widerspricht, eröffnet eine Diskussion.
-
-[An der Diskussion teilnehmen](https://github.com/hackersandwizards/hycle/discussions)
-
-## Autoren
-
-- [Andreas Stephan](https://www.linkedin.com/in/andreasstephan/)
-- [Benedikt Stemmildt](https://benedikt.stemmildt.com/)
-- [Björn Rochel](https://www.linkedin.com/in/bjoern-rochel/)
-- [Jens Himmelreich](https://www.linkedin.com/in/jens-himmelreich-a310251/)
-- [Johannes Schmidt](https://www.linkedin.com/in/johannes-schmidt-7b84b33/)
-- [Sven Christian Andrä](https://www.linkedin.com/in/svenandrae/)
+Regeln für Inhalt und Technik stehen in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Lizenz
 
-[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+Die Texte stehen unter [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Wer sie geschrieben hat, steht unter [Die Autoren](https://hycle.org/#authors).
