@@ -1,6 +1,6 @@
 # hycle
 
-> hycle, der hyper cycle. Ein Manifest für Produkt- und Tech-Organisationen im Übergang von prozessgetriebener zu entscheidungsgetriebener Arbeit im Zeitalter der KI-Agenten. Beobachtungen, Hypothesen, Framework. Ein Diskussionsangebot, kein fertiges Modell.
+> hycle, der hyper cycle. Ein Manifest für Produkt- und Tech-Organisationen im Zeitalter der KI-Agenten. Beobachtungen, Hypothesen, Framework. Ein Diskussionsangebot, kein fertiges Modell.
 
 ## Manifest
 
