@@ -20,7 +20,7 @@ bun install
 bun run dev
 ```
 
-`bun run dev` zeigt die Seite lokal. Der Text des Manifests steht als HTML in `src/body/index.html`, die übrigen Seiten liegen daneben. Frühere Versionen liegen eingefroren unter `public/versions/` (v1 bis v9). Vor dem Pull Request prüft `bun run check` alles.
+`bun run dev` zeigt die Seite lokal. Der Text des Manifests steht als HTML in `src/body/index.html`, die übrigen Seiten liegen daneben. Frühere Versionen liegen eingefroren unter `public/versions/` (v1 bis v9). Nach `bun run build` führt `bun run test` die Tests mit Vitest aus. Vor dem Pull Request prüft `bun run check` alles.
 
 Regeln für Inhalt und Technik stehen in [CONTRIBUTING.md](CONTRIBUTING.md).
 

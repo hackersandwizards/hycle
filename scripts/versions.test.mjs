@@ -1,6 +1,6 @@
 // Every surface that names the versions agrees with the changelog: the one whose heading links
 // index.html is the current version N, and public/versions/ holds exactly v1 to v(N-1).
-import { expect, test } from "bun:test";
+import { expect, test } from "vitest";
 import { readdirSync, readFileSync } from "node:fs";
 
 const read = (p) => readFileSync(p, "utf8");

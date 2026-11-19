@@ -1,6 +1,6 @@
 // The link check must read the links on every built page, not only test the links pointing at them:
 // a copy of dist/ gets one dead link per page, and `bun run links` has to report each of them.
-import { expect, test } from "bun:test";
+import { expect, test } from "vitest";
 import { Glob } from "bun";
 import {
   cpSync,
@@ -11,7 +11,6 @@ import {
   symlinkSync,
   writeFileSync,
 } from "node:fs";
-import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
 
 test("bun run links reads the links on every page in dist/", () => {
@@ -19,7 +18,7 @@ test("bun run links reads the links on every page in dist/", () => {
   const pages = [...new Glob("**/*.html").scanSync("dist")];
   expect(pages.length).toBeGreaterThan(0);
   const slug = (p) => p.replaceAll("/", "-");
-  const tmp = mkdtempSync(join(tmpdir(), "hycle-links-"));
+  const tmp = mkdtempSync(resolve("node_modules/.hycle-links-"));
   try {
     cpSync("dist", join(tmp, "dist"), { recursive: true });
     cpSync("package.json", join(tmp, "package.json"));

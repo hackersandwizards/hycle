@@ -27,7 +27,7 @@
     "gen:assets": "bun scripts/gen-assets.mjs",
     "audit": "bun audit --audit-level=high",
     "check": "bun run format:check && bun run build && bun run lint && bun run gen:sitemap --check && bun run links && bun run test",
-    "test": "bun test scripts"
+    "test": "bun --bun vitest run"
   },
   "devDependencies": {
     "@lhci/cli": "0.16.0",
@@ -39,7 +39,8 @@
     "prettier-plugin-astro": "1.1.2",
     "sharp": "0.35.5",
     "stylelint": "18.0.0",
-    "stylelint-config-standard": "41.0.0"
+    "stylelint-config-standard": "41.0.0",
+    "vitest": "5.1.0"
   },
   "overrides": {
     "glob": "14.0.4",

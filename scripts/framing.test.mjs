@@ -1,6 +1,6 @@
 // The manifest dropped the formula "von prozessgetriebener zu entscheidungsgetriebener Arbeit" with v9.
 // No current surface may carry it again; the frozen archives under public/versions/ keep it.
-import { expect, test } from "bun:test";
+import { expect, test } from "vitest";
 import { Glob } from "bun";
 import { readFileSync } from "node:fs";
 
