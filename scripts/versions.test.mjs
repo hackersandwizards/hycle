@@ -35,7 +35,6 @@ test("README names the archived range", () => {
   );
 });
 
-// File and the link it must carry for each archived version v.
 /** @type {[string, (version: number) => string][]} */
 const lists = [
   [

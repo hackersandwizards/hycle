@@ -1,9 +1,13 @@
 import { spawn } from "node:child_process";
 
-const child = spawn("bun", ["run", "stryker", "run"], {
-  detached: true,
-  stdio: "inherit",
-});
+const child = spawn(
+  "bun",
+  ["run", "stryker", "run", ...process.argv.slice(2)],
+  {
+    detached: true,
+    stdio: "inherit",
+  },
+);
 const deadline = setTimeout(
   () => {
     if (child.pid === undefined) return;

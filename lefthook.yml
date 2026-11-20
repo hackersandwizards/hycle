@@ -1,6 +1,3 @@
-# Git hooks. Scan for secrets, auto-format and lint staged code before committing.
-# Prettier skips public/versions/ through .prettierignore; Stylelint only ever sees public/style.css.
-
 pre-commit:
   parallel: false
   jobs:

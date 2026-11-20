@@ -14,7 +14,6 @@ const BG = "#1a1a1a";
 const FG = "#fafaf9";
 const MUTED = "#9a9a98";
 
-// --- Favicons / app icons from the coupled-rings mark ---
 /** @type {[string, number][]} */
 const icons = [
   ["favicon-32.png", 32],
@@ -23,7 +22,6 @@ const icons = [
   ["icon-512.png", 512],
 ];
 
-// --- Open Graph card (1200x630) ---
 const og = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630">
   <rect width="1200" height="630" fill="${BG}" />
   <g fill="none" stroke="${FG}" stroke-width="9" transform="translate(90,86)">

@@ -2,6 +2,15 @@ import astro from "eslint-plugin-astro";
 import tseslint from "typescript-eslint";
 
 const astroFiles = ["**/*.astro"];
+const describeCallees = [
+  "callee",
+  "callee.object",
+  "callee.callee.object",
+  "callee.callee.object.object",
+  "callee.object.callee.object",
+  "callee.tag.object",
+  "callee.tag.object.object",
+].map((path) => `[${path}.name='describe']`);
 
 export default [
   { ignores: ["**/.astro/**", "**/dist/**"] },
@@ -29,8 +38,7 @@ export default [
       "no-restricted-syntax": [
         "error",
         {
-          selector:
-            "CallExpression:matches([callee.name='describe'], [callee.object.name='describe'], [callee.callee.object.name='describe'], [callee.tag.object.name='describe']) > :matches(ArrowFunctionExpression, FunctionExpression)[body.body.length=0]",
+          selector: `CallExpression:matches(${describeCallees.join(", ")}) > :matches(ArrowFunctionExpression, FunctionExpression)[body.body.length=0]`,
           message: "Add tests to the suite or delete it.",
         },
       ],
