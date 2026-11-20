@@ -15,6 +15,7 @@ const FG = "#fafaf9";
 const MUTED = "#9a9a98";
 
 // --- Favicons / app icons from the coupled-rings mark ---
+/** @type {[string, number][]} */
 const icons = [
   ["favicon-32.png", 32],
   ["apple-touch-icon.png", 180],

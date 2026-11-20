@@ -17,11 +17,12 @@ const DIST = join(root, "dist");
 
 // Every page the build wrote, at any depth; a draft is noindex and drops out in listed().
 function htmlFiles() {
-  return readdirSync(DIST, { recursive: true })
+  return readdirSync(DIST, { recursive: true, encoding: "utf8" })
     .filter((f) => f.endsWith(".html"))
-    .sort();
+    .sort((a, b) => (a < b ? -1 : Number(a > b)));
 }
 
+/** @param {string} rel */
 function toLoc(rel) {
   // index.html is served at the directory root, in the root and in subdirs.
   if (rel === "index.html") return `${ORIGIN}/`;
@@ -30,6 +31,7 @@ function toLoc(rel) {
   return `${ORIGIN}/${rel}`;
 }
 
+/** @param {string[]} files */
 function build(files) {
   const urls = files
     .map((rel) => `  <url>\n    <loc>${toLoc(rel)}</loc>\n  </url>`)
@@ -37,6 +39,7 @@ function build(files) {
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
 }
 
+/** @param {string} rel */
 function listed(rel) {
   const html = readFileSync(join(DIST, rel), "utf8");
   if (/<meta name="robots" content="[^"]*noindex/.test(html)) return false;

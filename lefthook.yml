@@ -1,4 +1,4 @@
-# Git hooks. Scan for secrets and auto-format at commit time; run the full check before push.
+# Git hooks. Scan for secrets, auto-format and lint staged code before committing.
 # Prettier skips public/versions/ through .prettierignore; Stylelint only ever sees public/style.css.
 
 pre-commit:
@@ -9,12 +9,14 @@ pre-commit:
       run: gitleaks git --pre-commit --staged --redact --verbose --no-banner --log-level warn
     - name: prettier
       glob: "*.{astro,html,css,js,mjs,ts,json,md,yml,yaml}"
-      run: bunx prettier --write {staged_files}
+      run: bun run prettier --write {staged_files}
       stage_fixed: true
     - name: stylelint
       glob: "*.css"
-      run: bunx stylelint --fix {staged_files}
+      run: bun run stylelint --fix {staged_files}
       stage_fixed: true
+    - name: lint-code
+      run: bun run lint:staged
 
 pre-push:
   jobs:

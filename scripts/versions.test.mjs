@@ -3,7 +3,8 @@
 import { expect, test } from "vitest";
 import { readdirSync, readFileSync } from "node:fs";
 
-const read = (p) => readFileSync(p, "utf8");
+/** @param {string} path */
+const read = (path) => readFileSync(path, "utf8");
 const changelog = read("src/body/changelog.html");
 const current = Number(/href="index\.html">v(\d+)/.exec(changelog)?.[1]);
 const archived = readdirSync("public/versions")
@@ -35,6 +36,7 @@ test("README names the archived range", () => {
 });
 
 // File and the link it must carry for each archived version v.
+/** @type {[string, (version: number) => string][]} */
 const lists = [
   [
     "src/body/changelog.html",

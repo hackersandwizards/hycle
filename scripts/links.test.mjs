@@ -17,7 +17,8 @@ test("bun run links reads the links on every page in dist/", () => {
   if (!existsSync("dist")) throw new Error("dist/ fehlt: zuerst bun run build");
   const pages = [...new Glob("**/*.html").scanSync("dist")];
   expect(pages.length).toBeGreaterThan(0);
-  const slug = (p) => p.replaceAll("/", "-");
+  /** @param {string} path */
+  const slug = (path) => path.replaceAll("/", "-");
   const tmp = mkdtempSync(resolve("node_modules/.hycle-links-"));
   try {
     cpSync("dist", join(tmp, "dist"), { recursive: true });
@@ -31,10 +32,35 @@ test("bun run links reads the links on every page in dist/", () => {
     const run = Bun.spawnSync(["bun", "run", "links", "--format", "json"], {
       cwd: tmp,
     });
-    const broken = JSON.parse(run.stdout.toString())
-      .links.filter((l) => l.state === "BROKEN")
-      .map((l) => l.url.replace(/^.*missing-/, ""));
-    expect(broken.sort()).toEqual(pages.map(slug).sort());
+    /** @type {unknown} */
+    const report = JSON.parse(run.stdout.toString());
+    if (
+      !report ||
+      typeof report !== "object" ||
+      !("links" in report) ||
+      !Array.isArray(report.links)
+    ) {
+      throw new Error("Linkinator returned no links array");
+    }
+    /** @type {unknown[]} */
+    const links = report.links;
+    const broken = links.flatMap((link) => {
+      if (
+        !link ||
+        typeof link !== "object" ||
+        !("state" in link) ||
+        !("url" in link) ||
+        typeof link.url !== "string"
+      ) {
+        throw new Error("Linkinator returned an invalid link");
+      }
+      return link.state === "BROKEN"
+        ? [link.url.replace(/^.*missing-/, "")]
+        : [];
+    });
+    /** @type {(a: string, b: string) => number} */
+    const compare = (a, b) => (a < b ? -1 : Number(a > b));
+    expect(broken.sort(compare)).toEqual(pages.map(slug).sort(compare));
   } finally {
     rmSync(tmp, { recursive: true, force: true });
   }
