@@ -20,5 +20,6 @@ pre-commit:
 
 pre-push:
   jobs:
-    - name: check
-      run: bun run check
+    - script: check.sh
+      runner: sh
+      use_stdin: true

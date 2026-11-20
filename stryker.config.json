@@ -1,0 +1,10 @@
+{
+  "testRunner": "vitest",
+  "vitest": { "related": false },
+  "testFiles": ["scripts/changed.test.mjs"],
+  "mutate": ["scripts/changed.mjs"],
+  "tempDirName": "node_modules/.cache/stryker",
+  "jsonReporter": { "fileName": "node_modules/.cache/stryker-report.json" },
+  "reporters": ["clear-text", "json"],
+  "concurrency": 2
+}
