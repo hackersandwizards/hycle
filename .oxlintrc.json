@@ -40,6 +40,19 @@
   },
   "overrides": [
     {
+      "files": ["**/*.prop.test.mjs"],
+      "rules": {
+        "vitest/expect-expect": [
+          "error",
+          { "additionalTestBlockFunctions": ["test.prop"] }
+        ],
+        "vitest/no-standalone-expect": [
+          "error",
+          { "additionalTestBlockFunctions": ["test.prop"] }
+        ]
+      }
+    },
+    {
       "files": ["**/*.{js,jsx,mjs,cjs}"],
       "rules": { "no-undef": "error" }
     }

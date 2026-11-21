@@ -1,7 +1,7 @@
 {
   "testRunner": "vitest",
   "vitest": { "related": false },
-  "testFiles": ["scripts/changed.test.mjs"],
+  "testFiles": ["scripts/changed.test.mjs", "scripts/changed.prop.test.mjs"],
   "mutate": ["scripts/changed.mjs"],
   "tempDirName": "node_modules/.cache/stryker",
   "jsonReporter": { "fileName": "node_modules/.cache/stryker-report.json" },
