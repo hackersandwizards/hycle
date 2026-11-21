@@ -18,7 +18,7 @@ if (
 }
 
 console.log(`[explore] seed ${seed}, 512 cases per property`);
-const child = spawn("bun", ["run", "test"], {
+const child = spawn("bun", ["run", "test", "--mode", "property-exploration"], {
   detached: true,
   env: { ...process.env, HYCLE_EXPLORE_SEED: String(seed) },
   stdio: "inherit",
