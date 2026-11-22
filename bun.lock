@@ -1,5 +1,5 @@
 {
-  "lockfileVersion": 2,
+  "lockfileVersion": 3,
   "configVersion": 1,
   "workspaces": {
     "": {
@@ -38,6 +38,9 @@
     "basic-ftp": "6.2.6",
     "glob": "14.0.6",
     "minimatch": "11.0.9",
+    "typed-rest-client": {
+      "qs": "6.17.1",
+    },
   },
   "packages": {
     "@astrojs/compiler-binding": ["@astrojs/compiler-binding@0.5.3", "", { "optionalDependencies": { "@astrojs/compiler-binding-android-arm64": "0.5.3", "@astrojs/compiler-binding-darwin-arm64": "0.5.3", "@astrojs/compiler-binding-darwin-x64": "0.5.3", "@astrojs/compiler-binding-linux-arm64-gnu": "0.5.3", "@astrojs/compiler-binding-linux-arm64-musl": "0.5.3", "@astrojs/compiler-binding-linux-x64-gnu": "0.5.3", "@astrojs/compiler-binding-linux-x64-musl": "0.5.3", "@astrojs/compiler-binding-wasm32-wasi": "0.5.3", "@astrojs/compiler-binding-win32-arm64-msvc": "0.5.3", "@astrojs/compiler-binding-win32-x64-msvc": "0.5.3" } }, "sha512-fHG6eWKvnSlV11dUMZSi4AynOGjVbNBgZZc704Hi9DW8WeKtbsS7fJQT3omz1Nba+5mccLQQGAWOQ65cnuNLtg=="],
@@ -1878,7 +1881,7 @@
 
     "tsconfig-paths-webpack-plugin/chalk": ["chalk@4.1.2", "", { "dependencies": { "ansi-styles": "^4.1.0", "supports-color": "^7.1.0" } }, "sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA=="],
 
-    "typed-rest-client/qs": ["qs@6.15.1", "", { "dependencies": { "side-channel": "^1.1.0" } }, "sha512-6YHEFRL9mfgcAvql/XhwTvf5jKcOiiupt2FiJxHkiX1z4j7WL8J/jRHYLluORvc1XxB5rV20KoeK00gVJamspg=="],
+    "typed-rest-client/qs": ["qs@6.17.1", "", { "dependencies": { "es-define-property": "^1.0.1", "side-channel": "^1.1.1" } }, "sha512-jd3COkaKVgGUW+ZHyEHCG9bH7RoaaiWuMgzsIBjUMVjLAaWGWpoUAVwljVvBHxRu/2qEHnadLGZrkutYUBPQJA=="],
 
     "unstorage/lru-cache": ["lru-cache@11.5.3", "", {}, "sha512-U4N8FgzmWxc8k1VH8Kr6lQg18U7Fjvby6wXHVRX/ZZ7IwWbRMgrRbP0Wrb5q5NVinryp4SQampHKdvtecItxUg=="],
 
