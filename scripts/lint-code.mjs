@@ -1,6 +1,14 @@
 import { Glob } from "bun";
 import { ESLint } from "eslint";
-import { mkdtempSync, readFileSync, rmSync, symlinkSync } from "node:fs";
+import {
+  closeSync,
+  mkdirSync,
+  mkdtempSync,
+  openSync,
+  readFileSync,
+  rmSync,
+  symlinkSync,
+} from "node:fs";
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
 
@@ -14,11 +22,27 @@ const oxlint = [
 
 /** @param {string[]} args */
 function nativeOutput(...args) {
-  const result = Bun.spawnSync([...oxlint, ...args], { stderr: "inherit" });
-  const output = result.stdout.toString().trim();
-  if (result.exitCode !== 0)
-    throw new Error(output || `Oxlint failed with ${args.join(" ")}`);
-  return output;
+  const cache = resolve("node_modules/.cache");
+  mkdirSync(cache, { recursive: true });
+  const directory = mkdtempSync(join(cache, "hycle-oxlint-"));
+  try {
+    const outputPath = join(directory, "stdout");
+    const stdout = openSync(outputPath, "wx");
+    try {
+      const result = Bun.spawnSync([...oxlint, ...args], {
+        stdout,
+        stderr: "inherit",
+      });
+      const output = readFileSync(outputPath, "utf8").trim();
+      if (result.exitCode !== 0)
+        throw new Error(output || `Oxlint failed with ${args.join(" ")}`);
+      return output;
+    } finally {
+      closeSync(stdout);
+    }
+  } finally {
+    rmSync(directory, { recursive: true });
+  }
 }
 
 /** @param {unknown} value @returns {value is Record<string, unknown>} */
