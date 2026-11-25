@@ -1,4 +1,3 @@
-import { execFileSync } from "node:child_process";
 import {
   mkdirSync,
   mkdtempSync,
@@ -8,7 +7,7 @@ import {
 } from "node:fs";
 import { join, resolve } from "node:path";
 import { expect, test } from "vitest";
-import { gitFixtureEnv } from "./test-git-environment.mjs";
+import { initGitFixture } from "./test-git-environment.mjs";
 
 /** @type {{ name: string, sources: Record<string, string>, exitCode: number, output: RegExp }[]} */
 const cycleCases = [
@@ -48,8 +47,7 @@ const cycleCases = [
 test.each(cycleCases)("reports $name", ({ sources, exitCode, output }) => {
   const project = mkdtempSync(resolve("node_modules/.hycle-cycles-test-"));
   try {
-    const env = gitFixtureEnv();
-    execFileSync("git", ["init", "--quiet"], { cwd: project, env });
+    const env = initGitFixture(project);
     const dependencies = join(project, "node_modules");
     // The mirror cache lives here and dependency-cruiser resolves imports through symlinks.
     mkdirSync(dependencies);

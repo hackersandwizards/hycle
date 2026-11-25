@@ -1,9 +1,8 @@
-import { execFileSync } from "node:child_process";
-import { mkdtempSync, rmSync, symlinkSync, writeFileSync } from "node:fs";
+import { mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { ESLint } from "eslint";
 import { expect, test } from "vitest";
-import { gitFixtureEnv } from "./test-git-environment.mjs";
+import { initGitFixture } from "./test-git-environment.mjs";
 
 test.each([
   "describe",
@@ -57,13 +56,7 @@ test.each([
   ({ file, source, eslintConfig, diagnostic }) => {
     const project = mkdtempSync(resolve("node_modules/.hycle-lint-test-"));
     try {
-      const env = gitFixtureEnv();
-      execFileSync("git", ["init", "--quiet"], { cwd: project, env });
-      symlinkSync(
-        resolve("node_modules"),
-        join(project, "node_modules"),
-        "dir",
-      );
+      const env = initGitFixture(project);
       writeFileSync(join(project, "tsconfig.json"), "{}");
       writeFileSync(
         join(project, ".oxlintrc.json"),
