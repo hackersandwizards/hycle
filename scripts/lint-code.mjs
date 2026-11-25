@@ -79,14 +79,8 @@ function nativeIds(rule, plugins) {
   return [`${scope}/${name}`, `${nativeNamespace(alias)}/${name}`];
 }
 
-function readNativeRules() {
-  /** @type {unknown} */
-  const config = JSON.parse(nativeOutput("--print-config"));
-  /** @type {unknown} */
-  const catalog = JSON.parse(nativeOutput("--rules", "-f", "json"));
-  if (!isObject(config) || !Array.isArray(catalog)) {
-    throw new Error("Unexpected Oxlint configuration or rule catalog");
-  }
+/** @param {unknown[]} catalog */
+function parseTypeAwareNativeRuleIds(catalog) {
   /** @type {Set<string>} */
   const typed = new Set();
   for (const item of catalog) {
@@ -100,7 +94,11 @@ function readNativeRules() {
     if (item.type_aware === true)
       typed.add(`${nativeNamespace(item.scope)}/${item.value}`);
   }
+  return typed;
+}
 
+/** @param {Record<string, unknown>} config */
+function parseNativeRuleConfig(config) {
   const overrides = config.overrides ?? [];
   if (!Array.isArray(overrides))
     throw new Error("Expected an array of Oxlint overrides");
@@ -116,30 +114,46 @@ function readNativeRules() {
       rules: objectEntries(entry.rules ?? {}),
     };
   });
-  const rootRules = objectEntries(config.rules);
+  return { rootRules: objectEntries(config.rules), scopedRules };
+}
 
+/**
+ * @param {string} file
+ * @param {ReturnType<typeof parseNativeRuleConfig>} config
+ * @param {Set<string>} typed
+ */
+function resolveNativeFileRules(file, { rootRules, scopedRules }, typed) {
+  const rules = new Map(rootRules);
+  for (const { include, exclude, rules: scoped } of scopedRules) {
+    if (
+      include.some((glob) => glob.match(file)) &&
+      !exclude.some((glob) => glob.match(file))
+    ) {
+      for (const [rule, setting] of scoped) rules.set(rule, setting);
+    }
+  }
+  if (file.endsWith(".astro")) {
+    // Oxlint skips unused bindings and typed rules on partial Astro sources.
+    rules.delete("no-unused-vars");
+    for (const rule of typed) rules.delete(rule);
+  }
+  return new Set(
+    [...rules].filter(([, setting]) => enabled(setting)).map(([rule]) => rule),
+  );
+}
+
+function readNativeRules() {
+  /** @type {unknown} */
+  const config = JSON.parse(nativeOutput("--print-config"));
+  /** @type {unknown} */
+  const catalog = JSON.parse(nativeOutput("--rules", "-f", "json"));
+  if (!isObject(config) || !Array.isArray(catalog)) {
+    throw new Error("Unexpected Oxlint configuration or rule catalog");
+  }
+  const typed = parseTypeAwareNativeRuleIds(catalog);
+  const rules = parseNativeRuleConfig(config);
   /** @param {string} file */
-  return (file) => {
-    const rules = new Map(rootRules);
-    for (const { include, exclude, rules: scoped } of scopedRules) {
-      if (
-        include.some((glob) => glob.match(file)) &&
-        !exclude.some((glob) => glob.match(file))
-      ) {
-        for (const [rule, setting] of scoped) rules.set(rule, setting);
-      }
-    }
-    if (file.endsWith(".astro")) {
-      // Oxlint skips unused bindings and typed rules on partial Astro sources.
-      rules.delete("no-unused-vars");
-      for (const rule of typed) rules.delete(rule);
-    }
-    return new Set(
-      [...rules]
-        .filter(([, setting]) => enabled(setting))
-        .map(([rule]) => rule),
-    );
-  };
+  return (file) => resolveNativeFileRules(file, rules, typed);
 }
 
 /** @param {unknown} value @returns {value is Required<Pick<import("eslint").Linter.Processor, "preprocess" | "postprocess">>} */
@@ -149,6 +163,55 @@ function isProcessor(value) {
     typeof value.preprocess === "function" &&
     typeof value.postprocess === "function"
   );
+}
+
+/** @typedef {{ path: string, config: Record<string, unknown> }} ESLintTarget */
+
+/** @param {ESLint} eslint @param {string} file @returns {Promise<ESLintTarget[]>} */
+async function eslintFileTargets(eslint, file) {
+  /** @type {unknown} */
+  const config = await eslint.calculateConfigForFile(file);
+  if (config === undefined) return [];
+  if (!isObject(config))
+    throw new Error(`Unexpected ESLint config for ${file}`);
+
+  const targets = [{ path: file, config }];
+  if (!file.endsWith(".astro")) return targets;
+  if (!isProcessor(config.processor)) return targets;
+
+  const absolute = resolve(file);
+  const blocks = config.processor.preprocess(
+    readFileSync(absolute, "utf8"),
+    absolute,
+  );
+  config.processor.postprocess(
+    blocks.map(() => []),
+    absolute,
+  );
+  for (const [index, block] of blocks.entries()) {
+    if (typeof block === "string") continue;
+    const virtual = join(file, `${index}_${block.filename}`);
+    /** @type {unknown} */
+    const script = await eslint.calculateConfigForFile(virtual);
+    if (isObject(script)) targets.push({ path: virtual, config: script });
+  }
+  return targets;
+}
+
+/** @param {ESLintTarget} target @param {Set<string>} native */
+function findRuleOverlaps({ path, config }, native) {
+  const owned = [];
+  const overlaps = [];
+  for (const [rule, setting] of objectEntries(config.rules ?? {})) {
+    if (!enabled(setting)) continue;
+    owned.push(rule);
+    const duplicate = nativeIds(rule, config.plugins).find((id) =>
+      native.has(id),
+    );
+    if (duplicate)
+      overlaps.push(`${path}: ESLint ${rule} overlaps Oxlint ${duplicate}`);
+  }
+  return { owned, overlaps };
 }
 
 /** @param {ESLint} eslint */
@@ -163,43 +226,10 @@ async function verifyOwnership(eslint) {
   for (const file of files) {
     const native = nativeRules(file);
     for (const rule of native) nativeOwned.add(rule);
-    /** @type {unknown} */
-    const config = await eslint.calculateConfigForFile(file);
-    if (config === undefined) continue;
-    if (!isObject(config))
-      throw new Error(`Unexpected ESLint config for ${file}`);
-
-    /** @type {[string, Record<string, unknown>][]} */
-    const targets = [[file, config]];
-    if (file.endsWith(".astro") && isProcessor(config.processor)) {
-      const absolute = resolve(file);
-      const blocks = config.processor.preprocess(
-        readFileSync(absolute, "utf8"),
-        absolute,
-      );
-      config.processor.postprocess(
-        blocks.map(() => []),
-        absolute,
-      );
-      for (const [index, block] of blocks.entries()) {
-        if (typeof block === "string") continue;
-        const virtual = join(file, `${index}_${block.filename}`);
-        /** @type {unknown} */
-        const script = await eslint.calculateConfigForFile(virtual);
-        if (isObject(script)) targets.push([virtual, script]);
-      }
-    }
-
-    for (const [path, target] of targets) {
-      for (const [rule, setting] of objectEntries(target.rules ?? {})) {
-        if (!enabled(setting)) continue;
-        eslintOwned.add(rule);
-        const duplicate = nativeIds(rule, target.plugins).find((id) =>
-          native.has(id),
-        );
-        if (duplicate)
-          overlaps.push(`${path}: ESLint ${rule} overlaps Oxlint ${duplicate}`);
-      }
+    for (const target of await eslintFileTargets(eslint, file)) {
+      const result = findRuleOverlaps(target, native);
+      for (const rule of result.owned) eslintOwned.add(rule);
+      for (const line of result.overlaps) overlaps.push(line);
     }
   }
 

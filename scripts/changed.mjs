@@ -13,6 +13,28 @@ export function checkSteps() {
   ];
 }
 
+const siteSteps = ["build", "lint:html", "sitemap", "links", "test"];
+const codeSteps = ["lint:code", "check:cycles"];
+/** @type {[RegExp, string[]][]} */
+const pathSteps = [
+  [/^src\/.*\.html$/s, ["format:check", ...siteSteps]],
+  [/^src\//, ["format:check", ...siteSteps, ...codeSteps]],
+  [/^public\/style\.css$/, ["format:check", ...siteSteps, "lint:css"]],
+  [/^public\/.*\.[cm]?[jt]sx?$/s, ["format:check", ...siteSteps, ...codeSteps]],
+  [/^public\//, ["format:check", ...siteSteps]],
+  [
+    /^scripts\/gen-sitemap\.mjs$/,
+    ["format:check", "build", "sitemap", ...codeSteps],
+  ],
+  [/^scripts\/gen-assets\.mjs$/, ["format:check", ...codeSteps]],
+  [/\.md$/i, ["format:check", "test"]],
+];
+
+/** @param {string} file */
+function stepsForChangedPath(file) {
+  return pathSteps.find(([pattern]) => pattern.test(file))?.[1];
+}
+
 /**
  * @param {string} input Git pre-push records.
  * @param {(from: string, to: string) => string} diff NUL-separated paths, including deletions.
@@ -20,25 +42,6 @@ export function checkSteps() {
  */
 export function pushSteps(input, diff) {
   const allSteps = checkSteps();
-  const siteSteps = ["build", "lint:html", "sitemap", "links", "test"];
-  const codeSteps = ["lint:code", "check:cycles"];
-  /** @type {[RegExp, string[]][]} */
-  const pathSteps = [
-    [/^src\/.*\.html$/s, ["format:check", ...siteSteps]],
-    [/^src\//, ["format:check", ...siteSteps, ...codeSteps]],
-    [/^public\/style\.css$/, ["format:check", ...siteSteps, "lint:css"]],
-    [
-      /^public\/.*\.[cm]?[jt]sx?$/s,
-      ["format:check", ...siteSteps, ...codeSteps],
-    ],
-    [/^public\//, ["format:check", ...siteSteps]],
-    [
-      /^scripts\/gen-sitemap\.mjs$/,
-      ["format:check", "build", "sitemap", ...codeSteps],
-    ],
-    [/^scripts\/gen-assets\.mjs$/, ["format:check", ...codeSteps]],
-    [/\.md$/i, ["format:check", "test"]],
-  ];
   const selected = new Set();
   for (const line of input.split("\n").filter(Boolean)) {
     const fields = line.match(
@@ -57,13 +60,13 @@ export function pushSteps(input, diff) {
       return { steps: allSteps, reason: "Git could not list changed paths" };
     }
     for (const file of paths.split("\0").filter(Boolean)) {
-      const match = pathSteps.find(([pattern]) => pattern.test(file));
-      if (!match)
+      const steps = stepsForChangedPath(file);
+      if (!steps)
         return {
           steps: allSteps,
           reason: `No path rule for ${JSON.stringify(file)}`,
         };
-      for (const step of match[1]) selected.add(step);
+      for (const step of steps) selected.add(step);
     }
   }
   return {

@@ -1,6 +1,6 @@
 // The link check must read the links on every built page, not only test the links pointing at them:
 // a copy of dist/ gets one dead link per page, and `bun run links` has to report each of them.
-import { expect, test } from "vitest";
+import { assert, expect, test } from "vitest";
 import { Glob } from "bun";
 import {
   cpSync,
@@ -14,7 +14,7 @@ import {
 import { join, resolve } from "node:path";
 
 test("bun run links reads the links on every page in dist/", () => {
-  if (!existsSync("dist")) throw new Error("dist/ fehlt: zuerst bun run build");
+  assert(existsSync("dist"), "dist/ fehlt: zuerst bun run build");
   const pages = [...new Glob("**/*.html").scanSync("dist")];
   expect(pages.length).toBeGreaterThan(0);
   /** @param {string} path */
@@ -34,33 +34,31 @@ test("bun run links reads the links on every page in dist/", () => {
     });
     /** @type {unknown} */
     const report = JSON.parse(run.stdout.toString());
-    if (
-      !report ||
-      typeof report !== "object" ||
-      !("links" in report) ||
-      !Array.isArray(report.links)
-    ) {
-      throw new Error("Linkinator returned no links array");
-    }
+    assert(report, "Linkinator should return a report");
+    assert(typeof report === "object", "Linkinator report should be an object");
+    assert("links" in report, "Linkinator report should have links");
+    assert(Array.isArray(report.links), "Linkinator links should be an array");
     /** @type {unknown[]} */
     const links = report.links;
-    const broken = links.flatMap((link) => {
-      if (
-        !link ||
-        typeof link !== "object" ||
-        !("state" in link) ||
-        !("url" in link) ||
-        typeof link.url !== "string"
-      ) {
-        throw new Error("Linkinator returned an invalid link");
-      }
-      return link.state === "BROKEN"
-        ? [link.url.replace(/^.*missing-/, "")]
-        : [];
-    });
-    /** @type {(a: string, b: string) => number} */
-    const compare = (a, b) => (a < b ? -1 : Number(a > b));
-    expect(broken.sort(compare)).toEqual(pages.map(slug).sort(compare));
+    const broken = links
+      .map((link) => {
+        assert(link, "Each Linkinator link should be present");
+        assert(
+          typeof link === "object",
+          "Each Linkinator link should be an object",
+        );
+        assert("state" in link, "Each Linkinator link should have a state");
+        assert("url" in link, "Each Linkinator link should have a URL");
+        assert(
+          typeof link.url === "string",
+          "Each Linkinator URL should be a string",
+        );
+        return { state: link.state, url: link.url };
+      })
+      .filter(({ state }) => state === "BROKEN")
+      .map(({ url }) => url.replace(/^.*missing-/, ""));
+    expect(broken).toHaveLength(pages.length);
+    expect(new Set(broken)).toEqual(new Set(pages.map(slug)));
   } finally {
     rmSync(tmp, { recursive: true, force: true });
   }

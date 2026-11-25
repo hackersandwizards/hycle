@@ -17,6 +17,40 @@ const cache = resolve("node_modules/.cache");
 mkdirSync(cache, { recursive: true });
 const mirror = mkdtempSync(join(cache, "hycle-cycles-"));
 
+/** @param {string} file @param {string} target */
+function mirrorAstroModules(file, target) {
+  // Dependency-cruiser cannot read .astro directly. Keep the compiler's module
+  // and its client scripts in the original directory for import resolution.
+  const result = transform(readFileSync(file, "utf8"), { filename: file });
+  const errors = result.diagnostics.filter(
+    ({ severity }) => severity === "error",
+  );
+  if (errors.length)
+    throw new Error(`${file}: ${errors.map(({ text }) => text).join("\n")}`);
+
+  const modules = [`${file}.ts`];
+  writeFileSync(`${target}.ts`, result.code, { flag: "wx" });
+  for (const [index, script] of result.scripts.entries()) {
+    if (!script.code) continue;
+    const suffix = `.script-${index}.ts`;
+    writeFileSync(`${target}${suffix}`, script.code, { flag: "wx" });
+    modules.push(`${file}${suffix}`);
+  }
+  return modules;
+}
+
+/** @param {string} file */
+async function mirrorCycleSource(file) {
+  if (!/\.(?:astro|[cm]?[jt]sx?)$/.test(file)) return [];
+  if (!(await Bun.file(file).exists())) return [];
+
+  const target = join(mirror, file);
+  mkdirSync(dirname(target), { recursive: true });
+  if (file.endsWith(".astro")) return mirrorAstroModules(file, target);
+  copyFileSync(file, target, constants.COPYFILE_EXCL);
+  return [file];
+}
+
 try {
   const files = execFileSync(
     "git",
@@ -24,38 +58,8 @@ try {
     { encoding: "utf8" },
   );
   const modules = [];
-  for (const file of new Set(files.split("\0"))) {
-    if (
-      !/\.(?:astro|[cm]?[jt]sx?)$/.test(file) ||
-      !(await Bun.file(file).exists())
-    )
-      continue;
-    const target = join(mirror, file);
-    mkdirSync(dirname(target), { recursive: true });
-    if (file.endsWith(".astro")) {
-      // Dependency-cruiser cannot read .astro directly. Keep the compiler's module
-      // and its client scripts in the original directory for import resolution.
-      const result = transform(readFileSync(file, "utf8"), { filename: file });
-      const errors = result.diagnostics.filter(
-        ({ severity }) => severity === "error",
-      );
-      if (errors.length)
-        throw new Error(
-          `${file}: ${errors.map(({ text }) => text).join("\n")}`,
-        );
-      writeFileSync(`${target}.ts`, result.code, { flag: "wx" });
-      modules.push(`${file}.ts`);
-      for (const [index, script] of result.scripts.entries()) {
-        if (!script.code) continue;
-        const client = `${file}.script-${index}.ts`;
-        writeFileSync(join(mirror, client), script.code, { flag: "wx" });
-        modules.push(client);
-      }
-    } else {
-      copyFileSync(file, target, constants.COPYFILE_EXCL);
-      modules.push(file);
-    }
-  }
+  for (const file of new Set(files.split("\0")))
+    modules.push(...(await mirrorCycleSource(file)));
   if (!modules.length)
     throw new Error("No source modules found for the cycle check.");
 
