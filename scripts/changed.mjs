@@ -37,7 +37,7 @@ function stepsForChangedPath(file) {
 
 /**
  * @param {string} input Git pre-push records.
- * @param {(from: string, to: string) => string} diff NUL-separated paths, including deletions.
+ * @param {(from: string, to: string) => string | null} diff NUL-separated paths, including deletions, or null when Git cannot list them.
  * @returns {{steps: string[], reason: string}}
  */
 export function pushSteps(input, diff) {
@@ -53,12 +53,9 @@ export function pushSteps(input, diff) {
     if (remote === "0".repeat(remote.length))
       return { steps: allSteps, reason: "New remote ref" };
 
-    let paths;
-    try {
-      paths = diff(remote, local);
-    } catch {
+    const paths = diff(remote, local);
+    if (paths === null)
       return { steps: allSteps, reason: "Git could not list changed paths" };
-    }
     for (const file of paths.split("\0").filter(Boolean)) {
       const steps = stepsForChangedPath(file);
       if (!steps)

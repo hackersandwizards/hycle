@@ -1,18 +1,23 @@
-import { execFileSync } from "node:child_process";
+import { spawnSync } from "node:child_process";
 import { checkSteps, pushSteps } from "./changed.mjs";
+
+/** @param {string} from @param {string} to @returns {string | null} */
+function gitChangedPaths(from, to) {
+  const result = spawnSync(
+    "git",
+    ["diff", "--name-only", "--no-renames", "-z", from, to, "--"],
+    { encoding: "utf8" },
+  );
+  if (result.error) throw result.error;
+  if (result.signal)
+    throw new Error(`git diff terminated by signal ${result.signal}`);
+  return result.status === 0 ? result.stdout : null;
+}
 
 const allSteps = checkSteps();
 const push = process.argv.includes("--push");
 const selection = push
-  ? pushSteps(await Bun.stdin.text(), (from, to) =>
-      execFileSync(
-        "git",
-        ["diff", "--name-only", "--no-renames", "-z", from, to, "--"],
-        {
-          encoding: "utf8",
-        },
-      ),
-    )
+  ? pushSteps(await Bun.stdin.text(), gitChangedPaths)
   : { steps: allSteps, reason: "" };
 
 for (const step of allSteps) {

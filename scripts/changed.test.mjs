@@ -53,11 +53,18 @@ test.each(["package.json", "bun.lock", "tsconfig.json"])(
 );
 
 test("an unreadable diff falls back to all fast checks", () => {
-  expect(
+  expect(pushSteps(record, () => null)).toEqual({
+    steps: full,
+    reason: "Git could not list changed paths",
+  });
+});
+
+test("an unexpected diff error propagates instead of falling back", () => {
+  expect(() =>
     pushSteps(record, () => {
-      throw new Error("missing object");
+      throw new Error("git spawn failed");
     }),
-  ).toEqual({ steps: full, reason: "Git could not list changed paths" });
+  ).toThrow("git spawn failed");
 });
 
 test("an empty push input has no changed paths", () => {
