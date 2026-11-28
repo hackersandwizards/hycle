@@ -46,7 +46,7 @@
     "@types/spdx-expression-parse": "4.0.0",
     "astro": "7.4.13",
     "dependency-cruiser": "18.9.0",
-    "eslint": "10.15.0",
+    "eslint": "10.16.0",
     "eslint-plugin-astro": "3.2.2",
     "fast-check": "4.11.0",
     "html-validate": "11.23.0",
